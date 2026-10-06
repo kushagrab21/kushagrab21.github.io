@@ -1,0 +1,109 @@
+@import url('./stage6.css');
+
+/* An open instrument: two forward wings, with the calculation set behind them. */
+.input-node{border-radius:54px 9px 9px 24px;padding-left:27px}
+.output-node{border-radius:9px 54px 24px 9px;padding-right:27px}
+.workflow-paper::before{border-radius:inherit}
+.fold-toggle{padding-top:3px;min-height:42px}
+.fold-toggle .flap-heading{font-size:24px;letter-spacing:-.6px;color:#fff0d6;font-weight:500}
+.flap-heading small{font-size:10px;letter-spacing:0;vertical-align:middle;margin-right:9px;color:#d8b687}
+.fold-toggle .fold-label{font-size:11px;letter-spacing:0}
+.input-node .fold-toggle{padding-left:8px}
+.output-node .fold-toggle{padding-right:8px}
+.flap-hinge{position:absolute;top:20%;bottom:17%;width:8px;pointer-events:none;border-radius:5px;background:repeating-linear-gradient(0deg,#251a13 0 18px,#bb935e 19px,#63452e 22px,#2d2018 27px);box-shadow:1px 0 3px #150e0980}
+.input-node .flap-hinge{right:-9px}.output-node .flap-hinge{left:-9px}
+.question-node{border-radius:76px 76px 20px 20px;padding:32px 25px 24px;background:radial-gradient(ellipse at 50% 0,#90664440,transparent 62%),linear-gradient(145deg,#4f3525,#34271e);border-color:#99734c80;box-shadow:0 2px 0 #bf976333,3px 5px 0 #261a13,0 18px 25px -10px #100b0970}
+.question-node::before{inset:5px -6px -6px 6px;background:#2b2018}
+.question-node .paper-topline{margin-left:7px;margin-right:7px}
+.question-node .paper-topline>span{font-size:12px;color:#e2c5a0}
+.question-node .calculation{border-top:1px solid #b4946b44}
+.question-node .question-filter{font-weight:400}
+.input-node .contact-start{left:22px}.output-node .contact-end{right:22px}
+.question-node .contact-start{left:18px}.question-node .contact-end{right:18px}
+.room-surfaces{border-radius:48px 48px 16px 16px}
+.plot-surface{border-radius:4px 18px 18px 4px}
+.flow-wire{stroke-width:3.1}.flow-label{border-radius:10px;padding:3px 7px;background:#32261cde}
+
+@media(min-width:821px){
+  .scene-orbit{grid-template-columns:1.12fr 1.05fr 1.12fr;gap:28px;padding:30px 12px 32px}
+  .input-node{transform:rotateY(55deg) scale(.89);transform-origin:75% 100%}
+  .output-node{transform:rotateY(-55deg) scale(.89);transform-origin:25% 100%}
+  .question-node{margin-top:-70px;transform:translateY(50px) translateZ(-560px)}
+  .question-node .question-row h2{font-size:28px}
+  .question-node .threshold-heading strong{font-size:29px}
+  .question-node .arithmetic{font-size:28px}
+  .question-node .calculation-heading{font-size:14px}
+  .question-node #control-summary{font-size:13px;min-height:37px}
+  .question-node .paper-link,.question-node .missing-note{font-size:12px}
+  .scene.is-flat .question-node{transform:translateY(-20px)}
+  .scene.is-flat .scene-orbit{gap:30px}
+  .flow-dock{margin-top:-4px}
+}
+@media(min-width:821px) and (max-height:800px){
+  .scene-orbit{padding-top:16px;padding-bottom:25px}
+  .input-node{padding:15px 20px 17px 25px}
+  .output-node{padding:15px 25px 17px 20px}
+  .question-node{padding:29px 22px 21px;transform:translateY(50px) translateZ(-560px)}
+  .question-node .question-row h2{font-size:26px}
+  .question-node .question-filter{font-size:15px;min-height:40px}
+  .question-node .calculation-heading{font-size:13px;min-height:37px}
+  .question-node .arithmetic{font-size:26px}
+  .fold-toggle{min-height:36px}
+  .fold-toggle .flap-heading{font-size:23px}
+}
+@media(max-width:820px){
+  .input-node{padding:22px 20px 22px 25px;border-radius:44px 9px 9px 22px;align-self:flex-start}
+  .output-node{padding:22px 25px 22px 20px;border-radius:9px 44px 22px 9px;align-self:flex-end}
+  .question-node{padding:30px 22px 25px;border-radius:60px 60px 18px 18px;max-width:90%}
+  .fold-toggle .flap-heading{font-size:25px}
+  .room-surfaces{border-radius:30px 30px 15px 15px}
+}
+
+/* The rear console is compact enough to show the two wings in front of it. */
+@media(min-width:821px){
+  .question-node{padding:28px 24px 22px}
+  .question-node .question-row h2{font-size:26px}
+  .question-node .question-filter{font-size:15px;min-height:0}
+  .question-node .subject-switch{margin:10px 0}
+  .question-node #control-summary{font-size:13px;min-height:19px}
+  .question-node .calculation-heading{font-size:13px;min-height:0}
+  .question-node .calculation{margin-top:10px;padding-top:10px}
+  .question-node .missing-note{font-size:12px;margin-top:9px}
+  .question-node .arithmetic{font-size:27px}
+  .input-node{min-height:458px}
+}
+@media(min-width:821px) and (max-height:800px){
+  .question-node .question-row h2{font-size:25px}
+  .question-node .question-filter{font-size:14px}
+  .question-node .calculation-heading{font-size:12px}
+  .question-node .arithmetic{font-size:26px}
+  .question-node .missing-note{font-size:11px}
+  .question-node .paper-link{font-size:11px}
+}
+@media(min-width:821px){
+  .scene-orbit{grid-template-columns:1.4fr .65fr 1.4fr;gap:12px}
+  .input-node{grid-column:1}
+  .output-node{grid-column:3}
+  .question-node{position:absolute;width:32%;left:50%;bottom:-5px;margin:0;transform:translateX(-50%) translateY(50px) translateZ(-560px)}
+  .scene.is-flat .question-node{transform:translateX(-50%);bottom:25px}
+  .scene.is-flat .scene-orbit{grid-template-columns:1fr 1fr 1fr}
+  .scene.is-flat .question-node{position:relative;grid-column:2;grid-row:1;width:auto;left:auto;bottom:auto;transform:none}
+  .input-preview table{font-size:13px}
+  .input-live{font-size:13px}
+  .paper-subtitle{font-size:13px}
+  .paper-link,.point-invitation>span,.point-invitation button{font-size:12px}
+  .flow-dock{margin-top:-14px}
+}
+@media(min-width:821px){
+  .scene-orbit{grid-template-columns:1.3fr .85fr 1.3fr}
+  .question-node{transform:translateX(-50%) translateY(-10px) translateZ(-560px)}
+  .plot-surface #plot{height:178px}
+  .input-node,.output-node{min-height:458px}
+  .output-node .plot-surface{margin-top:12px}
+}
+@media(min-width:821px){
+  .scene-orbit{min-height:550px}
+  .input-node.is-folded,.output-node.is-folded{min-height:180px}
+  .fold-toggle .fold-label{font-size:13px;color:#f1d6b2;opacity:1}
+}
+@media(min-width:821px) and (max-height:800px){.scene-orbit{min-height:495px}}

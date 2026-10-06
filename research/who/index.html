@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Who made this · Kushagra Bhatnagar</title>
+  <link rel="stylesheet" href="styles.css?v=20261006-who-copy">
+  <link rel="modulepreload" href="vendor/three.module.min.js">
+</head>
+<body>
+  <main id="stage" class="stage">
+    <div class="room" aria-hidden="true"></div>
+    <div class="glow" aria-hidden="true"></div>
+    <!-- Decorative: the four station cards on a shallow curve, blurred. Blur lives on this layer only. -->
+    <div class="track" aria-hidden="true"><div class="track-blur" id="track"></div></div>
+    <div class="cast" id="cast" role="img" aria-label="Four small robot figures, one for each stop on the ride: Tome, ADSP, Followthrough and The finding. Each steps into the light in turn and acts out its job, then they step aside for the name."></div>
+    <div class="fallback" id="fallback" aria-hidden="true"></div>
+
+    <header class="head">
+      <p class="eyebrow"><span class="mark" aria-hidden="true"></span><span id="eyebrow"></span></p>
+      <h1 id="title"></h1>
+    </header>
+
+    <!-- The card of whoever is in the light. It travels in from that station's blurred card on the track. -->
+    <section class="turn" id="turn" aria-live="polite">
+      <p class="turn-name" id="turn-name"></p>
+      <p class="turn-what" id="turn-what"></p>
+      <p class="turn-proof" id="turn-proof"></p>
+    </section>
+
+    <section class="you" id="you" aria-labelledby="name">
+      <h2 class="name" id="name"></h2>
+      <p class="line" id="line"></p>
+      <p class="facts"><span id="now"></span> <span id="before"></span></p>
+      <div class="exits" id="exits">
+        <span class="group resume-group">
+          <a class="btn btn-main" id="resume-pdf" target="_blank" rel="noopener"></a>
+          <a class="btn btn-quiet" id="resume-page" target="_top"></a>
+        </span>
+        <span class="group email-group">
+          <a class="btn" id="email-link"></a>
+          <span class="address" id="address"></span>
+          <button type="button" class="copy" id="copy"></button>
+        </span>
+        <span class="break" aria-hidden="true"></span>
+        <a class="btn" id="linkedin" target="_blank" rel="noopener"></a>
+        <a class="btn" id="github" target="_blank" rel="noopener"></a>
+      </div>
+      <p class="made" id="made"></p>
+    </section>
+
+    <nav class="labels" id="labels" aria-label="Go back to a station"></nav>
+
+    <!-- From the first second: the name and a way straight to the contacts. -->
+    <button type="button" class="skip" id="skip"><span class="skip-name" id="skip-name"></span><span class="sep" aria-hidden="true"></span><span id="skip-text"></span><span class="arrow" aria-hidden="true">→</span></button>
+
+    <div class="controls" id="controls">
+      <button type="button" class="play" id="play"></button>
+      <ol class="dots" id="dots" aria-label="Steps"></ol>
+      <button type="button" class="again" id="again"></button>
+    </div>
+  </main>
+  <script type="module" src="app.js?v=20261006-who-copy"></script>
+</body>
+</html>

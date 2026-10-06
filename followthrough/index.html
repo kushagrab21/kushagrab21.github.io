@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Followthrough by Kushagra Bhatnagar. A client moved a workshop to a new date. Followthrough, an AI, updated the event documents, and plain code and a second AI checked its work. A recording of that job, one step at a time.">
+  <title>Followthrough: one date change, step by step</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2319373b'/%3E%3Crect x='14' y='16' width='22' height='30' rx='3' fill='%23f3eddf'/%3E%3Ccircle cx='46' cy='38' r='8' fill='%23e8c56d'/%3E%3C/svg%3E">
+  <link rel="preload" href="fonts/figtree-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/literata-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=20261006-links">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#inspect">Skip to the current step</a>
+  <main id="top">
+    <section class="ft" id="ft" aria-labelledby="ft-title">
+      <div class="room" aria-hidden="true">
+        <div class="wall"></div>
+        <div class="shelves"><i class="shelf s1"></i><i class="shelf s2"></i><i class="shelf s3"></i><i class="recess r1"></i><i class="recess r2"></i></div>
+        <div class="conveyor" id="conveyor"></div>
+        <div class="floor"></div>
+        <div class="pool" id="pool"></div>
+      </div>
+
+      <header class="band">
+        <div class="band-text">
+          <h1 id="ft-title"></h1>
+          <p class="lead" id="lead"></p>
+        </div>
+        <nav class="band-nav"><span class="recorded" id="recorded"></span><a href="#research" id="research-link"></a></nav>
+      </header>
+
+      <nav class="jobmap" id="jobmap" aria-label="The steps of the job"></nav>
+
+      <div class="inspect" id="inspect" tabindex="-1">
+        <section class="flap flap-in is-open" id="flap-in" data-side="in" aria-label="Input"></section>
+        <div class="vlink vlink-in" aria-hidden="true"><i></i><span id="vlink-in"></span></div>
+        <div class="stage" id="stage">
+          <div class="actors" id="actors"></div>
+          <p class="actor-name" id="actor-name"></p>
+          <article class="step-card" id="step-card" aria-live="polite">
+            <p class="card-meta"><span id="card-count"></span><span id="card-area"></span></p>
+            <h2 class="step-title" id="step-title"></h2>
+            <p class="step-say" id="step-say"></p>
+            <ol class="phases" id="phases"></ol>
+          </article>
+        </div>
+        <div class="vlink vlink-out" aria-hidden="true"><i></i><span id="vlink-out"></span></div>
+        <section class="flap flap-out is-open" id="flap-out" data-side="out" aria-label="Output"></section>
+        <svg class="routes" id="routes" aria-hidden="true">
+          <defs>
+            <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"></path></marker>
+            <marker id="arrowhead-back" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"></path></marker>
+          </defs>
+        </svg>
+        <div class="tokens" id="tokens" aria-hidden="true"></div>
+      </div>
+
+      <div class="playback">
+        <button type="button" class="pause" id="pause" aria-pressed="false"><span class="pause-icon" aria-hidden="true"></span><span class="pause-label"></span></button>
+        <div class="ownership">
+          <p class="own-line" id="own-line" aria-live="polite"></p>
+          <button type="button" class="follow" id="follow" hidden></button>
+          <p class="replay-at" id="replay-at"></p>
+        </div>
+        <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+        <button type="button" class="try-shortcut" id="try-shortcut"></button>
+      </div>
+    </section>
+
+    <div class="bridge" id="research">
+      <p id="bridge"></p>
+    </div>
+
+    <!-- How I made it: wording from build/notes/copy.js (the written layer); links added 6 Oct 2026 at the user's request -->
+    <footer class="ft-notes" aria-label="How I made it">
+      <p class="ft-notes-label">How I made it</p>
+      <p>I built Followthrough in a day, at the AI Tinkerers hackathon with OpenAI in Singapore on 12 September.</p>
+      <p>The part I cared about was who gets to say the work is done. One AI makes the edits, plain code collects the evidence (the document read back after saving, the quoted lines looked up in the original), and a second AI sees only that evidence and decides whether to accept the edit, so the screen says “Saved” or “Changes checked” only once the evidence exists.</p>
+      <p>The note to the event team is only drafted, it is never sent.</p>
+      <p class="links">
+        <a href="https://github.com/kushagrab21/followthrough" target="_blank" rel="noopener">Followthrough’s code on GitHub ↗</a>
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7504440629138116608/" target="_blank" rel="noopener">Watch the demo video (my LinkedIn post) ↗</a>
+      </p>
+    </footer>
+  </main>
+  <noscript><p class="noscript">This block replays a recorded job step by step and runs its checks in your browser. Turn on JavaScript to see it.</p></noscript>
+</body>
+</html>

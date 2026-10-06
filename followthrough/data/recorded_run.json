@@ -1,0 +1,3086 @@
+{
+ "about": "Recorded live run of Followthrough, 12 Sep 2026, against a fictional scenario seeded into a real Google account. Identifiers and the owner's address are removed.",
+ "request_a": "Apply the client's latest date change to the workshop materials.",
+ "request_b": "Prepare the handoff for the event team.",
+ "inputs": {
+  "client_email": {
+   "source_id": "src_000003",
+   "kind": "gmail_message",
+   "title": "Workshop date change",
+   "retrieved_at": "2026-09-12T07:01:28.863Z",
+   "text": "From: Priya Raman, Northstar Collective (fictional client)\nDate: 2026-09-11T18:38:46Z\nSubject: Workshop date change\n\nHi,\n\nPlease move the workshop from October 20 to October 27. The time stays the same.\n\nThanks,\nPriya\nNorthstar Collective"
+  },
+  "venue_email": {
+   "source_id": "src_000006",
+   "kind": "gmail_message",
+   "title": "Room booking confirmed",
+   "retrieved_at": "2026-09-12T07:02:20.058Z",
+   "text": "From: Venue Operations, Northstar Building (fictional venue)\nDate: 2026-09-11T18:38:49Z\nSubject: Room booking confirmed\n\nHello,\n\nYour room is confirmed for October 20, 2–5 pm.\n\nRoom: Level 3 Seminar Room, Northstar Building\nBooking reference: NB-4417\n\nRegards,\nVenue Operations\nNorthstar Building"
+  },
+  "brief_before": {
+   "source_id": "src_000007",
+   "kind": "gdoc",
+   "title": "Northstar Workshop — Brief",
+   "retrieved_at": "2026-09-12T07:02:33.567Z",
+   "text": "Northstar Workshop\nDate: October 20\nTime: 2–5 pm\nVenue: Level 3 Seminar Room, Northstar Building — confirmed\nPurpose\nA half-day working session with the Northstar Collective to agree the\nnext quarter's priorities and leave with a single written plan.\nRunning order\n1. Where we are — 30 min\n1. What is in the way — 45 min\n1. Break — 15 min\n1. What we will do about it — 60 min\n1. Who owns what, and by when — 30 min\nAttendees\nPriya Raman (Northstar Collective), the facilitation team, and up to\ntwelve participants from the client side.\nMaterials\nPrinted worksheets, two flip charts, markers. The room has a projector;\nbring an HDMI adapter."
+  },
+  "invitation_before": {
+   "source_id": "src_000009",
+   "kind": "gdoc",
+   "title": "Northstar Workshop — Invitation",
+   "retrieved_at": "2026-09-12T07:02:46.193Z",
+   "text": "You are invited: Northstar Workshop\nDate: October 20\nTime: 2–5 pm\nVenue: Level 3 Seminar Room, Northstar Building\nWe are running a half-day working session to set the next quarter's\npriorities. Your team's view matters to the outcome, so please come\nready to talk about what is actually getting in the way.\nPlease arrive ten minutes early. Tea and coffee are provided.\nReply to this invitation to confirm your place."
+  }
+ },
+ "outputs": {
+  "brief_after": {
+   "source_id": "src_000008",
+   "kind": "gdoc",
+   "title": "Northstar Workshop — Brief",
+   "retrieved_at": "2026-09-12T07:02:38.809Z",
+   "text": "Northstar Workshop\nDate: October 27\nTime: 2–5 pm\nVenue: Level 3 Seminar Room, Northstar Building — to be confirmed\nPurpose\nA half-day working session with the Northstar Collective to agree the\nnext quarter's priorities and leave with a single written plan.\nRunning order\n1. Where we are — 30 min\n1. What is in the way — 45 min\n1. Break — 15 min\n1. What we will do about it — 60 min\n1. Who owns what, and by when — 30 min\nAttendees\nPriya Raman (Northstar Collective), the facilitation team, and up to\ntwelve participants from the client side.\nMaterials\nPrinted worksheets, two flip charts, markers. The room has a projector;\nbring an HDMI adapter."
+  },
+  "invitation_after": {
+   "source_id": "src_000012",
+   "kind": "gdoc",
+   "title": "Northstar Workshop — Invitation",
+   "retrieved_at": "2026-09-12T07:03:14.017Z",
+   "text": "You are invited: Northstar Workshop\nDate: October 27\nTime: 2–5 pm\nVenue: Level 3 Seminar Room, Northstar Building — to be confirmed\nWe are running a half-day working session to set the next quarter's\npriorities. Your team's view matters to the outcome, so please come\nready to talk about what is actually getting in the way.\nPlease arrive ten minutes early. Tea and coffee are provided.\nReply to this invitation to confirm your place."
+  }
+ },
+ "outstanding": [
+  [
+   "Venue rebooking/confirmation for October 27 (and any new room details or reference number)."
+  ],
+  [
+   "Venue rebooking/confirmation for October 27 (and any new room details or reference number), carried forward from ck_000001."
+  ]
+ ],
+ "rehearsal_leftovers_in_mailbox": [
+  {
+   "source_id": "src_000001",
+   "title": "Northstar Workshop date change — room rebooking needed",
+   "note": "Written during an earlier rehearsal on the same morning; it already names the venue dependency."
+  },
+  {
+   "source_id": "src_000002",
+   "title": "Northstar Workshop — room booking confirmation for Oct 27 (2–5 pm)",
+   "note": "Written during an earlier rehearsal on the same morning; it already names the venue dependency."
+  }
+ ],
+ "snapshots": {
+  "src_000001": {
+   "source_id": "src_000001",
+   "kind": "gmail_message",
+   "title": "Northstar Workshop date change — room rebooking needed",
+   "retrieved_at": "2026-09-12T07:01:17.417Z",
+   "text": "From: Kushagra <[owner's mailbox]>\nTo: Kushagra <[owner's mailbox]>\nDate: 2026-09-12T05:47:47Z\nSubject: Northstar Workshop date change — room rebooking needed\n\nHi Priya,\r\n\r\nWe’ve updated the workshop date in the Brief and Invitation from October 20 to October 27. You mentioned the time stays the same, so both still show 2–5 pm.\r\n\r\nOne dependency to confirm: the room booking we have on file is for October 20 (Level 3 Seminar Room, Northstar Building). Could you please confirm whether the venue has been rebooked for October 27, 2–5 pm, or share the new room details/confirmation reference so we can mark it as confirmed?\r\n\r\nOnce confirmed, we’ll switch the Brief’s venue line from “to be confirmed” back to “confirmed.”\r\n\r\nThanks,\r\nKushagra"
+  },
+  "src_000002": {
+   "source_id": "src_000002",
+   "kind": "gmail_message",
+   "title": "Northstar Workshop — room booking confirmation for Oct 27 (2–5 pm)",
+   "retrieved_at": "2026-09-12T07:01:24.871Z",
+   "text": "From: Kushagra <[owner's mailbox]>\nTo: priya@northstar.example\nDate: 2026-09-12T06:51:01Z\nSubject: Northstar Workshop — room booking confirmation for Oct 27 (2–5 pm)\n\nHi Priya,\n\nWe’ve applied your date change across the Brief and Invitation: both now show October 27, 2–5 pm. \n\nOutstanding dependency: The room booking we have on file is for October 20, 2–5 pm (Level 3 Seminar Room, Northstar Building; booking reference NB-4417). Could you please confirm whether the venue has been rebooked for October 27, 2–5 pm? If it’s a different room/building, please share details and any confirmation reference. Once confirmed, we’ll switch the Brief’s venue line from “to be confirmed” back to “confirmed.”\n\nThanks,\nKushagra"
+  },
+  "src_000003": {
+   "source_id": "src_000003",
+   "kind": "gmail_message",
+   "title": "Workshop date change",
+   "retrieved_at": "2026-09-12T07:01:28.863Z",
+   "text": "From: Priya Raman, Northstar Collective (fictional client)\nDate: 2026-09-11T18:38:46Z\nSubject: Workshop date change\n\nHi,\n\nPlease move the workshop from October 20 to October 27. The time stays the same.\n\nThanks,\nPriya\nNorthstar Collective"
+  },
+  "src_000004": {
+   "source_id": "src_000004",
+   "kind": "gdoc",
+   "title": "Northstar Workshop — Brief",
+   "retrieved_at": "2026-09-12T07:01:36.282Z",
+   "text": "Northstar Workshop\nDate: October 20\nTime: 2–5 pm\nVenue: Level 3 Seminar Room, Northstar Building — confirmed\nPurpose\nA half-day working session with the Northstar Collective to agree the\nnext quarter's priorities and leave with a single written plan.\nRunning order\n1. Where we are — 30 min\n1. What is in the way — 45 min\n1. Break — 15 min\n1. What we will do about it — 60 min\n1. Who owns what, and by when — 30 min\nAttendees\nPriya Raman (Northstar Collective), the facilitation team, and up to\ntwelve participants from the client side.\nMaterials\nPrinted worksheets, two flip charts, markers. The room has a projector;\nbring an HDMI adapter."
+  },
+  "src_000005": {
+   "source_id": "src_000005",
+   "kind": "gdoc",
+   "title": "Northstar Workshop — Invitation",
+   "retrieved_at": "2026-09-12T07:01:46.548Z",
+   "text": "You are invited: Northstar Workshop\nDate: October 20\nTime: 2–5 pm\nVenue: Level 3 Seminar Room, Northstar Building\nWe are running a half-day working session to set the next quarter's\npriorities. Your team's view matters to the outcome, so please come\nready to talk about what is actually getting in the way.\nPlease arrive ten minutes early. Tea and coffee are provided.\nReply to this invitation to confirm your place."
+  },
+  "src_000006": {
+   "source_id": "src_000006",
+   "kind": "gmail_message",
+   "title": "Room booking confirmed",
+   "retrieved_at": "2026-09-12T07:02:20.058Z",
+   "text": "From: Venue Operations, Northstar Building (fictional venue)\nDate: 2026-09-11T18:38:49Z\nSubject: Room booking confirmed\n\nHello,\n\nYour room is confirmed for October 20, 2–5 pm.\n\nRoom: Level 3 Seminar Room, Northstar Building\nBooking reference: NB-4417\n\nRegards,\nVenue Operations\nNorthstar Building"
+  },
+  "src_000007": {
+   "source_id": "src_000007",
+   "kind": "gdoc",
+   "title": "Northstar Workshop — Brief",
+   "retrieved_at": "2026-09-12T07:02:33.567Z",
+   "text": "Northstar Workshop\nDate: October 20\nTime: 2–5 pm\nVenue: Level 3 Seminar Room, Northstar Building — confirmed\nPurpose\nA half-day working session with the Northstar Collective to agree the\nnext quarter's priorities and leave with a single written plan.\nRunning order\n1. Where we are — 30 min\n1. What is in the way — 45 min\n1. Break — 15 min\n1. What we will do about it — 60 min\n1. Who owns what, and by when — 30 min\nAttendees\nPriya Raman (Northstar Collective), the facilitation team, and up to\ntwelve participants from the client side.\nMaterials\nPrinted worksheets, two flip charts, markers. The room has a projector;\nbring an HDMI adapter."
+  },
+  "src_000008": {
+   "source_id": "src_000008",
+   "kind": "gdoc",
+   "title": "Northstar Workshop — Brief",
+   "retrieved_at": "2026-09-12T07:02:38.809Z",
+   "text": "Northstar Workshop\nDate: October 27\nTime: 2–5 pm\nVenue: Level 3 Seminar Room, Northstar Building — to be confirmed\nPurpose\nA half-day working session with the Northstar Collective to agree the\nnext quarter's priorities and leave with a single written plan.\nRunning order\n1. Where we are — 30 min\n1. What is in the way — 45 min\n1. Break — 15 min\n1. What we will do about it — 60 min\n1. Who owns what, and by when — 30 min\nAttendees\nPriya Raman (Northstar Collective), the facilitation team, and up to\ntwelve participants from the client side.\nMaterials\nPrinted worksheets, two flip charts, markers. The room has a projector;\nbring an HDMI adapter."
+  },
+  "src_000009": {
+   "source_id": "src_000009",
+   "kind": "gdoc",
+   "title": "Northstar Workshop — Invitation",
+   "retrieved_at": "2026-09-12T07:02:46.193Z",
+   "text": "You are invited: Northstar Workshop\nDate: October 20\nTime: 2–5 pm\nVenue: Level 3 Seminar Room, Northstar Building\nWe are running a half-day working session to set the next quarter's\npriorities. Your team's view matters to the outcome, so please come\nready to talk about what is actually getting in the way.\nPlease arrive ten minutes early. Tea and coffee are provided.\nReply to this invitation to confirm your place."
+  },
+  "src_000010": {
+   "source_id": "src_000010",
+   "kind": "gdoc",
+   "title": "Northstar Workshop — Invitation",
+   "retrieved_at": "2026-09-12T07:02:51.090Z",
+   "text": "You are invited: Northstar Workshop\nDate: October 27\nTime: 2–5 pm\nVenue: Level 3 Seminar Room, Northstar Building\nWe are running a half-day working session to set the next quarter's\npriorities. Your team's view matters to the outcome, so please come\nready to talk about what is actually getting in the way.\nPlease arrive ten minutes early. Tea and coffee are provided.\nReply to this invitation to confirm your place."
+  },
+  "src_000011": {
+   "source_id": "src_000011",
+   "kind": "gdoc",
+   "title": "Northstar Workshop — Invitation",
+   "retrieved_at": "2026-09-12T07:03:09.326Z",
+   "text": "You are invited: Northstar Workshop\nDate: October 27\nTime: 2–5 pm\nVenue: Level 3 Seminar Room, Northstar Building\nWe are running a half-day working session to set the next quarter's\npriorities. Your team's view matters to the outcome, so please come\nready to talk about what is actually getting in the way.\nPlease arrive ten minutes early. Tea and coffee are provided.\nReply to this invitation to confirm your place."
+  },
+  "src_000012": {
+   "source_id": "src_000012",
+   "kind": "gdoc",
+   "title": "Northstar Workshop — Invitation",
+   "retrieved_at": "2026-09-12T07:03:14.017Z",
+   "text": "You are invited: Northstar Workshop\nDate: October 27\nTime: 2–5 pm\nVenue: Level 3 Seminar Room, Northstar Building — to be confirmed\nWe are running a half-day working session to set the next quarter's\npriorities. Your team's view matters to the outcome, so please come\nready to talk about what is actually getting in the way.\nPlease arrive ten minutes early. Tea and coffee are provided.\nReply to this invitation to confirm your place."
+  }
+ },
+ "task_a": {
+  "totals": {
+   "receipts": 58,
+   "model_calls": 21,
+   "cost_usd": 0.4492,
+   "started": "2026-09-12T06:59:56.839Z",
+   "finished": "2026-09-12T07:08:31.235Z"
+  },
+  "edits": [
+   {
+    "at": "2026-09-12T07:02:38.810Z",
+    "before_source_id": "src_000007",
+    "after_source_id": "src_000008",
+    "replacements": [
+     {
+      "find": "Date: October 20",
+      "replace": "Date: October 27"
+     },
+     {
+      "find": "— confirmed",
+      "replace": "— to be confirmed"
+     }
+    ],
+    "recorded": {
+     "dateApplied": true,
+     "unrelatedTextPreserved": true,
+     "stylesPreserved": true,
+     "line_changes": [
+      {
+       "line": 2,
+       "before": "Date: October 20",
+       "after": "Date: October 27",
+       "explained_by_replacement": true
+      },
+      {
+       "line": 4,
+       "before": "Venue: Level 3 Seminar Room, Northstar Building — confirmed",
+       "after": "Venue: Level 3 Seminar Room, Northstar Building — to be confirmed",
+       "explained_by_replacement": true
+      }
+     ],
+     "unchanged_line_count": 17
+    },
+    "before_styles": [
+     "[sectionBreak]",
+     "HEADING_1",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "HEADING_2",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "HEADING_2",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "HEADING_2",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "HEADING_2",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT"
+    ],
+    "after_styles": [
+     "[sectionBreak]",
+     "HEADING_1",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "HEADING_2",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "HEADING_2",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "HEADING_2",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "HEADING_2",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT"
+    ]
+   },
+   {
+    "at": "2026-09-12T07:02:51.091Z",
+    "before_source_id": "src_000009",
+    "after_source_id": "src_000010",
+    "replacements": [
+     {
+      "find": "Date: October 20",
+      "replace": "Date: October 27"
+     }
+    ],
+    "recorded": {
+     "dateApplied": true,
+     "unrelatedTextPreserved": true,
+     "stylesPreserved": true,
+     "line_changes": [
+      {
+       "line": 2,
+       "before": "Date: October 20",
+       "after": "Date: October 27",
+       "explained_by_replacement": true
+      }
+     ],
+     "unchanged_line_count": 8
+    },
+    "before_styles": [
+     "[sectionBreak]",
+     "HEADING_1",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT"
+    ],
+    "after_styles": [
+     "[sectionBreak]",
+     "HEADING_1",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT"
+    ]
+   },
+   {
+    "at": "2026-09-12T07:03:14.024Z",
+    "before_source_id": "src_000011",
+    "after_source_id": "src_000012",
+    "replacements": [
+     {
+      "find": "Venue: Level 3 Seminar Room, Northstar Building",
+      "replace": "Venue: Level 3 Seminar Room, Northstar Building — to be confirmed"
+     }
+    ],
+    "recorded": {
+     "dateApplied": true,
+     "unrelatedTextPreserved": true,
+     "stylesPreserved": true,
+     "line_changes": [
+      {
+       "line": 4,
+       "before": "Venue: Level 3 Seminar Room, Northstar Building",
+       "after": "Venue: Level 3 Seminar Room, Northstar Building — to be confirmed",
+       "explained_by_replacement": true
+      }
+     ],
+     "unchanged_line_count": 8
+    },
+    "before_styles": [
+     "[sectionBreak]",
+     "HEADING_1",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT"
+    ],
+    "after_styles": [
+     "[sectionBreak]",
+     "HEADING_1",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT",
+     "NORMAL_TEXT"
+    ]
+   }
+  ],
+  "findings": [
+   {
+    "finding_id": "fd_000001",
+    "claim": "The latest client instruction states the workshop is on October 27, 2–5 pm.",
+    "excerpts": [
+     {
+      "source_id": "src_000002",
+      "quote": "We’ve applied your date change across the Brief and Invitation: both now show October 27, 2–5 pm."
+     },
+     {
+      "source_id": "src_000003",
+      "quote": "Please move the workshop from October 20 to October 27. The time stays the same."
+     }
+    ],
+    "type": "direct_fact",
+    "review": "rejected"
+   },
+   {
+    "finding_id": "fd_000002",
+    "claim": "The room booking on file is for October 20, 2–5 pm (NB-4417), not yet confirmed for Oct 27.",
+    "excerpts": [
+     {
+      "source_id": "src_000006",
+      "quote": "Your room is confirmed for October 20, 2–5 pm."
+     },
+     {
+      "source_id": "src_000006",
+      "quote": "Booking reference: NB-4417"
+     },
+     {
+      "source_id": "src_000002",
+      "quote": "The room booking we have on file is for October 20, 2–5 pm (Level 3 Seminar Room, Northstar Building; booking reference NB-4417)."
+     }
+    ],
+    "type": "direct_fact",
+    "review": "rejected"
+   },
+   {
+    "finding_id": "fd_000003",
+    "claim": "Until rebooking for Oct 27 is confirmed, the venue status in the Brief should remain “to be confirmed.”",
+    "excerpts": [
+     {
+      "source_id": "src_000001",
+      "quote": "Once confirmed, we’ll switch the Brief’s venue line from “to be confirmed” back to “confirmed.”"
+     },
+     {
+      "source_id": "src_000002",
+      "quote": "Outstanding dependency: The room booking we have on file is for October 20, 2–5 pm (Level 3 Seminar Room, Northstar Building; booking reference NB-4417)."
+     }
+    ],
+    "type": "direct_fact",
+    "review": "rejected"
+   },
+   {
+    "finding_id": "fd_000004",
+    "claim": "The latest client instruction sets the workshop date to October 27.",
+    "excerpts": [
+     {
+      "source_id": "src_000003",
+      "quote": "Please move the workshop from October 20 to October 27."
+     }
+    ],
+    "type": "direct_fact",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000005",
+    "claim": "The latest client instruction states the time remains unchanged (no new time specified).",
+    "excerpts": [
+     {
+      "source_id": "src_000003",
+      "quote": "The time stays the same."
+     }
+    ],
+    "type": "direct_fact",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000006",
+    "claim": "The room booking on file is confirmed for October 20, 2–5 pm in the Level 3 Seminar Room (booking reference NB-4417).",
+    "excerpts": [
+     {
+      "source_id": "src_000006",
+      "quote": "Your room is confirmed for October 20, 2–5 pm."
+     },
+     {
+      "source_id": "src_000006",
+      "quote": "Room: Level 3 Seminar Room, Northstar Building"
+     },
+     {
+      "source_id": "src_000006",
+      "quote": "Booking reference: NB-4417"
+     }
+    ],
+    "type": "direct_fact",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000007",
+    "claim": "As of our follow-ups, rebooking for October 27 had not yet been confirmed; we requested confirmation of Oct 27 and any new room details/reference.",
+    "excerpts": [
+     {
+      "source_id": "src_000001",
+      "quote": "Could you please confirm whether the venue has been rebooked for October 27, 2–5 pm, or share the new room details/confirmation reference so we can mark it as confirmed?"
+     },
+     {
+      "source_id": "src_000002",
+      "quote": "Could you please confirm whether the venue has been rebooked for October 27, 2–5 pm? If it’s a different room/building, please share details and any confirmation reference."
+     }
+    ],
+    "type": "assessment",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000008",
+    "claim": "Brief edits — targeted replacements and counts: (1) “Date: October 20” -> “Date: October 27” (1); (2) “— confirmed” -> “— to be confirmed” (1). Changed lines are evidenced below and styles were preserved per verification receipts.",
+    "excerpts": [
+     {
+      "source_id": "src_000004",
+      "quote": "Date: October 20"
+     },
+     {
+      "source_id": "src_000008",
+      "quote": "Date: October 27"
+     },
+     {
+      "source_id": "src_000004",
+      "quote": "Venue: Level 3 Seminar Room, Northstar Building — confirmed"
+     },
+     {
+      "source_id": "src_000008",
+      "quote": "Venue: Level 3 Seminar Room, Northstar Building — to be confirmed"
+     }
+    ],
+    "type": "direct_fact",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000009",
+    "claim": "Invitation edits — targeted replacements and counts: (1) “Date: October 20” -> “Date: October 27” (1); (2) “Venue: Level 3 Seminar Room, Northstar Building” -> “Venue: Level 3 Seminar Room, Northstar Building — to be confirmed” (1). Changed lines are evidenced below and styles were preserved per verification receipts.",
+    "excerpts": [
+     {
+      "source_id": "src_000009",
+      "quote": "Date: October 20"
+     },
+     {
+      "source_id": "src_000012",
+      "quote": "Date: October 27"
+     },
+     {
+      "source_id": "src_000009",
+      "quote": "Venue: Level 3 Seminar Room, Northstar Building"
+     },
+     {
+      "source_id": "src_000012",
+      "quote": "Venue: Level 3 Seminar Room, Northstar Building — to be confirmed"
+     }
+    ],
+    "type": "direct_fact",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000010",
+    "claim": "Mailbox dependency sweep — searches and results: searched subject and body for the client instruction and venue confirmations; matched messages are cited above with excerpts. Queries included: subject:\"Workshop date change\"; subject:\"room booking confirmed\"; subject:\"room booking confirmation for Oct 27\"; body:October 27 AND rebooked.",
+    "excerpts": [
+     {
+      "source_id": "src_000003",
+      "quote": "Please move the workshop from October 20 to October 27. The time stays the same."
+     },
+     {
+      "source_id": "src_000006",
+      "quote": "Your room is confirmed for October 20, 2–5 pm."
+     },
+     {
+      "source_id": "src_000001",
+      "quote": "Could you please confirm whether the venue has been rebooked for October 27, 2–5 pm, or share the new room details/confirmation reference so we can mark it as confirmed?"
+     },
+     {
+      "source_id": "src_000002",
+      "quote": "Could you please confirm whether the venue has been rebooked for October 27, 2–5 pm?"
+     }
+    ],
+    "type": "assessment",
+    "review": "accepted"
+   }
+  ],
+  "gate": [
+   {
+    "at": "2026-09-12T07:04:21.162Z",
+    "passed": true,
+    "checks": [
+     {
+      "check": "every_write_has_a_completed_receipt",
+      "passed": true,
+      "why": "a write whose receipt is not completed may or may not have landed"
+     },
+     {
+      "check": "every_edited_document_has_a_read_back_verification",
+      "passed": true,
+      "why": "a write with no read-back verification is an assertion, not a result; R-0038 is exactly the case where every other signal said the edit was fine"
+     },
+     {
+      "check": "every_finding_excerpt_occurs_verbatim_in_its_snapshot",
+      "passed": true,
+      "why": "a quotation that is not in the stored source is a fabrication, however reasonable the surrounding claim sounds"
+     },
+     {
+      "check": "outstanding_dependencies_are_listed_explicitly",
+      "passed": true,
+      "why": "an empty list is a claim that nothing is outstanding, and it is tested against the findings rather than taken on trust"
+     },
+     {
+      "check": "budget_respected",
+      "passed": true,
+      "why": "a run that overspends is reported, not silently accepted"
+     }
+    ]
+   },
+   {
+    "at": "2026-09-12T07:07:22.992Z",
+    "passed": true,
+    "checks": [
+     {
+      "check": "every_write_has_a_completed_receipt",
+      "passed": true,
+      "why": "a write whose receipt is not completed may or may not have landed"
+     },
+     {
+      "check": "every_edited_document_has_a_read_back_verification",
+      "passed": true,
+      "why": "a write with no read-back verification is an assertion, not a result; R-0038 is exactly the case where every other signal said the edit was fine"
+     },
+     {
+      "check": "every_finding_excerpt_occurs_verbatim_in_its_snapshot",
+      "passed": true,
+      "why": "a quotation that is not in the stored source is a fabrication, however reasonable the surrounding claim sounds"
+     },
+     {
+      "check": "outstanding_dependencies_are_listed_explicitly",
+      "passed": true,
+      "why": "an empty list is a claim that nothing is outstanding, and it is tested against the findings rather than taken on trust"
+     },
+     {
+      "check": "budget_respected",
+      "passed": true,
+      "why": "a run that overspends is reported, not silently accepted"
+     }
+    ]
+   }
+  ],
+  "rulings": [
+   {
+    "at": "2026-09-12T07:06:10.585Z",
+    "ruling": "repair_requested",
+    "text": "Edits are correctly targeted and verified, and mailbox dependency work is recorded with evidence. However, several findings overstate what their excerpts support and are mislabeled as direct facts. In finding fd_000001, the claim includes “2–5 pm” as part of the latest client instruction, which the cited instruction does not state. Findings fd_000002 and fd_000003 also contain inference but are labeled direct facts. Relabel or revise these findings (and add missing excerpts where needed); after that, this can be accepted."
+   },
+   {
+    "at": "2026-09-12T07:08:30.381Z",
+    "ruling": "accepted",
+    "text": "The findings now separate direct facts from assessments; earlier mislabelled findings are rejected. All acceptance criteria are met with edit verifications and receipts aligned. The latest client instruction is evidenced and correctly applied via targeted edits with unrelated text and styles preserved. The mailbox dependency sweep records queries, matched messages, and lists the unresolved venue rebooking dependency; materials were amended accordingly. Costs were within budget."
+   }
+  ],
+  "timeline": [
+   {
+    "t": "2026-09-12T06:59:56.837Z",
+    "actor": "user",
+    "kind": "task_created"
+   },
+   {
+    "t": "2026-09-12T06:59:56.839Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:00:03.562Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:00:03.565Z",
+    "actor": "gateway",
+    "kind": "browser_session_created"
+   },
+   {
+    "t": "2026-09-12T07:00:03.570Z",
+    "actor": "controller",
+    "kind": "status"
+   },
+   {
+    "t": "2026-09-12T07:00:03.571Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:00:59.472Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:00:59.473Z",
+    "actor": "researcher",
+    "kind": "order"
+   },
+   {
+    "t": "2026-09-12T07:00:59.474Z",
+    "actor": "controller",
+    "kind": "status"
+   },
+   {
+    "t": "2026-09-12T07:00:59.474Z",
+    "actor": "controller",
+    "kind": "status"
+   },
+   {
+    "t": "2026-09-12T07:00:59.476Z",
+    "actor": "controller",
+    "kind": "decision_packet"
+   },
+   {
+    "t": "2026-09-12T07:00:59.477Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:05.259Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:05.259Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:01:05.260Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:08.248Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:08.249Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:01:08.249Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:10.174Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:10.174Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:01:10.174Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:12.481Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:12.482Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:16.282Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:16.282Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:01:16.282Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:17.417Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:17.420Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:01:17.421Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:19.269Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:19.270Z",
+    "actor": "gateway",
+    "kind": "browser_opened"
+   },
+   {
+    "t": "2026-09-12T07:01:19.270Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:23.330Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:23.330Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:01:23.330Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:24.871Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:24.871Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:01:24.871Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:25.381Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:25.381Z",
+    "actor": "gateway",
+    "kind": "browser_opened"
+   },
+   {
+    "t": "2026-09-12T07:01:25.381Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:27.482Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:27.482Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:01:27.482Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:28.863Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:28.863Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:01:28.864Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:29.402Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:29.402Z",
+    "actor": "gateway",
+    "kind": "browser_opened"
+   },
+   {
+    "t": "2026-09-12T07:01:29.402Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:33.664Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:33.665Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:01:33.665Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:35.204Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:35.204Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:36.282Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:36.282Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:01:36.283Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:39.258Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:39.258Z",
+    "actor": "gateway",
+    "kind": "browser_opened"
+   },
+   {
+    "t": "2026-09-12T07:01:39.258Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:43.865Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:43.866Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:01:43.866Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:45.396Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:45.396Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:46.548Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:46.548Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:01:46.548Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:01:49.130Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:01:49.130Z",
+    "actor": "gateway",
+    "kind": "browser_opened"
+   },
+   {
+    "t": "2026-09-12T07:01:49.131Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:02:08.951Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:02:08.952Z",
+    "actor": "controller",
+    "kind": "decision_packet"
+   },
+   {
+    "t": "2026-09-12T07:02:08.952Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:02:18.709Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:02:18.709Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:02:18.709Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:02:20.057Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:02:20.058Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:02:20.058Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:02:22.008Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:02:22.009Z",
+    "actor": "gateway",
+    "kind": "browser_opened"
+   },
+   {
+    "t": "2026-09-12T07:02:22.010Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:02:30.812Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:02:30.813Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:02:30.813Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:02:32.293Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:02:32.294Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:02:33.567Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:02:33.568Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:02:33.568Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:02:35.174Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:02:35.175Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:02:36.503Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:02:36.504Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:02:37.606Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:02:37.607Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:02:38.808Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:02:38.809Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:02:38.810Z",
+    "actor": "gateway",
+    "kind": "doc_edit_verified"
+   },
+   {
+    "t": "2026-09-12T07:02:38.811Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:02:41.214Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:02:41.216Z",
+    "actor": "controller",
+    "kind": "decision_packet"
+   },
+   {
+    "t": "2026-09-12T07:02:41.217Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:02:42.992Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:02:42.993Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:02:42.993Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:02:44.913Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:02:44.914Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:02:46.192Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:02:46.193Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:02:46.193Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:02:47.256Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:02:47.256Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:02:48.630Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:02:48.630Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:02:49.990Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:02:49.991Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:02:51.090Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:02:51.090Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:02:51.091Z",
+    "actor": "gateway",
+    "kind": "doc_edit_verified"
+   },
+   {
+    "t": "2026-09-12T07:02:51.092Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:03:06.308Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:03:06.308Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:03:06.309Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:03:08.044Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:03:08.044Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:03:09.326Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:03:09.326Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:03:09.326Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:03:10.430Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:03:10.430Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:03:11.539Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:03:11.540Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:03:12.825Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:03:12.828Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:03:14.016Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:03:14.017Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:03:14.024Z",
+    "actor": "gateway",
+    "kind": "doc_edit_verified"
+   },
+   {
+    "t": "2026-09-12T07:03:14.025Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:03:44.762Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:03:44.762Z",
+    "actor": "runner",
+    "kind": "runner_text_only"
+   },
+   {
+    "t": "2026-09-12T07:03:44.763Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:04:04.491Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:04:04.492Z",
+    "actor": "controller",
+    "kind": "decision_packet"
+   },
+   {
+    "t": "2026-09-12T07:04:04.493Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:04:21.154Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:04:21.154Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:04:21.155Z",
+    "actor": "controller",
+    "kind": "runner_loop_finished"
+   },
+   {
+    "t": "2026-09-12T07:04:21.156Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:04:21.156Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:04:21.156Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:04:21.157Z",
+    "actor": "runner",
+    "kind": "submit_report"
+   },
+   {
+    "t": "2026-09-12T07:04:21.157Z",
+    "actor": "controller",
+    "kind": "status"
+   },
+   {
+    "t": "2026-09-12T07:04:21.162Z",
+    "actor": "controller",
+    "kind": "checks_passed"
+   },
+   {
+    "t": "2026-09-12T07:04:21.165Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:06:10.581Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:06:10.585Z",
+    "actor": "researcher",
+    "kind": "ruling"
+   },
+   {
+    "t": "2026-09-12T07:06:10.585Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:06:10.586Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:06:10.586Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:06:10.587Z",
+    "actor": "controller",
+    "kind": "status"
+   },
+   {
+    "t": "2026-09-12T07:06:10.587Z",
+    "actor": "controller",
+    "kind": "status"
+   },
+   {
+    "t": "2026-09-12T07:06:10.592Z",
+    "actor": "controller",
+    "kind": "decision_packet"
+   },
+   {
+    "t": "2026-09-12T07:06:10.593Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:06:23.677Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:06:23.677Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:06:23.680Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:06:52.966Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:06:52.969Z",
+    "actor": "controller",
+    "kind": "decision_packet"
+   },
+   {
+    "t": "2026-09-12T07:06:52.970Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:07:22.985Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:07:22.986Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:07:22.986Z",
+    "actor": "controller",
+    "kind": "runner_loop_finished"
+   },
+   {
+    "t": "2026-09-12T07:07:22.986Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:07:22.987Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:07:22.987Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:07:22.987Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:07:22.988Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:07:22.988Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:07:22.988Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:07:22.988Z",
+    "actor": "runner",
+    "kind": "submit_report"
+   },
+   {
+    "t": "2026-09-12T07:07:22.989Z",
+    "actor": "controller",
+    "kind": "status"
+   },
+   {
+    "t": "2026-09-12T07:07:22.992Z",
+    "actor": "controller",
+    "kind": "checks_passed"
+   },
+   {
+    "t": "2026-09-12T07:07:22.995Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:08:30.380Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:08:30.381Z",
+    "actor": "researcher",
+    "kind": "ruling"
+   },
+   {
+    "t": "2026-09-12T07:08:30.381Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:08:30.381Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:08:30.381Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:08:30.382Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:08:30.382Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:08:30.382Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:08:30.382Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:08:30.383Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:08:30.383Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:08:30.383Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:08:30.384Z",
+    "actor": "controller",
+    "kind": "controller_acceptance"
+   },
+   {
+    "t": "2026-09-12T07:08:30.388Z",
+    "actor": "controller",
+    "kind": "checkpoint"
+   },
+   {
+    "t": "2026-09-12T07:08:30.388Z",
+    "actor": "controller",
+    "kind": "status"
+   },
+   {
+    "t": "2026-09-12T07:08:30.389Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:08:31.235Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:08:31.235Z",
+    "actor": "gateway",
+    "kind": "browser_session_closed"
+   }
+  ]
+ },
+ "task_b": {
+  "totals": {
+   "receipts": 52,
+   "model_calls": 24,
+   "cost_usd": 0.4391,
+   "started": "2026-09-12T07:09:08.053Z",
+   "finished": "2026-09-12T07:16:07.299Z"
+  },
+  "findings": [
+   {
+    "finding_id": "fd_000011",
+    "claim": "Client instructed moving the workshop to October 27 with the time unchanged.",
+    "excerpts": [
+     {
+      "source_id": "src_000015",
+      "quote": "Please move the workshop from October 20 to October 27. The time stays the same."
+     }
+    ],
+    "type": "direct_fact",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000012",
+    "claim": "The Brief reflects the updated date and time and marks the venue as “— to be confirmed.”",
+    "excerpts": [
+     {
+      "source_id": "src_000013",
+      "quote": "Date: October 27"
+     },
+     {
+      "source_id": "src_000013",
+      "quote": "Time: 2–5 pm"
+     },
+     {
+      "source_id": "src_000013",
+      "quote": "Venue: Level 3 Seminar Room, Northstar Building — to be confirmed"
+     }
+    ],
+    "type": "direct_fact",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000013",
+    "claim": "The Invitation reflects the updated date and time and marks the venue as “— to be confirmed.”",
+    "excerpts": [
+     {
+      "source_id": "src_000014",
+      "quote": "Date: October 27"
+     },
+     {
+      "source_id": "src_000014",
+      "quote": "Time: 2–5 pm"
+     },
+     {
+      "source_id": "src_000014",
+      "quote": "Venue: Level 3 Seminar Room, Northstar Building — to be confirmed"
+     }
+    ],
+    "type": "direct_fact",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000014",
+    "claim": "The latest confirmed venue booking on file is for October 20, 2–5 pm in the Level 3 Seminar Room with booking reference NB-4417.",
+    "excerpts": [
+     {
+      "source_id": "src_000016",
+      "quote": "Your room is confirmed for October 20, 2–5 pm."
+     },
+     {
+      "source_id": "src_000016",
+      "quote": "Booking reference: NB-4417"
+     }
+    ],
+    "type": "direct_fact",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000015",
+    "claim": "As of the mailbox sweep, the Oct 27 rebooking is not confirmed; follow-ups request confirmation rather than provide it (dependency carried forward from ck_000001).",
+    "excerpts": [
+     {
+      "source_id": "src_000017",
+      "quote": "Could you please confirm whether the venue has been rebooked for October 27, 2–5 pm, or share the new room details/confirmation reference so we can mark it as confirmed?"
+     },
+     {
+      "source_id": "src_000018",
+      "quote": "Outstanding dependency: The room booking we have on file is for October 20, 2–5 pm (Level 3 Seminar Room, Northstar Building; booking reference NB-4417). Could you please confirm whether the venue has been rebooked for October 27, 2–5 pm?"
+     }
+    ],
+    "type": "assessment",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000016",
+    "claim": "Mailbox searches run and matched messages recorded: queries included subject:\"Workshop date change\"; subject:\"Room booking confirmed\"; subject:\"Northstar Workshop — room booking confirmation for Oct 27 (2–5 pm)\"; results are evidenced by the matched message subjects below.",
+    "excerpts": [
+     {
+      "source_id": "src_000015",
+      "quote": "Subject: Workshop date change"
+     },
+     {
+      "source_id": "src_000016",
+      "quote": "Subject: Room booking confirmed"
+     },
+     {
+      "source_id": "src_000017",
+      "quote": "Subject: Northstar Workshop date change — room rebooking needed"
+     },
+     {
+      "source_id": "src_000018",
+      "quote": "Subject: Northstar Workshop — room booking confirmation for Oct 27 (2–5 pm)"
+     }
+    ],
+    "type": "assessment",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000017",
+    "claim": "A new Handoff document was created and includes the required sections: Overview, Schedule, Venue status, Outstanding dependencies, Mailbox evidence, References.",
+    "excerpts": [
+     {
+      "source_id": "src_000019",
+      "quote": "Overview"
+     },
+     {
+      "source_id": "src_000019",
+      "quote": "Schedule"
+     },
+     {
+      "source_id": "src_000019",
+      "quote": "Venue status"
+     },
+     {
+      "source_id": "src_000019",
+      "quote": "Outstanding dependencies"
+     },
+     {
+      "source_id": "src_000019",
+      "quote": "Mailbox evidence"
+     },
+     {
+      "source_id": "src_000019",
+      "quote": "References"
+     }
+    ],
+    "type": "direct_fact",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000018",
+    "claim": "An unsent draft email to the event team was created with the correct recipient and subject, and remains unsent.",
+    "excerpts": [
+     {
+      "source_id": "src_000020",
+      "quote": "To: events@northstar.example"
+     },
+     {
+      "source_id": "src_000020",
+      "quote": "Subject: Handoff: Northstar Workshop — Oct 27, 2–5 pm | Venue TBC"
+     },
+     {
+      "source_id": "src_000020",
+      "quote": "Unsent: true"
+     }
+    ],
+    "type": "direct_fact",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000019",
+    "claim": "The draft email snapshot itself carries the required summary and document links in the subject line (date/time, venue status, next action, and URLs).",
+    "excerpts": [
+     {
+      "source_id": "src_000021",
+      "quote": "Subject: Handoff: Northstar Workshop — Oct 27, 2–5 pm | Venue TBC | Next: confirm Oct 27 room/ref | Brief https://docs.google.com/document/d/[document]/edit | Invitation https://docs.google.com/document/d/[document]/edit"
+     }
+    ],
+    "type": "direct_fact",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000020",
+    "claim": "The Handoff document includes the required sections: Overview, Schedule, Venue status, Outstanding dependencies, Mailbox evidence, and References.",
+    "excerpts": [
+     {
+      "source_id": "src_000019",
+      "quote": "Overview\n- Purpose: Package current schedule, venue status, evidence, dependencies, and ready-to-send communications for the event team."
+     },
+     {
+      "source_id": "src_000019",
+      "quote": "Schedule"
+     },
+     {
+      "source_id": "src_000019",
+      "quote": "Venue status"
+     },
+     {
+      "source_id": "src_000019",
+      "quote": "Outstanding dependencies"
+     },
+     {
+      "source_id": "src_000019",
+      "quote": "Mailbox evidence"
+     },
+     {
+      "source_id": "src_000019",
+      "quote": "References"
+     }
+    ],
+    "type": "direct_fact",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000021",
+    "claim": "Client instruction sets the date to October 27 with the time unchanged.",
+    "excerpts": [
+     {
+      "source_id": "src_000015",
+      "quote": "Please move the workshop from October 20 to October 27. The time stays the same."
+     }
+    ],
+    "type": "direct_fact",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000022",
+    "claim": "The latest confirmed room booking on file is for October 20, 2–5 pm in the Level 3 Seminar Room with reference NB-4417.",
+    "excerpts": [
+     {
+      "source_id": "src_000016",
+      "quote": "Your room is confirmed for October 20, 2–5 pm."
+     },
+     {
+      "source_id": "src_000016",
+      "quote": "Booking reference: NB-4417"
+     }
+    ],
+    "type": "direct_fact",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000023",
+    "claim": "As of the mailbox sweep, Oct 27 rebooking is not confirmed; follow-ups request confirmation rather than provide it.",
+    "excerpts": [
+     {
+      "source_id": "src_000017",
+      "quote": "Could you please confirm whether the venue has been rebooked for October 27, 2–5 pm, or share the new room details/confirmation reference so we can mark it as confirmed?"
+     },
+     {
+      "source_id": "src_000018",
+      "quote": "Outstanding dependency: The room booking we have on file is for October 20, 2–5 pm (Level 3 Seminar Room, Northstar Building; booking reference NB-4417). Could you please confirm whether the venue has been rebooked for October 27, 2–5 pm?"
+     }
+    ],
+    "type": "assessment",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000024",
+    "claim": "Mailbox searches and matched messages are recorded in the Handoff document.",
+    "excerpts": [
+     {
+      "source_id": "src_000019",
+      "quote": "Searches run (examples):\n    - subject:\"Workshop date change\"\n    - subject:\"Room booking confirmed\"\n    - subject:\"Northstar Workshop — room booking confirmation for Oct 27 (2–5 pm)\"\n    - body:(\"October 27\" AND rebooked)"
+     }
+    ],
+    "type": "direct_fact",
+    "review": "accepted"
+   },
+   {
+    "finding_id": "fd_000025",
+    "claim": "The venue rebooking/confirmation for October 27 remains outstanding, carried forward from ck_000001.",
+    "excerpts": [
+     {
+      "source_id": "src_000019",
+      "quote": "Outstanding dependencies\n- Venue rebooking/confirmation for October 27 (and any new room details or reference number). This remains outstanding, carried forward from ck_000001."
+     }
+    ],
+    "type": "direct_fact",
+    "review": "accepted"
+   }
+  ],
+  "drafts": [
+   {
+    "at": "2026-09-12T07:11:27.548Z",
+    "to": "events@northstar.example",
+    "subject": "Handoff: Northstar Workshop — Oct 27, 2–5 pm | Venue TBC",
+    "body": "Hi team,\n\nHere’s the handoff for the Northstar Workshop.\n\nSchedule\n- Date: October 27\n- Time: 2–5 pm\n\nVenue status\n- Current materials read: “Venue: Level 3 Seminar Room, Northstar Building — to be confirmed.”\n- Last confirmed booking on file: Oct 20, 2–5 pm (Level 3 Seminar Room, Northstar Building; ref NB-4417).\n- We’ve requested confirmation for Oct 27 and will update to “— confirmed” once received.\n\nNext actions\n- Await venue rebooking confirmation for Oct 27 (and any new room details/reference). Once in, we’ll update the Brief and Invitation — targeted replacement only, preserving all formatting.\n\nDocs\n- Handoff: (link)\n- Brief: (link)\n- Invitation: (link)\n\nThanks,\nKushagra"
+   },
+   {
+    "at": "2026-09-12T07:13:58.120Z",
+    "to": "events@northstar.example",
+    "subject": "Handoff: Northstar Workshop — Oct 27, 2–5 pm | Venue TBC | Next: confirm Oct 27 room/ref | Brief (link) | Invitation (link)",
+    "body": "Hi team,\n\nHandoff summary for the Northstar Workshop:\n- Schedule: Oct 27, 2–5 pm (time unchanged)\n- Venue status: TBC — Oct 20 booking (NB-4417, Level 3 Seminar Room) is the last confirmed on file; Oct 27 rebooking not yet confirmed.\n- Next actions: Please confirm Oct 27 room booking and share the room details and new reference number.\n\nDocs:\n- Brief: (link)\n- Invitation: (link)\n\nThanks!"
+   }
+  ],
+  "summary": "Prepared the event team handoff package repairs. I created a new unsent draft email whose subject line itself contains the required schedule/venue/next-action summary and live URLs to the Brief and Invitation, then read it back and cited the snapshot. I verified the existing Handoff document includes the required sections and cited mailbox evidence establishing the Oct 27 schedule and the unresolved Oct 27 venue rebooking dependency carried forward from ck_000001. No further edits to the Brief/Invitation were required.",
+  "timeline": [
+   {
+    "t": "2026-09-12T07:09:08.053Z",
+    "actor": "user",
+    "kind": "task_created"
+   },
+   {
+    "t": "2026-09-12T07:09:08.054Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:09:15.021Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:09:15.021Z",
+    "actor": "gateway",
+    "kind": "browser_session_created"
+   },
+   {
+    "t": "2026-09-12T07:09:15.026Z",
+    "actor": "controller",
+    "kind": "status"
+   },
+   {
+    "t": "2026-09-12T07:09:15.032Z",
+    "actor": "controller",
+    "kind": "checkpoint_retrieved"
+   },
+   {
+    "t": "2026-09-12T07:09:15.033Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:09:46.362Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:09:46.363Z",
+    "actor": "researcher",
+    "kind": "order"
+   },
+   {
+    "t": "2026-09-12T07:09:46.363Z",
+    "actor": "controller",
+    "kind": "status"
+   },
+   {
+    "t": "2026-09-12T07:09:46.364Z",
+    "actor": "controller",
+    "kind": "status"
+   },
+   {
+    "t": "2026-09-12T07:09:46.368Z",
+    "actor": "controller",
+    "kind": "decision_packet"
+   },
+   {
+    "t": "2026-09-12T07:09:46.368Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:09:55.813Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:09:55.813Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:09:55.813Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:09:57.682Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:09:57.682Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:09:58.929Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:09:58.930Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:09:58.930Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:06.446Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:06.446Z",
+    "actor": "gateway",
+    "kind": "browser_opened"
+   },
+   {
+    "t": "2026-09-12T07:10:06.447Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:10:06.447Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:08.283Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:08.283Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:09.960Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:09.961Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:10:09.961Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:14.318Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:14.319Z",
+    "actor": "gateway",
+    "kind": "browser_opened"
+   },
+   {
+    "t": "2026-09-12T07:10:14.319Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:10:14.319Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:16.607Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:16.607Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:10:16.608Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:18.161Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:18.161Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:10:18.162Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:19.522Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:19.522Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:10:19.522Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:21.332Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:21.333Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:22.745Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:22.745Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:10:22.746Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:23.984Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:23.985Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:10:23.986Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:27.062Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:27.063Z",
+    "actor": "gateway",
+    "kind": "browser_opened"
+   },
+   {
+    "t": "2026-09-12T07:10:27.063Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:29.295Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:29.296Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:10:29.296Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:30.397Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:30.397Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:10:30.398Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:40.177Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:40.177Z",
+    "actor": "gateway",
+    "kind": "browser_opened"
+   },
+   {
+    "t": "2026-09-12T07:10:40.178Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:41.378Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:41.378Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:10:41.379Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:43.145Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:43.148Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:10:43.148Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:51.105Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:51.106Z",
+    "actor": "gateway",
+    "kind": "browser_opened"
+   },
+   {
+    "t": "2026-09-12T07:10:51.111Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:52.436Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:52.436Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:10:52.436Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:54.010Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:54.011Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:10:54.011Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:10:56.895Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:10:56.896Z",
+    "actor": "gateway",
+    "kind": "browser_opened"
+   },
+   {
+    "t": "2026-09-12T07:10:56.897Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:11:13.823Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:11:13.823Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:11:13.823Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:11:16.284Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:11:16.285Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:11:17.597Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:11:17.597Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:11:18.842Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:11:18.843Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:11:20.466Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:11:20.466Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:11:20.486Z",
+    "actor": "gateway",
+    "kind": "created_doc_verified"
+   },
+   {
+    "t": "2026-09-12T07:11:20.487Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:11:24.178Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:11:24.180Z",
+    "actor": "controller",
+    "kind": "decision_packet"
+   },
+   {
+    "t": "2026-09-12T07:11:24.181Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:11:27.548Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:11:27.548Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:11:27.549Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:11:29.356Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:11:29.358Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:11:30.596Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:11:30.597Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:11:30.597Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:11:31.976Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:11:31.976Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:11:31.977Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:11:50.859Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:11:50.860Z",
+    "actor": "runner",
+    "kind": "runner_text_only"
+   },
+   {
+    "t": "2026-09-12T07:11:50.860Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:12:10.432Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:12:10.434Z",
+    "actor": "controller",
+    "kind": "decision_packet"
+   },
+   {
+    "t": "2026-09-12T07:12:10.435Z",
+    "actor": "controller",
+    "kind": "conversation_compacted"
+   },
+   {
+    "t": "2026-09-12T07:12:10.435Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:12:14.601Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:12:14.602Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:12:14.603Z",
+    "actor": "controller",
+    "kind": "conversation_compacted"
+   },
+   {
+    "t": "2026-09-12T07:12:14.604Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:12:22.431Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:12:22.431Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:12:22.431Z",
+    "actor": "controller",
+    "kind": "runner_loop_finished"
+   },
+   {
+    "t": "2026-09-12T07:12:22.432Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:12:22.432Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:12:22.433Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:12:22.433Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:12:22.434Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:12:22.434Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:12:22.435Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:12:22.435Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:12:22.436Z",
+    "actor": "runner",
+    "kind": "submit_report"
+   },
+   {
+    "t": "2026-09-12T07:12:22.436Z",
+    "actor": "controller",
+    "kind": "prior_record_applied"
+   },
+   {
+    "t": "2026-09-12T07:12:22.436Z",
+    "actor": "controller",
+    "kind": "status"
+   },
+   {
+    "t": "2026-09-12T07:12:22.441Z",
+    "actor": "controller",
+    "kind": "checks_passed"
+   },
+   {
+    "t": "2026-09-12T07:12:22.444Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:13:26.148Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:13:26.148Z",
+    "actor": "researcher",
+    "kind": "ruling"
+   },
+   {
+    "t": "2026-09-12T07:13:26.148Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:13:26.149Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:13:26.149Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:13:26.149Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:13:26.149Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:13:26.149Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:13:26.149Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:13:26.149Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:13:26.150Z",
+    "actor": "controller",
+    "kind": "status"
+   },
+   {
+    "t": "2026-09-12T07:13:26.150Z",
+    "actor": "controller",
+    "kind": "status"
+   },
+   {
+    "t": "2026-09-12T07:13:26.151Z",
+    "actor": "controller",
+    "kind": "decision_packet"
+   },
+   {
+    "t": "2026-09-12T07:13:26.152Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:13:44.125Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:13:44.125Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:13:44.126Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:13:53.144Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:13:53.145Z",
+    "actor": "controller",
+    "kind": "decision_packet"
+   },
+   {
+    "t": "2026-09-12T07:13:53.146Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:13:58.120Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:13:58.120Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:13:58.120Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:13:59.634Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:13:59.635Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:14:01.463Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:14:01.463Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:14:01.464Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:14:02.572Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:14:02.573Z",
+    "actor": "gateway",
+    "kind": "snapshot"
+   },
+   {
+    "t": "2026-09-12T07:14:02.576Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:14:09.258Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:14:09.258Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:14:09.260Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:14:24.877Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:14:24.877Z",
+    "actor": "runner",
+    "kind": "runner_text_only"
+   },
+   {
+    "t": "2026-09-12T07:14:24.879Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:14:45.649Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:14:45.654Z",
+    "actor": "controller",
+    "kind": "decision_packet"
+   },
+   {
+    "t": "2026-09-12T07:14:45.656Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:14:57.673Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:14:57.674Z",
+    "actor": "runner",
+    "kind": "runner_action"
+   },
+   {
+    "t": "2026-09-12T07:14:57.674Z",
+    "actor": "controller",
+    "kind": "runner_loop_finished"
+   },
+   {
+    "t": "2026-09-12T07:14:57.675Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:14:57.675Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:14:57.675Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:14:57.676Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:14:57.676Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:14:57.676Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:14:57.676Z",
+    "actor": "runner",
+    "kind": "finding"
+   },
+   {
+    "t": "2026-09-12T07:14:57.677Z",
+    "actor": "runner",
+    "kind": "submit_report"
+   },
+   {
+    "t": "2026-09-12T07:14:57.677Z",
+    "actor": "controller",
+    "kind": "prior_record_applied"
+   },
+   {
+    "t": "2026-09-12T07:14:57.677Z",
+    "actor": "controller",
+    "kind": "status"
+   },
+   {
+    "t": "2026-09-12T07:14:57.680Z",
+    "actor": "controller",
+    "kind": "checks_passed"
+   },
+   {
+    "t": "2026-09-12T07:14:57.683Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:16:06.488Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:16:06.491Z",
+    "actor": "researcher",
+    "kind": "ruling"
+   },
+   {
+    "t": "2026-09-12T07:16:06.491Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:16:06.492Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:16:06.492Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:16:06.492Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:16:06.492Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:16:06.492Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:16:06.493Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:16:06.493Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:16:06.493Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:16:06.493Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:16:06.494Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:16:06.494Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:16:06.494Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:16:06.500Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:16:06.501Z",
+    "actor": "researcher",
+    "kind": "finding_reviewed"
+   },
+   {
+    "t": "2026-09-12T07:16:06.502Z",
+    "actor": "controller",
+    "kind": "controller_acceptance"
+   },
+   {
+    "t": "2026-09-12T07:16:06.504Z",
+    "actor": "controller",
+    "kind": "checkpoint"
+   },
+   {
+    "t": "2026-09-12T07:16:06.504Z",
+    "actor": "controller",
+    "kind": "status"
+   },
+   {
+    "t": "2026-09-12T07:16:06.504Z",
+    "actor": "gateway",
+    "kind": "intent"
+   },
+   {
+    "t": "2026-09-12T07:16:07.299Z",
+    "actor": "gateway",
+    "kind": "outcome:succeeded"
+   },
+   {
+    "t": "2026-09-12T07:16:07.299Z",
+    "actor": "gateway",
+    "kind": "browser_session_closed"
+   }
+  ]
+ },
+ "refused_reruns": [
+  {
+   "task": "tk_000003",
+   "status": "repair_requested",
+   "totals": {
+    "receipts": 79,
+    "model_calls": 30,
+    "cost_usd": 0.4876,
+    "started": "2026-09-12T07:59:59.340Z",
+    "finished": "2026-09-12T08:12:06.831Z"
+   },
+   "report_summary": "Applied the client’s latest date change across the authorised materials previously edited in this task and documented the verification and dependency sweep. Verified the mailbox instruction, listed candidate threads, showed before/after excerpts in both authorised docs (old date removed, new date present), and logged the searches. Created a verification run log in the Northstar Workshop folder. No emails were sent. No additional materials required edits beyond the two authorised docs. One dependency remains: venue/room rebooking confirmation for Oct 27 (2–5 pm).",
+   "gate": {
+    "passed": false,
+    "checks": [
+     {
+      "check": "every_write_has_a_completed_receipt",
+      "passed": true,
+      "why": "a write whose receipt is not completed may or may not have landed"
+     },
+     {
+      "check": "every_edited_document_has_a_read_back_verification",
+      "passed": false,
+      "why": "a write with no read-back verification is an assertion, not a result; R-0038 is exactly the case where every other signal said the edit was fine"
+     },
+     {
+      "check": "every_finding_excerpt_occurs_verbatim_in_its_snapshot",
+      "passed": true,
+      "why": "a quotation that is not in the stored source is a fabrication, however reasonable the surrounding claim sounds"
+     },
+     {
+      "check": "outstanding_dependencies_are_listed_explicitly",
+      "passed": true,
+      "why": "an empty list is a claim that nothing is outstanding, and it is tested against the findings rather than taken on trust"
+     },
+     {
+      "check": "budget_respected",
+      "passed": true,
+      "why": "a run that overspends is reported, not silently accepted"
+     }
+    ]
+   }
+  },
+  {
+   "task": "tk_000004",
+   "status": "repair_requested",
+   "totals": {
+    "receipts": 45,
+    "model_calls": 21,
+    "cost_usd": 0.2599,
+    "started": "2026-09-12T12:04:29.629Z",
+    "finished": "2026-09-12T12:09:03.746Z"
+   },
+   "report_summary": "Searched mailbox for latest client instruction, confirmed unambiguous request to move the workshop from October 20 to October 27 with time unchanged. Read both authorised documents before any change; both already show Date: October 27 and Time: 2–5 pm. Per dependency sweep, the current room booking on file references October 20 (NB-4417); rebooking for Oct 27 is pending, so venue remains TBC/“to be confirmed.” No document edits were required in this run; therefore, no targeted replacements and no edit verifications were necessary. Recorded mailbox searches and Drive lookups as receipts.",
+   "gate": {
+    "passed": false,
+    "checks": [
+     {
+      "check": "every_write_has_a_completed_receipt",
+      "passed": true,
+      "why": "a write whose receipt is not completed may or may not have landed"
+     },
+     {
+      "check": "every_edited_document_has_a_read_back_verification",
+      "passed": false,
+      "why": "a write with no read-back verification is an assertion, not a result; R-0038 is exactly the case where every other signal said the edit was fine"
+     },
+     {
+      "check": "every_finding_excerpt_occurs_verbatim_in_its_snapshot",
+      "passed": true,
+      "why": "a quotation that is not in the stored source is a fabrication, however reasonable the surrounding claim sounds"
+     },
+     {
+      "check": "outstanding_dependencies_are_listed_explicitly",
+      "passed": true,
+      "why": "an empty list is a claim that nothing is outstanding, and it is tested against the findings rather than taken on trust"
+     },
+     {
+      "check": "budget_respected",
+      "passed": true,
+      "why": "a run that overspends is reported, not silently accepted"
+     }
+    ]
+   }
+  }
+ ]
+}

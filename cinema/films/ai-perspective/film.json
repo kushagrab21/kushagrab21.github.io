@@ -1,0 +1,16 @@
+{
+  "id": "ai-perspective",
+  "stop": "w-articles",
+  "title": "How I think about AI",
+  "date": "6 October 2026",
+  "seconds": 40,
+  "claim": "Building AI means deciding what to delegate, what to check, and what we still need to understand.",
+  "claimFrom": "An editorial synthesis of Kushagra's articles, developed for this film.",
+  "source": {
+    "label": "Read the argument",
+    "href": "https://www.linkedin.com/pulse/entry-level-automation-paradox-kushagra-bhatnagar-r8wue/"
+  },
+  "disclosure": null,
+  "startWithSound": true,
+  "revision": "voice3"
+}

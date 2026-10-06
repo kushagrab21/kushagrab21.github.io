@@ -1,0 +1,729 @@
+{
+ "run_date": "5 October 2026",
+ "page": {
+  "title": "Throwing Things: Projectile Motion",
+  "subtitle": "A short section on why every thrown object follows the same curve, and how two numbers let you predict where it lands.",
+  "sections": [
+   {
+    "title": "1. Why this matters",
+    "paragraphs": [
+     "A fielder on the boundary throws the ball back to the keeper. A basketball player takes a jump shot. Water arcs out of a garden hose. A long jumper leaves the board. These look like four different problems, but once the object is in the air and air resistance is small, all four follow the same curve, called a **parabola**. An object moving like this is called a **projectile**.",
+     "The useful part is that you need only two numbers to predict the whole flight: how fast it was launched, and at what angle. From those you can work out how long it stays up, how high it goes and where it comes down. That is exactly what a fielder does by instinct, and what a games engine or a sports analyst does with equations."
+    ]
+   },
+   {
+    "title": "2. The key idea: sideways and up-down do not affect each other",
+    "paragraphs": [
+     "Hold one ball in each hand at the same height. Drop the first and, at the same moment, throw the second straight out sideways. The thrown ball travels much further, but **both hit the ground at the same time**. Gravity pulls both down in the same way; the sideways motion does not change how fast an object falls.",
+     "So we can treat a projectile as two separate motions happening at once:"
+    ]
+   },
+   {
+    "title": "3. Splitting the launch into two parts",
+    "paragraphs": [
+     "If something is launched with speed v₀ at an angle θ above the ground, its starting speed splits into a sideways part and an upward part:",
+     "v₀ₓ = v₀ cos θ v₀ᵧ = v₀ sin θ",
+     "For example, a ball thrown at 20 m/s at 30° moves sideways at 17.3 m/s and starts upward at 10.0 m/s.",
+     "After a time t, its position and vertical speed are:",
+     "x = v₀ₓ t y = v₀ᵧ t − ½ g t² vᵧ = v₀ᵧ − g t"
+    ]
+   },
+   {
+    "title": "4. Three answers you usually want",
+    "paragraphs": [
+     "For a launch from the ground that lands back at the same height:"
+    ]
+   },
+   {
+    "title": "5. Which angle throws the farthest?",
+    "paragraphs": [
+     "Keep the launch speed fixed at 20 m/s and change only the angle:",
+     "Two patterns stand out. First, **45° gives the longest range** on level ground, because sin 2θ is largest when 2θ = 90°. Second, **angles that add up to 90° land in the same place**: 30° and 60° both reach 35.3 m. The steeper throw goes much higher and stays up longer; the flatter one gets there sooner. A fielder in a hurry throws flat for this reason.",
+     "In real life, air resistance shortens high, slow flights the most, so for a real ball the best angle is usually somewhat below 45°. The 45° rule is the clean answer for the idealised case."
+    ]
+   },
+   {
+    "title": "6. A common mistake: \"it stops at the top\"",
+    "paragraphs": [
+     "Many people say that at the highest point the ball's speed is zero. It is not. Only the **vertical** speed is zero at the top; the **sideways** speed has not changed at all. So the speed at the top equals the sideways speed. For a ball thrown at 20 m/s at 45°, that is 20 cos 45° = 14.1 m/s at the top, not zero."
+    ]
+   },
+   {
+    "title": "7. Summary",
+    "paragraphs": [
+     "A projectile's sideways and vertical motions are independent: sideways speed stays constant; vertical speed changes by 9.8 m/s every second.",
+     "Split the launch with v₀ₓ = v₀ cos θ and v₀ᵧ = v₀ sin θ, then treat each part separately.",
+     "On level ground: T = 2v₀ᵧ/g, H = v₀ᵧ²/(2g), R = v₀² sin 2θ / g.",
+     "45° gives the longest range; angles adding to 90° give equal ranges with different heights.",
+     "At the top, the ball is still moving sideways; its speed is not zero."
+    ]
+   }
+  ],
+  "table": {
+   "header": [
+    "Angle",
+    "Range",
+    "Time in air",
+    "Highest point"
+   ],
+   "rows": [
+    [
+     "15°",
+     "20.4 m",
+     "1.06 s",
+     "1.4 m"
+    ],
+    [
+     "30°",
+     "35.3 m",
+     "2.04 s",
+     "5.1 m"
+    ],
+    [
+     "45°",
+     "40.8 m",
+     "2.89 s",
+     "10.2 m"
+    ],
+    [
+     "60°",
+     "35.3 m",
+     "3.53 s",
+     "15.3 m"
+    ],
+    [
+     "75°",
+     "20.4 m",
+     "3.94 s",
+     "19.0 m"
+    ]
+   ]
+  },
+  "footer": "Written by Kushagra Bhatnagar as the source text for a Tome demonstration lesson. Original text; not adapted from any textbook. Air resistance is ignored throughout unless stated; g = 9.8 m/s².",
+  "pages": 3
+ },
+ "topics": [
+  {
+   "title": "1. Why this matters",
+   "page_start": 1,
+   "page_end": 1
+  },
+  {
+   "title": "2. The key idea: sideways and up-down do not affect each other",
+   "page_start": 1,
+   "page_end": 1
+  },
+  {
+   "title": "3. Splitting the launch into two parts",
+   "page_start": 1,
+   "page_end": 1
+  },
+  {
+   "title": "4. Three answers you usually want",
+   "page_start": 1,
+   "page_end": 2
+  },
+  {
+   "title": "5. Which angle throws the farthest?",
+   "page_start": 2,
+   "page_end": 2
+  },
+  {
+   "title": "6. A common mistake: \"it stops at the top\"",
+   "page_start": 2,
+   "page_end": 3
+  },
+  {
+   "title": "7. Summary",
+   "page_start": 3,
+   "page_end": 3
+  }
+ ],
+ "chosen_topic": 5,
+ "plan": {
+  "picked": "projectile",
+  "simulations": [
+   "bell curve",
+   "binary search",
+   "binomial",
+   "binary search tree",
+   "central limit",
+   "finite automaton",
+   "dipole",
+   "exponential",
+   "normal curve",
+   "gravity well",
+   "heap",
+   "insertion sort",
+   "Markov chain",
+   "pendulum",
+   "harmonic phase",
+   "logistic growth",
+   "predator and prey",
+   "point charge",
+   "projectile",
+   "RC charging",
+   "rotation",
+   "scaling",
+   "secant and tangent",
+   "shear",
+   "sigmoid",
+   "sine wave",
+   "spring",
+   "uniform"
+  ],
+  "slides": [
+   {
+    "name": "Why it matters",
+    "title": "Why does 45° give the farthest range?",
+    "seconds": 109,
+    "lines": [
+     "Deciding how to throw isn’t just about “far.” In sports or robots that must hit a target at distance R under constraints, the angle sets hang time and ceiling clearance. With fixed v₀, v₀ᵧ = v₀sinθ so T = (2 v₀ᵧ)/(g) and H = (v₀ᵧ²)/(2g). If a runner is advancing or a roof is low, you pick a smaller θ to shrink T and H while still reaching the required R when the geometry allows two viable arcs.",
+     "Think of your fixed launch speed as a budget you split into two jobs: sideways travel and hang time. Sideways distance is “horizontal speed” v₀cosθ times “time in the air,” which scales with v₀sinθ. So R is proportional to (v₀cosθ) (v₀sinθ). A product with a fixed hypotenuse is largest when the legs match, so equal split wins: cosθ = sinθ gives θ = 45°.",
+     "Think about irrigation sprayers. When you’re trying to wet the far edge of a flat field, you tune the nozzle pitch θ to push the throw radius R as far as possible for a given pump pressure (fixed exit speed). Techs do sweep tests: adjust θ, watch where the stream lands, and lock the setting that maximizes R while keeping H low enough to limit wind drift and overspray onto roads or neighboring plots.",
+     "You can use the range–angle law as a diagnostic and calibration tool. On a lab bench or in a game engine, measuring R versus θ at known v₀ lets you check physics: do data follow R = (v₀² sin 2θ)/(g)? If not, you’ve surfaced drag, slope, or timing errors. Conversely, on another planet, fit the curve and solve for g; or if g is known, back out v₀ of a launcher from its R(θ) trace.",
+     "Picture the graph of R(θ) as a hill with a very flat top at 45°. That flatness means small aim errors near 45° barely change R because the slope dR/dθ is 0 there. Far from 45°, tiny tweaks swing either v₀cosθ or the hang time from v₀sinθ a lot, so R drops quickly. This is why 45° feels forgiving when you’re throwing for distance."
+    ]
+   },
+   {
+    "name": "Definition",
+    "title": "Definition",
+    "seconds": 114,
+    "lines": [
+     "Define the “best angle” on level ground by the range formula at fixed launch speed v₀: R(θ) = (v₀²)/(g) sin 2θ. Here θ is the launch angle above horizontal, R is how far it lands, and g≈ 9.8 m/s² is gravity. The maximum occurs when sin 2θ = 1, i.e., at 2θ = 90°, so θ = 45°. A useful consequence is R(θ) = R(90°-θ): complementary angles give the same range.",
+     "Compute R(θ) from a given launch speed step by step. First split v₀ into components: v₀ₓ = v₀cosθ and v₀ᵧ = v₀sinθ. Use the vertical motion to get the flight time T = (2v₀ᵧ)/(g). Then multiply sideways speed by time: R = v₀ₓ T. Substituting gives R = (v₀cosθ)(2v₀sinθ)/(g) = (v₀²)/(g) sin 2θ.",
+     "Let’s actually maximize R(θ) = (v₀²)/(g) sin 2θ by calculus. Differentiate: (dR)/(dθ) = (v₀²)/(g) 2cos 2θ. Set it to zero: cos 2θ = 0⇒ 2θ = 90°+180°k. The candidate in [0°,90°] is θ = 45°. Check it’s a maximum: (d²R)/(dθ²) = (v₀²)/(g) (-4)sin 2θ, and at θ = 45° we have sin 2θ = 1, so (d²R)/(dθ²)<0. Conclusion: θ = 45° throws farthest for fixed v₀ and g.",
+     "Work the inverse problem: given a target range R at speed v₀, solve for launch angles. Start from R = (v₀²)/(g) sin 2θ. Rearrange to sin 2θ = (gR)/(v₀²). Then 2θ = arcsin ((gR)/(v₀²)) or 2θ = 180°-arcsin ((gR)/(v₀²)), yielding two angles θ that land at the same R when the quantity lies in [0,1].",
+     "For level-ground launches at fixed speed, complementary angles always give the same range: R(θ) = R(90°-θ), since sin 2θ = sin(180° - 2θ). Equivalently, the R–vs.–θ curve is mirror-symmetric about 45°: replacing θ by 90°-θ leaves R unchanged for every throw (with the same g)."
+    ]
+   },
+   {
+    "name": "Simulation",
+    "title": "5. Which angle throws the farthest?",
+    "seconds": 30,
+    "lines": [
+     "Here's the projectile, set to v₀=20m/s at 45°. Take a moment to watch how it behaves.",
+     "Think of your fixed launch speed as a budget you split into two jobs: sideways travel and hang time. Sideways distance is “horizontal speed” v₀cosθ times “time in the air,” which scales with v₀sinθ. So R is proportional to (v₀cosθ) (v₀sinθ). A product with a fixed hypotenuse is largest when the legs match, so equal split wins: cosθ = sinθ gives θ = 45°.",
+     "Try moving the slider — the projectile reacts in real time. The pattern is the whole point."
+    ]
+   },
+   {
+    "name": "Worked example",
+    "title": "A worked example",
+    "seconds": 45,
+    "lines": [
+     "Let’s actually maximize R(θ) = (v₀²)/(g) sin 2θ by calculus. Differentiate: (dR)/(dθ) = (v₀²)/(g) 2cos 2θ. Set it to zero: cos 2θ = 0⇒ 2θ = 90°+180°k. The candidate in [0°,90°] is θ = 45°. Check it’s a maximum: (d²R)/(dθ²) = (v₀²)/(g) (-4)sin 2θ, and at θ = 45° we have sin 2θ = 1, so (d²R)/(dθ²)<0. Conclusion: θ = 45° throws farthest for fixed v₀ and g.",
+     "Step 1: Let’s actually maximize R(θ) = (v₀²)/(g) sin 2θ by calculus. Differentiate: (dR)/(dθ) = (v₀²)/(g) 2cos 2θ. Set it to zero: …",
+     "Let's take a moment to re-read what we just placed."
+    ]
+   },
+   {
+    "name": "Common mistake",
+    "title": "A common pitfall",
+    "seconds": 39,
+    "lines": [
+     "First, let's look at the common mistake. Don’t blindly keep θ = 45° when the launch and landing heights differ. The shortcut R = (v₀²)/(g) sin 2θ and T = (2v₀ᵧ)/(g) assume level ground (same start and finish height).",
+     "Now the correct way to think about it. Notice how the same angle choice pulls three levers differently. With fixed speed, R rides on sin 2θ (it rises then falls), T = (2 v₀ᵧ)/(g) grows linearly with v₀ᵧ, and H = (v₀ᵧ²)/(2g) grows quadratically with v₀ᵧ.",
+     "So the takeaway is: As θ increases on [0°, 90°], v₀ᵧ increases, so T and H keep rising, while R eventually turns over. Same knob, three distinct response curves."
+    ]
+   },
+   {
+    "name": "Summary",
+    "title": "Takeaways",
+    "seconds": 73,
+    "lines": [
+     "Once you trust R = (v₀²)/(g) sin 2θ, you get a powerful scaling rule: range grows with launch speed squared and shrinks inversely with g. A 10% boost in v₀ yields about a 21% gain in R because (1.1)²≈1.21. Halve g (think a smaller planet) and, at the same θ, R doubles. So in practice, chasing more v₀ usually beats micromanaging θ near 45° when the goal is raw distance.",
+     "In field artillery and mortar gunnery, the first question is feasibility: can this charge reach that grid? With a fixed muzzle speed, there’s a peak ground range R you can achieve by choosing θ well. If the target’s distance exceeds that maximum, you need a higher charge or a different weapon. Crews use this peak-R idea for quick go/no-go checks before doing finer θ adjustments with observers.",
+     "To get T and H for a chosen θ, compute v₀ᵧ = v₀sinθ once, then reuse it. Flight time follows from vertical symmetry: T = (2v₀ᵧ)/(g). Peak height uses constant downward acceleration: H = (v₀ᵧ²)/(2g). If you have a table of angles, fill its T and H columns quickly with these two formulas after evaluating v₀ᵧ.",
+     "For level-ground launches at fixed speed, complementary angles always give the same range: R(θ) = R(90°-θ), since sin 2θ = sin(180° - 2θ).",
+     "Think about irrigation sprayers."
+    ]
+   }
+  ]
+ },
+ "simulation": {
+  "speed": 20.0,
+  "angle_deg": 45,
+  "g": 9.81,
+  "duration_s": 2.8832080782326095,
+  "narration": [
+   {
+    "text": "Here's the projectile, set to v₀=20m/s at 45°. Take a moment to watch how it behaves.",
+    "audio": "audio/simulation-line-1.mp3",
+    "seconds": 5.86
+   },
+   {
+    "text": "Think of your fixed launch speed as a budget you split into two jobs: sideways travel and hang time. Sideways distance is “horizontal speed” $v_{0}\\cos\\theta$ times “time in the air,” which scales with $v_{0}\\sin\\theta$. So $R$ is proportional to $(v_{0}\\cos\\theta)\\,(v_{0}\\sin\\theta)$. A product with a fixed hypotenuse is largest when the legs match, so equal split wins: $\\cos\\theta=\\sin\\theta$ gives $\\theta=45^{\\circ}$.",
+    "audio": "audio/simulation-line-2.mp3",
+    "seconds": 26.59
+   }
+  ]
+ },
+ "practice": [
+  {
+   "kind": "number",
+   "prompt": "Using R = v0^2 sin(2θ) / g with v0 = 20 m/s, θ = 45° (in degrees), and g = 10 m/s^2, what is R?",
+   "answer": 40.0,
+   "unit": "m",
+   "g_note": "The question takes g = 10 so the sums come out round; with the page's g = 9.8 it's 40.8 m."
+  },
+  {
+   "kind": "choice",
+   "prompt": "With fixed speed v0, you must reach a landing point higher than launch. A friend picks θ=45° using R = v0^2/g sin 2θ, which assumes equal heights. Relative to 45°, what angle choice maximizes range to a higher landing?",
+   "options": [
+    "Above 45°",
+    "Below 45°"
+   ],
+   "answer": "Above 45°"
+  },
+  {
+   "kind": "reveal",
+   "prompt": "In the context of projectile motion when analyzing which launch angle throws the farthest, what does the symbol H represent?",
+   "answer": "highest point (peak height)"
+  }
+ ],
+ "slides_full": [
+  {
+   "name": "Why it matters",
+   "title": "Why does 45° give the farthest range?",
+   "kind": "slide",
+   "beats": [
+    {
+     "text": "Deciding how to throw isn’t just about “far.” In sports or robots that must hit a target at distance R under constraints, the angle sets hang time and ceiling clearance. With fixed v₀, v₀ᵧ = v₀sinθ so T = (2 v₀ᵧ)/(g) and H = (v₀ᵧ²)/(2g). If a runner is advancing or a roof is low, you pick a smaller θ to shrink T and H while still reaching the required R when the geometry allows two viable arcs.",
+     "audio": "audio/lesson/slide1-line1.mp3",
+     "seconds": 23.0,
+     "actions": [
+      {
+       "kind": "place",
+       "object": {
+        "kind": "text_column",
+        "id": "stream",
+        "cell": {
+         "col": 0,
+         "row": 0,
+         "w": 12,
+         "h": 8
+        },
+        "title": "Why does 45° give the farthest range?",
+        "initial_body": null,
+        "style": "default"
+       }
+      },
+      {
+       "kind": "append_text",
+       "target_id": "stream",
+       "body": "Deciding how to throw isn’t just about “far.” In sports or robots that must hit a target at distance R under constraints, the angle sets hang time and ceiling clearance. With fixed v₀, v₀ᵧ = v₀sinθ so T = (2 v₀ᵧ)/(g) and H = (v₀ᵧ²)/(2g). If a runner is advancing or a roof is low, you pick a smaller θ to shrink T and H while still reaching the required R when the geometry allows two viable arcs.",
+       "step_kind": "premise"
+      }
+     ]
+    },
+    {
+     "text": "Think of your fixed launch speed as a budget you split into two jobs: sideways travel and hang time. Sideways distance is “horizontal speed” v₀cosθ times “time in the air,” which scales with v₀sinθ. So R is proportional to (v₀cosθ) (v₀sinθ). A product with a fixed hypotenuse is largest when the legs match, so equal split wins: cosθ = sinθ gives θ = 45°.",
+     "audio": "audio/lesson/slide1-line2.mp3",
+     "seconds": 21.7,
+     "actions": [
+      {
+       "kind": "append_text",
+       "target_id": "stream",
+       "body": "Think of your fixed launch speed as a budget you split into two jobs: sideways travel and hang time. Sideways distance is “horizontal speed” v₀cosθ times “time in the air,” which scales with v₀sinθ. So R is proportional to (v₀cosθ) (v₀sinθ). A product with a fixed hypotenuse is largest when the legs match, so equal split wins: cosθ = sinθ gives θ = 45°.",
+       "step_kind": "premise"
+      }
+     ]
+    },
+    {
+     "text": "Think about irrigation sprayers. When you’re trying to wet the far edge of a flat field, you tune the nozzle pitch θ to push the throw radius R as far as possible for a given pump pressure (fixed exit speed). Techs do sweep tests: adjust θ, watch where the stream lands, and lock the setting that maximizes R while keeping H low enough to limit wind drift and overspray onto roads or neighboring plots.",
+     "audio": "audio/lesson/slide1-line3.mp3",
+     "seconds": 21.1,
+     "actions": [
+      {
+       "kind": "append_text",
+       "target_id": "stream",
+       "body": "Think about irrigation sprayers. When you’re trying to wet the far edge of a flat field, you tune the nozzle pitch θ to push the throw radius R as far as possible for a given pump pressure (fixed exit speed). Techs do sweep tests: adjust θ, watch where the stream lands, and lock the setting that maximizes R while keeping H low enough to limit wind drift and overspray onto roads or neighboring plots.",
+       "step_kind": "consequence"
+      }
+     ]
+    },
+    {
+     "text": "You can use the range–angle law as a diagnostic and calibration tool. On a lab bench or in a game engine, measuring R versus θ at known v₀ lets you check physics: do data follow R = (v₀² sin 2θ)/(g)? If not, you’ve surfaced drag, slope, or timing errors. Conversely, on another planet, fit the curve and solve for g; or if g is known, back out v₀ of a launcher from its R(θ) trace.",
+     "audio": "audio/lesson/slide1-line4.mp3",
+     "seconds": 21.3,
+     "actions": [
+      {
+       "kind": "append_text",
+       "target_id": "stream",
+       "body": "You can use the range–angle law as a diagnostic and calibration tool. On a lab bench or in a game engine, measuring R versus θ at known v₀ lets you check physics: do data follow R = (v₀² sin 2θ)/(g)? If not, you’ve surfaced drag, slope, or timing errors. Conversely, on another planet, fit the curve and solve for g; or if g is known, back out v₀ of a launcher from its R(θ) trace.",
+       "step_kind": "premise"
+      }
+     ]
+    },
+    {
+     "text": "Picture the graph of R(θ) as a hill with a very flat top at 45°. That flatness means small aim errors near 45° barely change R because the slope dR/dθ is 0 there. Far from 45°, tiny tweaks swing either v₀cosθ or the hang time from v₀sinθ a lot, so R drops quickly. This is why 45° feels forgiving when you’re throwing for distance.",
+     "audio": "audio/lesson/slide1-line5.mp3",
+     "seconds": 22.2,
+     "actions": [
+      {
+       "kind": "append_text",
+       "target_id": "stream",
+       "body": "Picture the graph of R(θ) as a hill with a very flat top at 45°. That flatness means small aim errors near 45° barely change R because the slope dR/dθ is 0 there. Far from 45°, tiny tweaks swing either v₀cosθ or the hang time from v₀sinθ a lot, so R drops quickly. This is why 45° feels forgiving when you’re throwing for distance.",
+       "step_kind": "premise"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Definition",
+   "title": "Definition",
+   "kind": "slide",
+   "beats": [
+    {
+     "text": "Define the “best angle” on level ground by the range formula at fixed launch speed v₀: R(θ) = (v₀²)/(g) sin 2θ. Here θ is the launch angle above horizontal, R is how far it lands, and g≈ 9.8 m/s² is gravity. The maximum occurs when sin 2θ = 1, i.e., at 2θ = 90°, so θ = 45°. A useful consequence is R(θ) = R(90°-θ): complementary angles give the same range.",
+     "audio": "audio/lesson/slide2-line1.mp3",
+     "seconds": 23.8,
+     "actions": [
+      {
+       "kind": "place",
+       "object": {
+        "kind": "equation",
+        "id": "head_eq",
+        "cell": {
+         "col": 2,
+         "row": 0,
+         "w": 8,
+         "h": 2
+        },
+        "latex": "R = (v₀² sin 2θ)/(g)",
+        "caption": null,
+        "style": "accent"
+       }
+      },
+      {
+       "kind": "place",
+       "object": {
+        "kind": "text_column",
+        "id": "stream",
+        "cell": {
+         "col": 0,
+         "row": 2,
+         "w": 12,
+         "h": 6
+        },
+        "title": "Definition",
+        "initial_body": null,
+        "style": "default"
+       }
+      },
+      {
+       "kind": "append_text",
+       "target_id": "stream",
+       "body": "Define the “best angle” on level ground by the range formula at fixed launch speed v₀: R(θ) = (v₀²)/(g) sin 2θ. Here θ is the launch angle above horizontal, R is how far it lands, and g≈ 9.8 m/s² is gravity. The maximum occurs when sin 2θ = 1, i.e., at 2θ = 90°, so θ = 45°. A useful consequence is R(θ) = R(90°-θ): complementary angles give the same range.",
+       "step_kind": "claim"
+      }
+     ]
+    },
+    {
+     "text": "Compute R(θ) from a given launch speed step by step. First split v₀ into components: v₀ₓ = v₀cosθ and v₀ᵧ = v₀sinθ. Use the vertical motion to get the flight time T = (2v₀ᵧ)/(g). Then multiply sideways speed by time: R = v₀ₓ T. Substituting gives R = (v₀cosθ)(2v₀sinθ)/(g) = (v₀²)/(g) sin 2θ.",
+     "audio": "audio/lesson/slide2-line2.mp3",
+     "seconds": 20.3,
+     "actions": [
+      {
+       "kind": "append_text",
+       "target_id": "stream",
+       "body": "Compute R(θ) from a given launch speed step by step. First split v₀ into components: v₀ₓ = v₀cosθ and v₀ᵧ = v₀sinθ. Use the vertical motion to get the flight time T = (2v₀ᵧ)/(g). Then multiply sideways speed by time: R = v₀ₓ T. Substituting gives R = (v₀cosθ)(2v₀sinθ)/(g) = (v₀²)/(g) sin 2θ.",
+       "step_kind": "derive"
+      }
+     ]
+    },
+    {
+     "text": "Let’s actually maximize R(θ) = (v₀²)/(g) sin 2θ by calculus. Differentiate: (dR)/(dθ) = (v₀²)/(g) 2cos 2θ. Set it to zero: cos 2θ = 0⇒ 2θ = 90°+180°k. The candidate in [0°,90°] is θ = 45°. Check it’s a maximum: (d²R)/(dθ²) = (v₀²)/(g) (-4)sin 2θ, and at θ = 45° we have sin 2θ = 1, so (d²R)/(dθ²)<0. Conclusion: θ = 45° throws farthest for fixed v₀ and g.",
+     "audio": "audio/lesson/slide2-line3.mp3",
+     "seconds": 30.8,
+     "actions": [
+      {
+       "kind": "append_text",
+       "target_id": "stream",
+       "body": "Let’s actually maximize R(θ) = (v₀²)/(g) sin 2θ by calculus. Differentiate: (dR)/(dθ) = (v₀²)/(g) 2cos 2θ. Set it to zero: cos 2θ = 0⇒ 2θ = 90°+180°k. The candidate in [0°,90°] is θ = 45°. Check it’s a maximum: (d²R)/(dθ²) = (v₀²)/(g) (-4)sin 2θ, and at θ = 45° we have sin 2θ = 1, so (d²R)/(dθ²)<0. Conclusion: θ = 45° throws farthest for fixed v₀ and g.",
+       "step_kind": "evidence"
+      }
+     ]
+    },
+    {
+     "text": "Work the inverse problem: given a target range R at speed v₀, solve for launch angles. Start from R = (v₀²)/(g) sin 2θ. Rearrange to sin 2θ = (gR)/(v₀²). Then 2θ = arcsin ((gR)/(v₀²)) or 2θ = 180°-arcsin ((gR)/(v₀²)), yielding two angles θ that land at the same R when the quantity lies in [0,1].",
+     "audio": "audio/lesson/slide2-line4.mp3",
+     "seconds": 21.1,
+     "actions": [
+      {
+       "kind": "append_text",
+       "target_id": "stream",
+       "body": "Work the inverse problem: given a target range R at speed v₀, solve for launch angles. Start from R = (v₀²)/(g) sin 2θ. Rearrange to sin 2θ = (gR)/(v₀²). Then 2θ = arcsin ((gR)/(v₀²)) or 2θ = 180°-arcsin ((gR)/(v₀²)), yielding two angles θ that land at the same R when the quantity lies in [0,1].",
+       "step_kind": "derive"
+      }
+     ]
+    },
+    {
+     "text": "For level-ground launches at fixed speed, complementary angles always give the same range: R(θ) = R(90°-θ), since sin 2θ = sin(180° - 2θ). Equivalently, the R–vs.–θ curve is mirror-symmetric about 45°: replacing θ by 90°-θ leaves R unchanged for every throw (with the same g).",
+     "audio": "audio/lesson/slide2-line5.mp3",
+     "seconds": 18.4,
+     "actions": [
+      {
+       "kind": "append_text",
+       "target_id": "stream",
+       "body": "For level-ground launches at fixed speed, complementary angles always give the same range: R(θ) = R(90°-θ), since sin 2θ = sin(180° - 2θ). Equivalently, the R–vs.–θ curve is mirror-symmetric about 45°: replacing θ by 90°-θ leaves R unchanged for every throw (with the same g).",
+       "step_kind": "evidence"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Simulation",
+   "title": "5. Which angle throws the farthest?",
+   "kind": "simulation",
+   "beats": [
+    {
+     "text": "Here's the projectile, set to v₀=20m/s at 45°. Take a moment to watch how it behaves.",
+     "audio": "audio/lesson/slide3-line1.mp3",
+     "seconds": 4.7,
+     "actions": []
+    },
+    {
+     "text": "Think of your fixed launch speed as a budget you split into two jobs: sideways travel and hang time. Sideways distance is “horizontal speed” v₀cosθ times “time in the air,” which scales with v₀sinθ. So R is proportional to (v₀cosθ) (v₀sinθ). A product with a fixed hypotenuse is largest when the legs match, so equal split wins: cosθ = sinθ gives θ = 45°.",
+     "audio": "audio/lesson/slide3-line2.mp3",
+     "seconds": 21.3,
+     "actions": []
+    },
+    {
+     "text": "Try moving the slider — the projectile reacts in real time. The pattern is the whole point.",
+     "audio": "audio/lesson/slide3-line3.mp3",
+     "seconds": 4.4,
+     "actions": []
+    }
+   ]
+  },
+  {
+   "name": "Worked example",
+   "title": "A worked example",
+   "kind": "slide",
+   "beats": [
+    {
+     "text": "Let’s actually maximize R(θ) = (v₀²)/(g) sin 2θ by calculus. Differentiate: (dR)/(dθ) = (v₀²)/(g) 2cos 2θ. Set it to zero: cos 2θ = 0⇒ 2θ = 90°+180°k. The candidate in [0°,90°] is θ = 45°. Check it’s a maximum: (d²R)/(dθ²) = (v₀²)/(g) (-4)sin 2θ, and at θ = 45° we have sin 2θ = 1, so (d²R)/(dθ²)<0. Conclusion: θ = 45° throws farthest for fixed v₀ and g.",
+     "audio": "audio/lesson/slide4-line1.mp3",
+     "seconds": 31.3,
+     "actions": [
+      {
+       "kind": "place",
+       "object": {
+        "kind": "equation",
+        "id": "problem",
+        "cell": {
+         "col": 1,
+         "row": 0,
+         "w": 10,
+         "h": 1
+        },
+        "latex": "See worked example below",
+        "caption": "Problem statement",
+        "style": "accent"
+       }
+      }
+     ]
+    },
+    {
+     "text": "Step 1: Let’s actually maximize R(θ) = (v₀²)/(g) sin 2θ by calculus. Differentiate: (dR)/(dθ) = (v₀²)/(g) 2cos 2θ. Set it to zero: …",
+     "audio": "audio/lesson/slide4-line2.mp3",
+     "seconds": 11.7,
+     "actions": [
+      {
+       "kind": "place",
+       "object": {
+        "kind": "box",
+        "id": "step_0",
+        "cell": {
+         "col": 1,
+         "row": 1,
+         "w": 10,
+         "h": 3
+        },
+        "title": "Step 1",
+        "body": "Let’s actually maximize R(θ) = (v₀²)/(g) sin 2θ by calculus. Differentiate: (dR)/(dθ) = (v₀²)/(g) 2cos 2θ. Set it to zero: cos 2θ = 0⇒ 2θ = 90°+180°k. The candidate in [0°,90°] is θ = 45°. Check it’s a maximum: (d²R)/(dθ²) = (v₀²)/(g) (-4)sin 2θ, and at θ = 45° we have sin 2θ = 1, so (d²R)/(dθ²)<0. Conclusion: θ = 45° throws farthest for fixed v₀ and g.",
+        "style": "default"
+       }
+      }
+     ]
+    },
+    {
+     "text": "Let's take a moment to re-read what we just placed.",
+     "audio": "audio/lesson/slide4-line3.mp3",
+     "seconds": 1.9,
+     "actions": [
+      {
+       "kind": "highlight",
+       "target_id": "problem"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Common mistake",
+   "title": "A common pitfall",
+   "kind": "slide",
+   "beats": [
+    {
+     "text": "First, let's look at the common mistake. Don’t blindly keep θ = 45° when the launch and landing heights differ. The shortcut R = (v₀²)/(g) sin 2θ and T = (2v₀ᵧ)/(g) assume level ground (same start and finish height).",
+     "audio": "audio/lesson/slide5-line1.mp3",
+     "seconds": 13.1,
+     "actions": [
+      {
+       "kind": "place",
+       "object": {
+        "kind": "box",
+        "id": "wrong",
+        "cell": {
+         "col": 0,
+         "row": 1,
+         "w": 5,
+         "h": 4
+        },
+        "title": "Wrong",
+        "body": "Don’t blindly keep θ = 45° when the launch and landing heights differ. The shortcut R = (v₀²)/(g) sin 2θ and T = (2v₀ᵧ)/(g) assume level ground (same start and finish height). If the target is higher, you get less time to travel sideways, so the best θ is typically above 45°; if it’s lower, extra fall time boosts range and the best θ is below 45°. Check the height before applying the “best angle.”",
+        "style": "danger"
+       }
+      }
+     ]
+    },
+    {
+     "text": "Now the correct way to think about it. Notice how the same angle choice pulls three levers differently. With fixed speed, R rides on sin 2θ (it rises then falls), T = (2 v₀ᵧ)/(g) grows linearly with v₀ᵧ, and H = (v₀ᵧ²)/(2g) grows quadratically with v₀ᵧ.",
+     "audio": "audio/lesson/slide5-line2.mp3",
+     "seconds": 15.5,
+     "actions": [
+      {
+       "kind": "place",
+       "object": {
+        "kind": "box",
+        "id": "right",
+        "cell": {
+         "col": 7,
+         "row": 1,
+         "w": 5,
+         "h": 4
+        },
+        "title": "Right",
+        "body": "Notice how the same angle choice pulls three levers differently. With fixed speed, R rides on sin 2θ (it rises then falls), T = (2 v₀ᵧ)/(g) grows linearly with v₀ᵧ, and H = (v₀ᵧ²)/(2g) grows quadratically with v₀ᵧ. As θ increases on [0°, 90°], v₀ᵧ increases, so T and H keep rising, while R eventually turns over. Same knob, three distinct response curves.",
+        "style": "accent"
+       }
+      }
+     ]
+    },
+    {
+     "text": "So the takeaway is: As θ increases on [0°, 90°], v₀ᵧ increases, so T and H keep rising, while R eventually turns over. Same knob, three distinct response curves.",
+     "audio": "audio/lesson/slide5-line3.mp3",
+     "seconds": 9.9,
+     "actions": [
+      {
+       "kind": "highlight",
+       "target_id": "right"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Summary",
+   "title": "Takeaways",
+   "kind": "slide",
+   "beats": [
+    {
+     "text": "Once you trust R = (v₀²)/(g) sin 2θ, you get a powerful scaling rule: range grows with launch speed squared and shrinks inversely with g. A 10% boost in v₀ yields about a 21% gain in R because (1.1)²≈1.21. Halve g (think a smaller planet) and, at the same θ, R doubles. So in practice, chasing more v₀ usually beats micromanaging θ near 45° when the goal is raw distance.",
+     "audio": "audio/lesson/slide6-line1.mp3",
+     "seconds": 23.9,
+     "actions": [
+      {
+       "kind": "place",
+       "object": {
+        "kind": "text_column",
+        "id": "stream",
+        "cell": {
+         "col": 0,
+         "row": 0,
+         "w": 12,
+         "h": 8
+        },
+        "title": "Takeaways",
+        "initial_body": null,
+        "style": "default"
+       }
+      },
+      {
+       "kind": "append_text",
+       "target_id": "stream",
+       "body": "Once you trust R = (v₀²)/(g) sin 2θ, you get a powerful scaling rule: range grows with launch speed squared and shrinks inversely with g. A 10% boost in v₀ yields about a 21% gain in R because (1.1)²≈1.21. Halve g (think a smaller planet) and, at the same θ, R doubles. So in practice, chasing more v₀ usually beats micromanaging θ near 45° when the goal is raw distance.",
+       "step_kind": "consequence"
+      }
+     ]
+    },
+    {
+     "text": "In field artillery and mortar gunnery, the first question is feasibility: can this charge reach that grid? With a fixed muzzle speed, there’s a peak ground range R you can achieve by choosing θ well. If the target’s distance exceeds that maximum, you need a higher charge or a different weapon. Crews use this peak-R idea for quick go/no-go checks before doing finer θ adjustments with observers.",
+     "audio": "audio/lesson/slide6-line2.mp3",
+     "seconds": 20.4,
+     "actions": [
+      {
+       "kind": "append_text",
+       "target_id": "stream",
+       "body": "In field artillery and mortar gunnery, the first question is feasibility: can this charge reach that grid? With a fixed muzzle speed, there’s a peak ground range R you can achieve by choosing θ well. If the target’s distance exceeds that maximum, you need a higher charge or a different weapon. Crews use this peak-R idea for quick go/no-go checks before doing finer θ adjustments with observers.",
+       "step_kind": "consequence"
+      }
+     ]
+    },
+    {
+     "text": "To get T and H for a chosen θ, compute v₀ᵧ = v₀sinθ once, then reuse it. Flight time follows from vertical symmetry: T = (2v₀ᵧ)/(g). Peak height uses constant downward acceleration: H = (v₀ᵧ²)/(2g). If you have a table of angles, fill its T and H columns quickly with these two formulas after evaluating v₀ᵧ.",
+     "audio": "audio/lesson/slide6-line3.mp3",
+     "seconds": 18.5,
+     "actions": [
+      {
+       "kind": "append_text",
+       "target_id": "stream",
+       "body": "To get T and H for a chosen θ, compute v₀ᵧ = v₀sinθ once, then reuse it. Flight time follows from vertical symmetry: T = (2v₀ᵧ)/(g). Peak height uses constant downward acceleration: H = (v₀ᵧ²)/(2g). If you have a table of angles, fill its T and H columns quickly with these two formulas after evaluating v₀ᵧ.",
+       "step_kind": "derive"
+      }
+     ]
+    },
+    {
+     "text": "For level-ground launches at fixed speed, complementary angles always give the same range: R(θ) = R(90°-θ), since sin 2θ = sin(180° - 2θ).",
+     "audio": "audio/lesson/slide6-line4.mp3",
+     "seconds": 9.1,
+     "actions": [
+      {
+       "kind": "append_text",
+       "target_id": "stream",
+       "body": "For level-ground launches at fixed speed, complementary angles always give the same range: R(θ) = R(90°-θ), since sin 2θ = sin(180° - 2θ).",
+       "step_kind": "evidence"
+      }
+     ]
+    },
+    {
+     "text": "Think about irrigation sprayers.",
+     "audio": "audio/lesson/slide6-line5.mp3",
+     "seconds": 1.5,
+     "actions": [
+      {
+       "kind": "append_text",
+       "target_id": "stream",
+       "body": "Think about irrigation sprayers.",
+       "step_kind": "consequence"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "totals": {
+  "narration_lines": 24,
+  "narration_minutes": 6.8,
+  "questions": 3,
+  "slides": 6,
+  "gpt5_calls": 33,
+  "cost_usd": 0.43,
+  "build_minutes": 5.6
+ }
+}

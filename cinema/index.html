@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Articles</title>
+<link rel="stylesheet" href="styles.css?v=20261006-arrival-audio">
+</head>
+<body>
+<main class="hall" id="hall" data-phase="arrive">
+  <canvas id="room" aria-hidden="true"></canvas>
+  <!-- Where you are and what the piece says, for screen readers only: on screen, the film itself carries it (your decision, checkpoint 4). -->
+  <header class="sign sr-only" id="sign">
+    <p class="where"><span id="where">Writing</span>, <span id="count"></span></p>
+    <h1 class="claim" id="claim"></h1>
+    <p class="title"><span id="title"></span></p>
+  </header>
+
+  <!-- Laid over the screen in the room. -->
+  <section class="screen" id="screen" aria-label="The film">
+    <video id="film" muted playsinline preload="auto" crossorigin="anonymous"></video>
+    <p class="disclose" id="disclose"></p>
+    <div class="controls" id="controls">
+      <button type="button" class="c-play" id="cPlay">Play</button>
+      <button type="button" class="c-again" id="cAgain">Start again</button>
+      <span class="c-time" id="cTime"></span>
+      <i class="c-bar" id="cBar"><b id="cBarFill"></b></i>
+    </div>
+  </section>
+
+  <!-- Under the screen: the one lit control, and how the room behaves. -->
+  <div class="under" id="under">
+    <p class="hint" id="hint">Plays by itself. Click anywhere to pause.</p>
+    <p class="meta"><span class="runs" id="runs" aria-live="off"></span><a class="read-now" id="readNow" target="_blank" rel="noopener"></a></p>
+    <button type="button" class="sound" id="sound" aria-pressed="false"><span class="lamp" aria-hidden="true"></span><span class="sound-copy"><span id="soundLabel">Sound off</span><small id="soundAction">Click to turn on</small></span></button>
+  </div>
+
+  <!-- At the end: the next film comes forward as the centre card, and the piece itself sits beside it. -->
+  <section class="end" id="end" aria-live="polite" hidden>
+    <div class="next" id="next">
+      <p class="next-kicker" id="nextKicker">Next film</p>
+      <p class="next-claim" id="nextClaim"></p>
+      <p class="next-meta" id="nextMeta"></p>
+      <button type="button" class="next-go" id="nextGo"></button>
+    </div>
+    <a class="read" id="read" target="_blank" rel="noopener"></a>
+    <p class="countdown" id="countdown"></p>
+  </section>
+</main>
+<script type="module" src="app.js?v=20261006-arrival-audio"></script>
+</body>
+</html>

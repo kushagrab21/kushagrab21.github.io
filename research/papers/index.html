@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#3b2e24">
+  <title>The papers | Kushagra Bhatnagar</title>
+  <meta name="description" content="Two papers, and the test I built between them. Research on when an AI decides its work is finished.">
+  <link rel="preload" href="./fonts/overpass-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="room" aria-hidden="true"><div class="lamp"></div><div class="floor"></div></div>
+  <header class="masthead">
+    <div class="intro"><p class="eyebrow"><i></i> Research <span>/</span> The papers</p>
+      <h1>When an AI says it’s done, is it?</h1>
+      <p class="deck">Two papers, and the test I built between them.</p>
+    </div>
+    <nav class="always-links" aria-label="Papers and code">
+      <a href="./assets/paper-1.pdf" target="_blank" rel="noopener">Paper 1 <span>PDF ↗</span></a>
+      <a href="./assets/paper-2.pdf" target="_blank" rel="noopener">Paper 2 <span>PDF ↗</span></a>
+      <a href="https://github.com/kushagrab21/gauntlet" target="_blank" rel="noopener">Code <span>↗</span></a>
+    </nav>
+  </header>
+  <main id="station">
+    <section class="stage" aria-label="The research sequence">
+      <svg class="track" viewBox="0 0 1400 600" preserveAspectRatio="none" aria-hidden="true"><path d="M-100 220 Q700 640 1500 220"/><path d="M-100 235 Q700 670 1500 235"/></svg>
+      <div class="back-cards" aria-hidden="true">
+        <button class="back-card" tabindex="-1" data-go="0"><span class="card-surface"></span><span>Paper 1</span><small>Who decides?</small></button>
+        <button class="back-card" tabindex="-1" data-go="1"><span class="card-surface"></span><span>GAUNTLET</span><small>What can it see?</small></button>
+        <button class="back-card" tabindex="-1" data-go="2"><span class="card-surface"></span><span>Paper 2</span><small>Where does it happen?</small></button>
+        <button class="back-card dashed" tabindex="-1" data-go="3"><span class="card-surface"></span><span>Still open</span><small>A check still to run</small></button>
+      </div>
+      <article class="front-card" aria-labelledby="card-title">
+        <div class="card-top"><p id="card-kicker"></p><p id="card-meta"></p></div>
+        <h2 id="card-title" tabindex="-1"></h2>
+        <div class="card-body">
+          <h3 id="card-heading"></h3>
+          <div id="chart-panel">
+            <div class="figure-top"><p>Extra jobs done right when the tests decide, not the AI <span>(out of every 100)</span></p><span class="lock-note"><svg width="10" height="13" viewBox="0 0 10 13" aria-hidden="true"><path d="M2 5V3a3 3 0 0 1 6 0v2M1 5h8v7H1Z" pathLength="1" stroke-dasharray="1" fill="none" stroke="currentColor"/></svg> Written down before the runs</span></div>
+            <div id="chart" role="img" aria-label="Seven AI models, ordered strongest to weakest in the paper. Gain from letting tests decide completion."></div>
+            <p id="first-caption" class="claim"></p><p id="first-caveat" class="caveat"></p>
+          </div>
+          <div id="gauntlet-panel" hidden>
+            <div class="instrument"><div class="tile-field"><div id="task-tiles" aria-hidden="true"></div><span><b data-fact="gauntletTasks"></b> tasks I built</span></div>
+              <div class="example"><p class="example-label">A question hidden in the task</p><p class="example-question">Does a range include its last number?</p><div class="range-sketch" aria-hidden="true"><span>start</span><i></i><i></i><i></i><b>?</b><span>end</span></div><p>The task never says. Real systems disagree.</p></div></div>
+            <p class="caveat">Paper 2 also uses a separate set of <span data-fact="secondCorpusTasks"></span> tasks, with <span data-fact="secondWorkingTasks"></span> used in its later experiments.</p>
+          </div>
+          <div id="second-panel" hidden><p class="seen">Where it said “finished” too soon</p><p id="second-claim" class="large-claim"></p><p class="caveat">Across both test sets.</p><p class="counter-effect" id="counter-effect"></p></div>
+          <div id="open-panel" hidden><div class="unrun"><div class="reminder">The reminder tested<span>A line saying how many batches of tests are still hidden</span></div><span class="versus">or</span><div class="reminder empty">The comparison still to run<span>Any extra line that doesn’t give the count</span></div></div><p class="large-claim" id="open-question"></p><p class="caveat">The second paper names this missing comparison. It has not been run.</p></div>
+          <div id="shared-loop" class="shared-loop" role="img" aria-label="The AI submits code, the tests check it, and the result goes back to the AI.">
+            <div class="loop-ai">AI<span id="ai-caption">submits code</span></div><span class="loop-arrow" aria-hidden="true">→</span><div class="checks"><span class="check-label">Visible tests</span><div class="check-row"><i>✓</i><i>✓</i><i>✓</i></div></div><span class="loop-arrow" aria-hidden="true">→</span><div class="end-rule" id="end-rule">The tests decide<br>“finished”</div><div class="withheld"><div class="check-row"><i>?</i><i>?</i></div><span>Held back until<br>everything visible passes</span></div>
+          </div>
+          <p class="loop-note" id="loop-note">A sketch of the setup. Each box stands for a group of tests.</p>
+        </div>
+        <div class="card-foot"><div class="fine-print"><p id="stats"></p><p id="misses"></p></div><nav id="card-links" aria-label="Open this work"></nav></div>
+      </article>
+      <p id="bridge" class="bridge"></p>
+      <section id="overview" hidden aria-label="The complete line of work"></section>
+    </section>
+  </main>
+  <footer class="playback">
+    <button id="play" type="button">Pause</button>
+    <div class="step-controls" aria-label="Choose a step"><button data-go="0" aria-label="Paper 1" title="Paper 1">1</button><button data-go="1" aria-label="GAUNTLET" title="GAUNTLET">2</button><button data-go="2" aria-label="Paper 2" title="Paper 2">3</button><button data-go="3" aria-label="Still open" title="Still open">4</button></div>
+    <p id="play-status" role="status" aria-live="polite">Playing<span class="sep" aria-hidden="true"></span>touch anywhere to pause</p>
+    <button id="show-all" type="button" aria-controls="overview" aria-expanded="false">See all four</button>
+    <label class="scrubber"><span class="sr-only">Position in the sequence</span><input id="scrub" type="range" min="0" max="48" step="0.1" value="0" aria-label="Position in the sequence"></label>
+  </footer>
+  <noscript><div class="no-script">The sequence needs JavaScript. Both PDFs and the code links above still open directly.</div></noscript>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

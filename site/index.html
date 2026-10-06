@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" data-hand="b">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kushagra Bhatnagar</title>
+  <meta name="description" content="Things Kushagra Bhatnagar built, and research on when an AI's 'finished' can be trusted.">
+  <link rel="preload" href="fonts/overpass-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/patrickhand-regular-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="site.css?v=20261006k">
+  <script type="module" src="site.js?v=20261006-arrival-audio"></script>
+</head>
+<body>
+  <header class="bar">
+    <a class="me" href="#who">Kushagra Bhatnagar</a>
+    <span class="what">builds things with AI, then goes looking for where they break</span>
+    <nav class="bar-nav">
+      <button type="button" id="lines-btn" class="quiet">All lines</button>
+      <a class="resume" href="resume.html">My resume</a>
+    </nav>
+  </header>
+
+  <main class="stage" id="stage">
+    <canvas id="ride" aria-hidden="true"></canvas>
+
+    <div class="node" id="node" hidden>
+      <img class="poster" id="poster" alt="">
+      <iframe id="block" title="Product demonstration"></iframe>
+      <section class="panel" id="panel" hidden></section>
+    </div>
+    <aside class="flap" id="flap" hidden></aside>
+
+    <section class="landing" id="landing" hidden aria-label="Departures">
+      <div class="board">
+        <h1>Kushagra Bhatnagar</h1>
+        <p class="one">I build things with AI, then go looking for where they break.</p>
+        <div class="dep-head"><span>Departures</span><span>Calling at</span></div>
+        <div class="deps">
+        <button type="button" class="dep" data-depart="built" style="--c:#e07a5f"><i></i><b>Things I built</b><span>Tome<span class="sep"> <svg viewBox="0 0 12 18" aria-hidden="true"><path class="mk-b" d="M7.58 8.57Q7.93 9.24 7.84 10.04Q7.76 10.85 7.03 11.4Q6.3 11.96 5.26 12.01Q4.23 12.05 3.62 11.28Q3 10.52 2.92 9.62Q2.84 8.73 3.47 8.1Q4.1 7.46 4.95 7.31Q5.79 7.15 6.51 7.53Q7.22 7.9 7.58 8.57Z"/><path class="mk-s" d="M0.46 10.02h.01"/></svg></span>ADSP<span class="sep"> <svg viewBox="0 0 12 18" aria-hidden="true"><path class="mk-b" d="M7.97 11.22Q7.19 11.86 6.37 12.24Q5.55 12.62 4.53 12.44Q3.51 12.27 3.12 11.31Q2.74 10.35 2.83 9.33Q2.91 8.3 3.71 7.47Q4.51 6.64 5.57 7.07Q6.63 7.49 7.22 8.14Q7.82 8.79 8.28 9.68Q8.75 10.57 7.97 11.22Z"/><path class="mk-s" d="M2.83 12.95h.01"/></svg></span>Followthrough</span><small>Tools that do an actual job (one of them is now part of a commercial product).</small></button>
+        <button type="button" class="dep" data-depart="research" style="--c:#4fb0a5"><i></i><b>Research</b><span>The finding<span class="sep"> <svg viewBox="0 0 12 18" aria-hidden="true"><path class="mk-b" d="M3.74 10.5Q3.19 9.7 3.57 8.77Q3.95 7.85 4.92 7.59Q5.89 7.32 6.9 7.25Q7.91 7.17 8.67 7.9Q9.43 8.62 9.05 9.52Q8.68 10.42 8.24 11.16Q7.8 11.89 6.85 12.06Q5.9 12.22 5.09 11.76Q4.28 11.3 3.74 10.5Z"/><path class="mk-s" d="M5.57 13.1h.01"/></svg></span>The papers<span class="sep"> <svg viewBox="0 0 12 18" aria-hidden="true"><path class="mk-b" d="M7.6 11.9Q6.64 12.32 5.59 12.12Q4.54 11.92 4.02 11.08Q3.49 10.25 3.83 9.44Q4.16 8.63 4.72 8.13Q5.29 7.63 6.16 7.14Q7.03 6.64 7.69 7.36Q8.35 8.09 8.74 8.87Q9.14 9.65 8.86 10.56Q8.57 11.48 7.6 11.9Z"/><path class="mk-s" d="M3.4 11.54h.01"/></svg></span><span style="white-space:nowrap">Earlier work</span></span><small>I watched AI say “done” 608 times. Nearly every wrong one came at the same moment.</small></button>
+        <button type="button" class="dep" data-depart="writing" style="--c:#a98bd8"><i></i><b>Writing</b><span>Articles<span class="sep"> <svg viewBox="0 0 12 18" aria-hidden="true"><path class="mk-b" d="M5.9 7.12Q6.96 7.01 7.72 7.62Q8.48 8.22 8.48 9.01Q8.47 9.79 8.26 10.61Q8.04 11.43 6.99 11.7Q5.94 11.97 5.16 11.45Q4.39 10.94 3.76 10.41Q3.13 9.88 3.15 9.06Q3.17 8.24 4 7.73Q4.83 7.22 5.9 7.12Z"/><path class="mk-s" d="M1.62 7.93h.01"/></svg></span>Posts</span><small>So how is the weakest executor automating the most <span style="white-space:nowrap;font:inherit">execution-heavy jobs?</span></small></button>
+        </div>
+        <div class="board-act">
+          <button type="button" class="primary" data-depart="built">Board the train →</button>
+          <a class="resume-out" href="resume.html">My resume</a>
+        </div>
+        <div class="leave" id="leave"><i><b id="leave-bar"></b></i><span id="leave-text"></span></div>
+      </div>
+    </section>
+
+    <section class="rail" id="rail" aria-label="Where the train is">
+      <div class="nameband" id="nameband" aria-live="polite"></div>
+      <div class="map" id="map"></div>
+      <div class="band" id="band"></div>
+    </section>
+  </main>
+
+  <div class="overview" id="overview" hidden></div>
+</body>
+</html>

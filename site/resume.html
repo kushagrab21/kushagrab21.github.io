@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume · Kushagra Bhatnagar</title>
+  <style>
+    @font-face { font-family: 'Overpass'; src: url(fonts/overpass-var.woff2) format('woff2'); font-weight: 100 900; }
+            :root { --ink: #1f1a16; --ink-2: #4a423b; --dim: #786d63; --rule: #e2dbd2; --paper: #fbf8f3; --mark: #b8860b; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 16.5px/1.5 'Overpass', system-ui, sans-serif; }
+    .top { position: sticky; top: 0; display: flex; gap: 12px; align-items: center; padding: 10px 20px; background: rgba(251, 248, 243, .94); border-bottom: 1px solid var(--rule); }
+    .top a { color: var(--ink); }
+    .top .pdf { margin-left: auto; background: var(--ink); color: var(--paper); text-decoration: none; font-weight: 700; padding: 6px 14px; border-radius: 6px; }
+    main { max-width: 860px; margin: 0 auto; padding: 32px 20px 64px; }
+    h1 { font-size: 34px; margin: 0; }
+    .contact { color: var(--ink-2); margin: 4px 0 18px; }
+    .contact a { color: var(--ink-2); }
+    .summary { font-size: 17.5px; max-width: 70ch; }
+    section { display: grid; grid-template-columns: 170px 1fr; gap: 0 28px; border-top: 2px solid var(--ink); padding: 14px 0 6px; margin-top: 22px; }
+    h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .07em; margin: 4px 0; }
+    .item { padding: 0 0 14px; }
+    .item h3 { font-size: 17px; margin: 0; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .item h3 span { font-weight: 400; color: var(--dim); font-size: 15px; }
+    .item p { margin: 3px 0 0; color: var(--ink-2); }
+    .item a { color: var(--ink); text-underline-offset: 3px; }
+    .new { font-size: 12px; font-weight: 700; color: var(--mark); border: 1px solid var(--mark); border-radius: 3px; padding: 0 4px; margin-left: 6px; }
+    :target { background: #f6ecd0; outline: 6px solid #f6ecd0; }
+    @media (max-width: 640px) { section { grid-template-columns: 1fr; } h1 { font-size: 28px; } }
+  </style>
+</head>
+<body>
+  <div class="top"><a href="index.html#who">← Back to the site</a><a class="pdf" href="resume.pdf" download>Download PDF</a></div>
+  <main>
+    <h1>Kushagra Bhatnagar</h1>
+    <p class="contact">Singapore · <a href="mailto:bhatnagar.kushagra.m@u.nus.edu">bhatnagar.kushagra.m@u.nus.edu</a> · <a href="https://github.com/kushagrab21">github.com/kushagrab21</a> · <a href="https://www.linkedin.com/in/kushagra-bhatnagar-6624b410b">LinkedIn</a></p>
+    <p class="summary">MSc student in Data Science and Machine Learning at the National University of Singapore, with an undergraduate degree in Economics from IIT Kanpur. Past work includes a deployed data analysis agent, a system that turns books into narrated lessons, a text to 3D scene generator, and Python packages on PyPI that run logic as explicit recorded steps, so any result can be replayed and checked. Recent experimental work tested when an AI coding agent can be trusted to judge that its own task is complete.</p>
+
+    <section>
+      <h2>Education</h2>
+      <div>
+        <div class="item"><h3>National University of Singapore <span>Aug 2026 – Dec 2027 (expected)</span></h3><p>MSc, Data Science and Machine Learning</p></div>
+        <div class="item"><h3>IIT Kanpur <span>2021 – 2025</span></h3><p>BS, Economics · CPI 8.8 out of 10 · department rank one in first year · KN Saluja Scholarship · Academic Excellence Awards 2021/22 and 2022/23</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Systems</h2>
+      <div>
+        <div class="item" id="adsp"><h3>ADSP, a data analysis agent (deployed) <span><a href="https://www.youtube.com/watch?v=K23TB9MUVrQ">demo</a></span></h3><p>An AI assistant built into a data analysis platform. It chooses and runs the right analysis steps for a request, can carry out a complete analysis on its own, scores its own results, and logs every action so the work can be reviewed afterwards.</p></div>
+        <div class="item"><h3>Tome, an AI tutor <span><a href="https://youtu.be/3Ndfqpeo_8o">demo</a> · <a href="https://github.com/kushagrab21/tome">code</a></span></h3><p>Upload a book and it produces narrated slide lessons. The book is split into small sections, and for each one the system pulls out the key points, arranges them on slides, and generates the matching narration.</p></div>
+        <div class="item"><h3>Followthrough <span><a href="https://github.com/kushagrab21/followthrough">code</a></span></h3><p>Keeps event documents in step with emails when plans change, with a second AI and plain code checking its work. Top 10 at the AI Tinkerers Singapore × OpenAI hackathon, September 2026.</p></div>
+        <div class="item"><h3>RLang stack, published on PyPI <span><a href="https://pypi.org/project/rlang-compiler/">rlang-compiler</a> · <a href="https://pypi.org/project/semantic-compiler-core/">semantic-compiler-core</a> · <a href="https://pypi.org/project/bor-sdk/">bor-sdk</a></span></h3><p>Three Python packages that turn written rules into programs which run step by step, record each step, and let anyone replay a run to verify the result. Provisional patent filed at the Indian Patent Office, November 2025.</p></div>
+        <div class="item"><h3>Text to 3D</h3><p>Turns a written description into a rendered 3D scene, by converting the text into an intermediate scene format that is then compiled into the final render.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Research and publications</h2>
+      <div>
+        <div class="item"><h3><a href="https://doi.org/10.5281/zenodo.21917996">Where a Coding Agent Decides It Is Finished?</a> <span>Zenodo, Aug 2026<b class="new">NEW</b></span></h3><p>Locates where wrong "done" claims happen: 73 of 74 at one state, across 856 episodes and three models.</p></div>
+        <div class="item"><h3><a href="https://doi.org/10.5281/zenodo.21698264">Who Decides When the Task Is Done?</a> <span>Zenodo, Jul 2026</span></h3><p>Preregistered experiments on whether a coding agent can be trusted to declare its own work complete. Code and data public.</p></div>
+        <div class="item"><h3><a href="https://github.com/kushagrab21/gauntlet">Gauntlet</a> <span>2026</span></h3><p>A benchmark of 452 code repair tasks with machine-verified difficulty and solution properties.</p></div>
+        <div class="item"><h3><a href="https://ieeexplore.ieee.org/document/11211944">Machine Learning Based Prediction of Wireless Fading Distribution Functions</a> <span>IEEE WCAIC 2025</span></h3><p>Best Paper Award.</p></div>
+        <div class="item"><h3><a href="https://doi.org/10.4324/9781003628828-14">Re-imagining ASEAN: Analysing the Trade Effects of India and Japan's Participation in the ASEAN Framework Using a Structural Gravity Model</a> <span>Routledge, 2025</span></h3><p>Book chapter.</p></div>
+        <div class="item"><h3>RAM and BoR <span>Zenodo, 2025</span></h3><p>Two whitepapers on making program execution reproducible and verifiable: <a href="https://doi.org/10.5281/zenodo.17308295">RAM</a>, <a href="https://doi.org/10.5281/zenodo.17525451">BoR</a>.</p></div>
+        <div class="item"><h3><a href="https://www.researchgate.net/publication/340362418_Modeling_and_Predictions_for_COVID_19_Spread_in_India">Modeling and Predictions for COVID 19 Spread in India</a> <span>2020</span></h3><p>Over 50,000 reads.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div>
+        <div class="item"><h3>CIFDAQ · Research Scientist <span>Jul 2025 – Nov 2025</span></h3><p>Built a trading signal framework that models price movement as a system of physical forces. Authored research reports on blockchain activity, staking, and token economics that fed directly into product decisions.</p></div>
+        <div class="item"><h3>Ernst &amp; Young · Government Consulting Intern <span>May 2024 – Jul 2024</span></h3><p>Reviewed how India and five other countries collect balance of payments data and proposed changes to align India's trade reporting with international practice.</p></div>
+        <div class="item"><h3>DesignX · Data Analyst Intern <span>2023</span></h3><p>Analyzed industrial production data using ensemble learning methods to find drivers of performance and operational bottlenecks.</p></div>
+        <div class="item"><h3>TimesPro · Management Consulting Intern <span>2023</span></h3><p>Competitive and pricing analysis for education sector products.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div>
+        <div class="item"><p><b>Programming:</b> Python (NumPy, pandas), SQL, JavaScript, LaTeX</p><p><b>Working with LLMs:</b> building agents with tool calling, retrieval augmented generation, evaluation harnesses</p><p><b>Engineering:</b> git, testing, Docker, Kafka, packaging and publishing</p><p><b>Quantitative methods:</b> statistics, econometrics, causal inference, game theory</p></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

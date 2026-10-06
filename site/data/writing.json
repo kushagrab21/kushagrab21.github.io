@@ -1,0 +1,247 @@
+{
+ "posts": [
+  {
+   "n": 7,
+   "age": "3w",
+   "title": "Built today at the AI Tinkerers Singapore leg of the Agents, Everywhere global hackathon: Followthrough, an agent…",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7504440629138116608/",
+   "topic": "research"
+  },
+  {
+   "n": 11,
+   "age": "1mo",
+   "title": "I have published the second paper in my programme on coding agent reliability. It studies a specific failure: the…",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7493849370098868224/",
+   "topic": "research"
+  },
+  {
+   "n": 15,
+   "age": "1mo",
+   "title": "I am looking for a part time role, 16 hours a week, alongside my MSc in Data Science and Machine Learning at NUS.",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7490624943852781569/",
+   "topic": "study"
+  },
+  {
+   "n": 16,
+   "age": "2mo",
+   "title": "Every time we hear news about how AI is impacting the labour market, we hear the same line, that AI is automating…",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7490275164753043457/",
+   "topic": "ai"
+  },
+  {
+   "n": 17,
+   "age": "2mo",
+   "title": "AI agents often declare a task finished while the work is still wrong ( and this mode of failure recurs in many…",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7488478643313094656/",
+   "topic": "research"
+  },
+  {
+   "n": 27,
+   "age": "6mo",
+   "title": "I’m thrilled to share that I’ve been admitted to the MS in Data Science and Machine Learning program at the National…",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7435551648506236929/",
+   "topic": "study"
+  },
+  {
+   "n": 28,
+   "age": "8mo",
+   "title": "A small learning from working with agents",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7416801061207687168/",
+   "topic": "ai"
+  },
+  {
+   "n": 29,
+   "age": "9mo",
+   "title": "Prompting. RAG. CoT / ToT. Agents. Tool-calling. RLHF. Alignment. Safety. ",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7411716751572316161/",
+   "topic": "ai"
+  },
+  {
+   "n": 30,
+   "age": "9mo",
+   "title": "Why are we so obsessed with training models — and barely talking about prompting?",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7411325076945567744/",
+   "topic": "ai"
+  },
+  {
+   "n": 31,
+   "age": "9mo",
+   "title": "Something subtle is breaking.",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7411041009096294400/",
+   "topic": "ai"
+  },
+  {
+   "n": 32,
+   "age": "9mo",
+   "title": "Something important has changed quietly over the last year.",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7410610849523879937/",
+   "topic": "ai"
+  },
+  {
+   "n": 33,
+   "age": "9mo",
+   "title": "This keeps showing up in prompting, RAG, agents, LLMOps, MLOps — everywhere.",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7410235457546125312/",
+   "topic": "ai"
+  },
+  {
+   "n": 34,
+   "age": "9mo",
+   "title": "Humans and LLMs both use language — but they approach it from opposite directions.",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7409937384231956480/",
+   "topic": "ai"
+  },
+  {
+   "n": 35,
+   "age": "9mo",
+   "title": "The Two Kinds of Trust We Keep Confusing",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7408430836758376449/",
+   "topic": "ai"
+  },
+  {
+   "n": 37,
+   "age": "10mo",
+   "title": "A lot of bugs I’ve seen in real projects come from one simple issue:",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7399772463812755456/",
+   "topic": "ai"
+  },
+  {
+   "n": 38,
+   "age": "10mo",
+   "title": "I’ve been noticing a pattern in how AI behaves on everyday tasks.",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7399074994548293632/",
+   "topic": "ai"
+  },
+  {
+   "n": 39,
+   "age": "10mo",
+   "title": "For years, “prompt engineering” looked like a set of tricks —",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7398681044230639617/",
+   "topic": "ai"
+  },
+  {
+   "n": 40,
+   "age": "10mo",
+   "title": "Three core components of the Deterministic Trust Stack are now live on PyPI.",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7398364279717924865/",
+   "topic": "provable"
+  },
+  {
+   "n": 41,
+   "age": "10mo",
+   "title": "AI models hallucinate. What if AI decisions came with cryptographic proofs of correctness?",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7398353474859638785/",
+   "topic": "provable"
+  },
+  {
+   "n": 42,
+   "age": "10mo",
+   "title": "“When an AI Thinks x + 1 Instead of x — and You Catch It Instantly”",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7394335865491161088/",
+   "topic": "provable"
+  },
+  {
+   "n": 43,
+   "age": "10mo",
+   "title": "From Proof to Practice: Mapping the Next Frontiers of Deterministic AI",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7394330736121511936/",
+   "topic": "provable"
+  },
+  {
+   "n": 47,
+   "age": "10mo",
+   "title": "AI Doesn’t Need to Be Bigger. It Needs to Be Provable.",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7392631117830488064/",
+   "topic": "provable"
+  },
+  {
+   "n": 48,
+   "age": "10mo",
+   "title": "What if AI could prove it was right — not just sound convincing?",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7392630405352394752/",
+   "topic": "provable"
+  },
+  {
+   "n": 50,
+   "age": "10mo",
+   "title": "The AI industry is quietly building a bubble of uncertainty.",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7392497334825238529/",
+   "topic": "provable"
+  },
+  {
+   "n": 52,
+   "age": "10mo",
+   "title": "For years we’ve verified data. For the first time, we can verify reasoning.",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7392246178588835840/",
+   "topic": "provable"
+  },
+  {
+   "n": 59,
+   "age": "11mo",
+   "title": "When blockchain first appeared, it didn’t promise disruption.",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7391530301153333249/",
+   "topic": "provable"
+  },
+  {
+   "n": 60,
+   "age": "11mo",
+   "title": "AUTOMATION MADE FINANCE FASTER — NOT TRUER.",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7390016239630299136/",
+   "topic": "provable"
+  },
+  {
+   "n": 62,
+   "age": "11mo",
+   "title": "Proof-of-Correctness for Deterministic AI in Audit and Compliance",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7387383144624246784/",
+   "topic": "provable"
+  },
+  {
+   "n": 63,
+   "age": "11mo",
+   "title": "AI can create — but it can’t prove.",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7387345530475081728/",
+   "topic": "provable"
+  },
+  {
+   "n": 66,
+   "age": "11mo",
+   "title": "Exploring a deterministic path for AI — The RAM Cognitive Architecture",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7382149184495370240/",
+   "topic": "provable"
+  },
+  {
+   "n": 67,
+   "age": "1yr",
+   "title": "A new initiative in the field of quantum communications.....please have a look at it.....",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7379781890066640898/",
+   "topic": "older"
+  },
+  {
+   "n": 68,
+   "age": "1yr",
+   "title": "A Further Exploration: New Results in Economics, Finance, and Machine Learning",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7278389227468259329/",
+   "topic": "older"
+  },
+  {
+   "n": 69,
+   "age": "1yr",
+   "title": "A New AI Paradigm: Merging Generative Models with Formal, Axiomatic Reasoning",
+   "url": "https://www.linkedin.com/feed/update/urn:li:activity:7278027827633942528/",
+   "topic": "older"
+  }
+ ],
+ "articles": [
+  {
+   "title": "The Entry Level Automation Paradox",
+   "date": "August 4, 2026",
+   "url": "https://www.linkedin.com/pulse/entry-level-automation-paradox-kushagra-bhatnagar-r8wue/"
+  },
+  {
+   "title": "Beyond the AI Hype: Building Intelligence the World Can Actually Trust",
+   "date": "November 8, 2025",
+   "url": "https://www.linkedin.com/pulse/beyond-ai-hype-building-intelligence-world-can-trust-why-bhatnagar-6mpwf/"
+  }
+ ]
+}

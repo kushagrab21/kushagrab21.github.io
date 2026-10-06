@@ -1,0 +1,3139 @@
+{
+  "metadata": {
+    "kind": "Classroom demonstration dataset; not a real-world education finding",
+    "source_filename": "adsp_classroom_sample.csv",
+    "source_sha256": "9906075bda95c512c5426fa183ae356aafd58f0c0b6ae083f9786633a0ed8711",
+    "calculated_on": "2026-10-05",
+    "operation": "Local raw-data calculation, not an ADSP agent replay",
+    "filter_rule": "Known attendance strictly below threshold; missing attendance excluded",
+    "baseline_rule": "All rows, including missing attendance; subgroup overlaps baseline",
+    "field_map": {
+      "id": "student_id",
+      "attendance": "attendance_pct",
+      "maths": "math_score",
+      "english": "english_score"
+    }
+  },
+  "rows": [
+    {
+      "id": "S1001",
+      "attendance": 55.6,
+      "maths": 44.0,
+      "english": 55.0
+    },
+    {
+      "id": "S1002",
+      "attendance": 84.4,
+      "maths": 57.0,
+      "english": 66.0
+    },
+    {
+      "id": "S1003",
+      "attendance": 74.4,
+      "maths": 29.0,
+      "english": 56.0
+    },
+    {
+      "id": "S1004",
+      "attendance": 85.9,
+      "maths": 56.0,
+      "english": 45.0
+    },
+    {
+      "id": "S1005",
+      "attendance": 78.3,
+      "maths": 50.0,
+      "english": 77.0
+    },
+    {
+      "id": "S1006",
+      "attendance": 76.8,
+      "maths": 58.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1007",
+      "attendance": 70.6,
+      "maths": 38.0,
+      "english": 57.0
+    },
+    {
+      "id": "S1008",
+      "attendance": 97.2,
+      "maths": 66.0,
+      "english": 70.0
+    },
+    {
+      "id": "S1009",
+      "attendance": 93.9,
+      "maths": 73.0,
+      "english": 75.0
+    },
+    {
+      "id": "S1010",
+      "attendance": 60.8,
+      "maths": 59.0,
+      "english": 83.0
+    },
+    {
+      "id": "S1011",
+      "attendance": 70.5,
+      "maths": 58.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1012",
+      "attendance": 62.9,
+      "maths": 46.0,
+      "english": 58.0
+    },
+    {
+      "id": "S1013",
+      "attendance": 83.2,
+      "maths": 78.0,
+      "english": 82.0
+    },
+    {
+      "id": "S1014",
+      "attendance": 83.0,
+      "maths": 48.0,
+      "english": 50.0
+    },
+    {
+      "id": "S1015",
+      "attendance": 78.7,
+      "maths": 70.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1016",
+      "attendance": 79.1,
+      "maths": 42.0,
+      "english": 52.0
+    },
+    {
+      "id": "S1017",
+      "attendance": 92.0,
+      "maths": 57.0,
+      "english": 57.0
+    },
+    {
+      "id": "S1018",
+      "attendance": 48.6,
+      "maths": 37.0,
+      "english": 48.0
+    },
+    {
+      "id": "S1019",
+      "attendance": 84.3,
+      "maths": 51.0,
+      "english": 57.0
+    },
+    {
+      "id": "S1020",
+      "attendance": 87.2,
+      "maths": 68.0,
+      "english": 73.0
+    },
+    {
+      "id": "S1021",
+      "attendance": 82.5,
+      "maths": 76.0,
+      "english": 76.0
+    },
+    {
+      "id": "S1022",
+      "attendance": 21.6,
+      "maths": 14.0,
+      "english": 50.0
+    },
+    {
+      "id": "S1023",
+      "attendance": 88.5,
+      "maths": 52.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1024",
+      "attendance": 77.9,
+      "maths": 50.0,
+      "english": 67.0
+    },
+    {
+      "id": "S1025",
+      "attendance": 90.6,
+      "maths": 50.0,
+      "english": 67.0
+    },
+    {
+      "id": "S1026",
+      "attendance": 85.6,
+      "maths": 51.0,
+      "english": 62.0
+    },
+    {
+      "id": "S1027",
+      "attendance": 96.6,
+      "maths": 51.0,
+      "english": 72.0
+    },
+    {
+      "id": "S1028",
+      "attendance": 55.1,
+      "maths": 36.0,
+      "english": 18.0
+    },
+    {
+      "id": "S1029",
+      "attendance": 91.0,
+      "maths": 68.0,
+      "english": 57.0
+    },
+    {
+      "id": "S1030",
+      "attendance": 89.9,
+      "maths": 60.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1031",
+      "attendance": 82.2,
+      "maths": 42.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1032",
+      "attendance": 86.6,
+      "maths": 51.0,
+      "english": 41.0
+    },
+    {
+      "id": "S1033",
+      "attendance": 61.3,
+      "maths": 33.0,
+      "english": 64.0
+    },
+    {
+      "id": "S1034",
+      "attendance": 63.6,
+      "maths": 71.0,
+      "english": 83.0
+    },
+    {
+      "id": "S1035",
+      "attendance": 67.9,
+      "maths": 39.0,
+      "english": 46.0
+    },
+    {
+      "id": "S1036",
+      "attendance": 79.3,
+      "maths": 76.0,
+      "english": 80.0
+    },
+    {
+      "id": "S1037",
+      "attendance": 84.7,
+      "maths": 61.0,
+      "english": 67.0
+    },
+    {
+      "id": "S1038",
+      "attendance": 86.0,
+      "maths": 66.0,
+      "english": 55.0
+    },
+    {
+      "id": "S1039",
+      "attendance": 85.2,
+      "maths": 32.0,
+      "english": 59.0
+    },
+    {
+      "id": "S1040",
+      "attendance": 72.5,
+      "maths": 56.0,
+      "english": 70.0
+    },
+    {
+      "id": "S1041",
+      "attendance": 89.5,
+      "maths": 80.0,
+      "english": 68.0
+    },
+    {
+      "id": "S1042",
+      "attendance": 92.8,
+      "maths": 43.0,
+      "english": 51.0
+    },
+    {
+      "id": "S1043",
+      "attendance": 91.6,
+      "maths": 64.0,
+      "english": 62.0
+    },
+    {
+      "id": "S1044",
+      "attendance": 78.9,
+      "maths": 57.0,
+      "english": 64.0
+    },
+    {
+      "id": "S1045",
+      "attendance": 82.4,
+      "maths": 62.0,
+      "english": 79.0
+    },
+    {
+      "id": "S1046",
+      "attendance": 94.4,
+      "maths": 74.0,
+      "english": 74.0
+    },
+    {
+      "id": "S1047",
+      "attendance": 73.2,
+      "maths": 46.0,
+      "english": 75.0
+    },
+    {
+      "id": "S1048",
+      "attendance": 81.8,
+      "maths": 64.0,
+      "english": 78.0
+    },
+    {
+      "id": "S1049",
+      "attendance": 75.3,
+      "maths": 43.0,
+      "english": 45.0
+    },
+    {
+      "id": "S1050",
+      "attendance": 98.9,
+      "maths": 81.0,
+      "english": 86.0
+    },
+    {
+      "id": "S1051",
+      "attendance": 84.2,
+      "maths": 67.0,
+      "english": 69.0
+    },
+    {
+      "id": "S1052",
+      "attendance": 69.2,
+      "maths": 32.0,
+      "english": 42.0
+    },
+    {
+      "id": "S1053",
+      "attendance": 54.5,
+      "maths": 38.0,
+      "english": 51.0
+    },
+    {
+      "id": "S1054",
+      "attendance": 83.0,
+      "maths": 63.0,
+      "english": 65.0
+    },
+    {
+      "id": "S1055",
+      "attendance": 70.9,
+      "maths": 76.0,
+      "english": 99.0
+    },
+    {
+      "id": "S1056",
+      "attendance": 59.8,
+      "maths": 54.0,
+      "english": 47.0
+    },
+    {
+      "id": "S1057",
+      "attendance": 64.2,
+      "maths": 63.0,
+      "english": 69.0
+    },
+    {
+      "id": "S1058",
+      "attendance": 77.1,
+      "maths": 54.0,
+      "english": 70.0
+    },
+    {
+      "id": "S1059",
+      "attendance": 21.7,
+      "maths": 54.0,
+      "english": 74.0
+    },
+    {
+      "id": "S1060",
+      "attendance": 73.1,
+      "maths": 61.0,
+      "english": 60.0
+    },
+    {
+      "id": "S1061",
+      "attendance": 91.3,
+      "maths": 71.0,
+      "english": 72.0
+    },
+    {
+      "id": "S1062",
+      "attendance": 96.2,
+      "maths": 70.0,
+      "english": 80.0
+    },
+    {
+      "id": "S1063",
+      "attendance": 69.2,
+      "maths": 29.0,
+      "english": 67.0
+    },
+    {
+      "id": "S1064",
+      "attendance": 77.3,
+      "maths": 52.0,
+      "english": 56.0
+    },
+    {
+      "id": "S1065",
+      "attendance": 44.7,
+      "maths": 55.0,
+      "english": 77.0
+    },
+    {
+      "id": "S1066",
+      "attendance": 76.9,
+      "maths": 35.0,
+      "english": 45.0
+    },
+    {
+      "id": "S1067",
+      "attendance": 66.3,
+      "maths": 58.0,
+      "english": 81.0
+    },
+    {
+      "id": "S1068",
+      "attendance": 83.8,
+      "maths": 48.0,
+      "english": 54.0
+    },
+    {
+      "id": "S1069",
+      "attendance": 91.2,
+      "maths": 76.0,
+      "english": 87.0
+    },
+    {
+      "id": "S1070",
+      "attendance": 99.5,
+      "maths": 85.0,
+      "english": 78.0
+    },
+    {
+      "id": "S1071",
+      "attendance": 81.4,
+      "maths": 44.0,
+      "english": 73.0
+    },
+    {
+      "id": "S1072",
+      "attendance": 82.8,
+      "maths": 51.0,
+      "english": 58.0
+    },
+    {
+      "id": "S1073",
+      "attendance": 84.5,
+      "maths": 63.0,
+      "english": 72.0
+    },
+    {
+      "id": "S1074",
+      "attendance": 62.2,
+      "maths": 44.0,
+      "english": 71.0
+    },
+    {
+      "id": "S1075",
+      "attendance": 69.7,
+      "maths": 59.0,
+      "english": 90.0
+    },
+    {
+      "id": "S1076",
+      "attendance": 90.5,
+      "maths": 77.0,
+      "english": 62.0
+    },
+    {
+      "id": "S1077",
+      "attendance": 83.0,
+      "maths": 76.0,
+      "english": 85.0
+    },
+    {
+      "id": "S1078",
+      "attendance": 66.3,
+      "maths": 50.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1079",
+      "attendance": 81.0,
+      "maths": 41.0,
+      "english": 69.0
+    },
+    {
+      "id": "S1080",
+      "attendance": 82.4,
+      "maths": 43.0,
+      "english": 46.0
+    },
+    {
+      "id": "S1081",
+      "attendance": 77.7,
+      "maths": 65.0,
+      "english": 76.0
+    },
+    {
+      "id": "S1082",
+      "attendance": 95.0,
+      "maths": 62.0,
+      "english": 54.0
+    },
+    {
+      "id": "S1083",
+      "attendance": 91.2,
+      "maths": 57.0,
+      "english": 49.0
+    },
+    {
+      "id": "S1084",
+      "attendance": 93.9,
+      "maths": 95.0,
+      "english": 82.0
+    },
+    {
+      "id": "S1085",
+      "attendance": 91.3,
+      "maths": 66.0,
+      "english": 58.0
+    },
+    {
+      "id": "S1086",
+      "attendance": 77.4,
+      "maths": 24.0,
+      "english": 52.0
+    },
+    {
+      "id": "S1087",
+      "attendance": 64.0,
+      "maths": 52.0,
+      "english": 62.0
+    },
+    {
+      "id": "S1088",
+      "attendance": 81.4,
+      "maths": 42.0,
+      "english": 54.0
+    },
+    {
+      "id": "S1089",
+      "attendance": 88.8,
+      "maths": 68.0,
+      "english": 76.0
+    },
+    {
+      "id": "S1090",
+      "attendance": 96.2,
+      "maths": 85.0,
+      "english": 92.0
+    },
+    {
+      "id": "S1091",
+      "attendance": 54.3,
+      "maths": 47.0,
+      "english": 56.0
+    },
+    {
+      "id": "S1092",
+      "attendance": 88.3,
+      "maths": 63.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1093",
+      "attendance": 66.5,
+      "maths": 41.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1094",
+      "attendance": 72.3,
+      "maths": 56.0,
+      "english": 77.0
+    },
+    {
+      "id": "S1095",
+      "attendance": 90.9,
+      "maths": 71.0,
+      "english": 81.0
+    },
+    {
+      "id": "S1096",
+      "attendance": 89.0,
+      "maths": 69.0,
+      "english": 88.0
+    },
+    {
+      "id": "S1097",
+      "attendance": 71.6,
+      "maths": 52.0,
+      "english": 59.0
+    },
+    {
+      "id": "S1098",
+      "attendance": 95.1,
+      "maths": 83.0,
+      "english": 78.0
+    },
+    {
+      "id": "S1099",
+      "attendance": 71.0,
+      "maths": 38.0,
+      "english": 41.0
+    },
+    {
+      "id": "S1100",
+      "attendance": 64.7,
+      "maths": 55.0,
+      "english": 72.0
+    },
+    {
+      "id": "S1101",
+      "attendance": 79.7,
+      "maths": 81.0,
+      "english": 83.0
+    },
+    {
+      "id": "S1102",
+      "attendance": 45.7,
+      "maths": 60.0,
+      "english": 66.0
+    },
+    {
+      "id": "S1103",
+      "attendance": 70.9,
+      "maths": 44.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1104",
+      "attendance": 50.6,
+      "maths": 44.0,
+      "english": 68.0
+    },
+    {
+      "id": "S1105",
+      "attendance": 68.3,
+      "maths": 43.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1106",
+      "attendance": 91.8,
+      "maths": 51.0,
+      "english": 75.0
+    },
+    {
+      "id": "S1107",
+      "attendance": 98.4,
+      "maths": 79.0,
+      "english": 79.0
+    },
+    {
+      "id": "S1108",
+      "attendance": 92.6,
+      "maths": 52.0,
+      "english": 38.0
+    },
+    {
+      "id": "S1109",
+      "attendance": 95.2,
+      "maths": 71.0,
+      "english": 66.0
+    },
+    {
+      "id": "S1110",
+      "attendance": 85.2,
+      "maths": 64.0,
+      "english": 67.0
+    },
+    {
+      "id": "S1111",
+      "attendance": 86.5,
+      "maths": 67.0,
+      "english": 75.0
+    },
+    {
+      "id": "S1112",
+      "attendance": 95.7,
+      "maths": 64.0,
+      "english": 62.0
+    },
+    {
+      "id": "S1113",
+      "attendance": 28.0,
+      "maths": 52.0,
+      "english": 71.0
+    },
+    {
+      "id": "S1114",
+      "attendance": 58.8,
+      "maths": 58.0,
+      "english": 59.0
+    },
+    {
+      "id": "S1115",
+      "attendance": 87.8,
+      "maths": 67.0,
+      "english": 73.0
+    },
+    {
+      "id": "S1116",
+      "attendance": 96.2,
+      "maths": 74.0,
+      "english": 71.0
+    },
+    {
+      "id": "S1117",
+      "attendance": 83.7,
+      "maths": 62.0,
+      "english": 90.0
+    },
+    {
+      "id": "S1118",
+      "attendance": 77.8,
+      "maths": 33.0,
+      "english": 55.0
+    },
+    {
+      "id": "S1119",
+      "attendance": 97.2,
+      "maths": 86.0,
+      "english": 79.0
+    },
+    {
+      "id": "S1120",
+      "attendance": 63.1,
+      "maths": 60.0,
+      "english": 64.0
+    },
+    {
+      "id": "S1121",
+      "attendance": null,
+      "maths": 56.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1122",
+      "attendance": 43.5,
+      "maths": 32.0,
+      "english": 55.0
+    },
+    {
+      "id": "S1123",
+      "attendance": 84.0,
+      "maths": 33.0,
+      "english": 62.0
+    },
+    {
+      "id": "S1124",
+      "attendance": 68.0,
+      "maths": 51.0,
+      "english": 38.0
+    },
+    {
+      "id": "S1125",
+      "attendance": 69.3,
+      "maths": 52.0,
+      "english": 56.0
+    },
+    {
+      "id": "S1126",
+      "attendance": 82.2,
+      "maths": 52.0,
+      "english": 72.0
+    },
+    {
+      "id": "S1127",
+      "attendance": 39.2,
+      "maths": 30.0,
+      "english": 59.0
+    },
+    {
+      "id": "S1128",
+      "attendance": 93.6,
+      "maths": 79.0,
+      "english": 69.0
+    },
+    {
+      "id": "S1129",
+      "attendance": 83.2,
+      "maths": 64.0,
+      "english": 71.0
+    },
+    {
+      "id": "S1130",
+      "attendance": 64.9,
+      "maths": 40.0,
+      "english": 69.0
+    },
+    {
+      "id": "S1131",
+      "attendance": 76.0,
+      "maths": 53.0,
+      "english": 54.0
+    },
+    {
+      "id": "S1132",
+      "attendance": 40.1,
+      "maths": 23.0,
+      "english": 38.0
+    },
+    {
+      "id": "S1133",
+      "attendance": 77.5,
+      "maths": 56.0,
+      "english": 51.0
+    },
+    {
+      "id": "S1134",
+      "attendance": 69.9,
+      "maths": 49.0,
+      "english": 49.0
+    },
+    {
+      "id": "S1135",
+      "attendance": 60.1,
+      "maths": 40.0,
+      "english": 70.0
+    },
+    {
+      "id": "S1136",
+      "attendance": 84.6,
+      "maths": 67.0,
+      "english": 56.0
+    },
+    {
+      "id": "S1137",
+      "attendance": 35.5,
+      "maths": 33.0,
+      "english": 65.0
+    },
+    {
+      "id": "S1138",
+      "attendance": 75.8,
+      "maths": 48.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1139",
+      "attendance": 68.3,
+      "maths": 59.0,
+      "english": 49.0
+    },
+    {
+      "id": "S1140",
+      "attendance": 75.0,
+      "maths": 49.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1141",
+      "attendance": 93.9,
+      "maths": 82.0,
+      "english": 73.0
+    },
+    {
+      "id": "S1142",
+      "attendance": 62.4,
+      "maths": 63.0,
+      "english": 73.0
+    },
+    {
+      "id": "S1143",
+      "attendance": 89.9,
+      "maths": 42.0,
+      "english": 76.0
+    },
+    {
+      "id": "S1144",
+      "attendance": 83.0,
+      "maths": 50.0,
+      "english": 48.0
+    },
+    {
+      "id": "S1145",
+      "attendance": 63.7,
+      "maths": 37.0,
+      "english": 59.0
+    },
+    {
+      "id": "S1146",
+      "attendance": 79.7,
+      "maths": 41.0,
+      "english": 41.0
+    },
+    {
+      "id": "S1147",
+      "attendance": 85.4,
+      "maths": 58.0,
+      "english": 74.0
+    },
+    {
+      "id": "S1148",
+      "attendance": 86.7,
+      "maths": 55.0,
+      "english": 79.0
+    },
+    {
+      "id": "S1149",
+      "attendance": 82.2,
+      "maths": 51.0,
+      "english": 53.0
+    },
+    {
+      "id": "S1150",
+      "attendance": 88.8,
+      "maths": 48.0,
+      "english": 71.0
+    },
+    {
+      "id": "S1151",
+      "attendance": 75.1,
+      "maths": 52.0,
+      "english": 76.0
+    },
+    {
+      "id": "S1152",
+      "attendance": 86.0,
+      "maths": 63.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1153",
+      "attendance": 69.9,
+      "maths": 57.0,
+      "english": 45.0
+    },
+    {
+      "id": "S1154",
+      "attendance": 81.8,
+      "maths": 45.0,
+      "english": 53.0
+    },
+    {
+      "id": "S1155",
+      "attendance": 78.7,
+      "maths": 44.0,
+      "english": 66.0
+    },
+    {
+      "id": "S1156",
+      "attendance": 73.6,
+      "maths": 60.0,
+      "english": 68.0
+    },
+    {
+      "id": "S1157",
+      "attendance": 69.0,
+      "maths": 43.0,
+      "english": 53.0
+    },
+    {
+      "id": "S1158",
+      "attendance": 34.1,
+      "maths": 33.0,
+      "english": 58.0
+    },
+    {
+      "id": "S1159",
+      "attendance": 88.3,
+      "maths": 54.0,
+      "english": 54.0
+    },
+    {
+      "id": "S1160",
+      "attendance": 50.3,
+      "maths": 30.0,
+      "english": 52.0
+    },
+    {
+      "id": "S1161",
+      "attendance": 65.7,
+      "maths": 52.0,
+      "english": 65.0
+    },
+    {
+      "id": "S1162",
+      "attendance": 73.1,
+      "maths": 77.0,
+      "english": 98.0
+    },
+    {
+      "id": "S1163",
+      "attendance": 66.8,
+      "maths": 48.0,
+      "english": 48.0
+    },
+    {
+      "id": "S1164",
+      "attendance": 79.8,
+      "maths": 70.0,
+      "english": 88.0
+    },
+    {
+      "id": "S1165",
+      "attendance": 88.6,
+      "maths": 59.0,
+      "english": 65.0
+    },
+    {
+      "id": "S1166",
+      "attendance": 76.6,
+      "maths": 31.0,
+      "english": 48.0
+    },
+    {
+      "id": "S1167",
+      "attendance": 63.2,
+      "maths": 62.0,
+      "english": 67.0
+    },
+    {
+      "id": "S1168",
+      "attendance": 69.8,
+      "maths": 57.0,
+      "english": 66.0
+    },
+    {
+      "id": "S1169",
+      "attendance": 91.8,
+      "maths": 57.0,
+      "english": 41.0
+    },
+    {
+      "id": "S1170",
+      "attendance": 33.3,
+      "maths": 57.0,
+      "english": 81.0
+    },
+    {
+      "id": "S1171",
+      "attendance": 70.7,
+      "maths": 32.0,
+      "english": 35.0
+    },
+    {
+      "id": "S1172",
+      "attendance": null,
+      "maths": 41.0,
+      "english": 59.0
+    },
+    {
+      "id": "S1173",
+      "attendance": 82.6,
+      "maths": 59.0,
+      "english": 75.0
+    },
+    {
+      "id": "S1174",
+      "attendance": 70.9,
+      "maths": 46.0,
+      "english": 51.0
+    },
+    {
+      "id": "S1175",
+      "attendance": 69.7,
+      "maths": 49.0,
+      "english": 69.0
+    },
+    {
+      "id": "S1176",
+      "attendance": 63.3,
+      "maths": 48.0,
+      "english": 68.0
+    },
+    {
+      "id": "S1177",
+      "attendance": 54.3,
+      "maths": 45.0,
+      "english": 82.0
+    },
+    {
+      "id": "S1178",
+      "attendance": 56.2,
+      "maths": 55.0,
+      "english": 66.0
+    },
+    {
+      "id": "S1179",
+      "attendance": 84.0,
+      "maths": 61.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1180",
+      "attendance": 67.8,
+      "maths": 34.0,
+      "english": 36.0
+    },
+    {
+      "id": "S1181",
+      "attendance": 84.3,
+      "maths": 57.0,
+      "english": 70.0
+    },
+    {
+      "id": "S1182",
+      "attendance": 92.6,
+      "maths": 81.0,
+      "english": 87.0
+    },
+    {
+      "id": "S1183",
+      "attendance": 63.2,
+      "maths": 58.0,
+      "english": 73.0
+    },
+    {
+      "id": "S1184",
+      "attendance": 97.3,
+      "maths": 65.0,
+      "english": 84.0
+    },
+    {
+      "id": "S1185",
+      "attendance": 79.3,
+      "maths": 32.0,
+      "english": 54.0
+    },
+    {
+      "id": "S1186",
+      "attendance": 75.7,
+      "maths": 57.0,
+      "english": 65.0
+    },
+    {
+      "id": "S1187",
+      "attendance": 74.2,
+      "maths": 41.0,
+      "english": 60.0
+    },
+    {
+      "id": "S1188",
+      "attendance": 81.2,
+      "maths": 55.0,
+      "english": 58.0
+    },
+    {
+      "id": "S1189",
+      "attendance": 80.9,
+      "maths": 63.0,
+      "english": 76.0
+    },
+    {
+      "id": "S1190",
+      "attendance": 76.0,
+      "maths": 52.0,
+      "english": 64.0
+    },
+    {
+      "id": "S1191",
+      "attendance": 88.4,
+      "maths": 57.0,
+      "english": 71.0
+    },
+    {
+      "id": "S1192",
+      "attendance": 84.0,
+      "maths": 31.0,
+      "english": 43.0
+    },
+    {
+      "id": "S1193",
+      "attendance": 61.7,
+      "maths": 47.0,
+      "english": 46.0
+    },
+    {
+      "id": "S1194",
+      "attendance": 78.7,
+      "maths": 55.0,
+      "english": 58.0
+    },
+    {
+      "id": "S1195",
+      "attendance": 87.2,
+      "maths": 58.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1196",
+      "attendance": 63.1,
+      "maths": 40.0,
+      "english": 35.0
+    },
+    {
+      "id": "S1197",
+      "attendance": 71.2,
+      "maths": 67.0,
+      "english": 77.0
+    },
+    {
+      "id": "S1198",
+      "attendance": 63.9,
+      "maths": 45.0,
+      "english": 57.0
+    },
+    {
+      "id": "S1199",
+      "attendance": 63.1,
+      "maths": 48.0,
+      "english": 49.0
+    },
+    {
+      "id": "S1200",
+      "attendance": 89.7,
+      "maths": 59.0,
+      "english": 48.0
+    },
+    {
+      "id": "S1201",
+      "attendance": 85.0,
+      "maths": 77.0,
+      "english": 92.0
+    },
+    {
+      "id": "S1202",
+      "attendance": 98.9,
+      "maths": 87.0,
+      "english": 97.0
+    },
+    {
+      "id": "S1203",
+      "attendance": 73.9,
+      "maths": 63.0,
+      "english": 65.0
+    },
+    {
+      "id": "S1204",
+      "attendance": 87.3,
+      "maths": 60.0,
+      "english": 71.0
+    },
+    {
+      "id": "S1205",
+      "attendance": 71.5,
+      "maths": 52.0,
+      "english": 72.0
+    },
+    {
+      "id": "S1206",
+      "attendance": 94.4,
+      "maths": 73.0,
+      "english": 65.0
+    },
+    {
+      "id": "S1207",
+      "attendance": 73.9,
+      "maths": 47.0,
+      "english": 80.0
+    },
+    {
+      "id": "S1208",
+      "attendance": 93.4,
+      "maths": 92.0,
+      "english": 70.0
+    },
+    {
+      "id": "S1209",
+      "attendance": 95.7,
+      "maths": 76.0,
+      "english": 76.0
+    },
+    {
+      "id": "S1210",
+      "attendance": 80.1,
+      "maths": 56.0,
+      "english": 55.0
+    },
+    {
+      "id": "S1211",
+      "attendance": 55.6,
+      "maths": 50.0,
+      "english": 70.0
+    },
+    {
+      "id": "S1212",
+      "attendance": 87.7,
+      "maths": 67.0,
+      "english": 60.0
+    },
+    {
+      "id": "S1213",
+      "attendance": 83.9,
+      "maths": 74.0,
+      "english": 79.0
+    },
+    {
+      "id": "S1214",
+      "attendance": 50.3,
+      "maths": 27.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1215",
+      "attendance": 84.0,
+      "maths": 55.0,
+      "english": 77.0
+    },
+    {
+      "id": "S1216",
+      "attendance": 42.9,
+      "maths": 40.0,
+      "english": 57.0
+    },
+    {
+      "id": "S1217",
+      "attendance": 48.6,
+      "maths": 25.0,
+      "english": 70.0
+    },
+    {
+      "id": "S1218",
+      "attendance": 21.3,
+      "maths": 35.0,
+      "english": 54.0
+    },
+    {
+      "id": "S1219",
+      "attendance": 62.3,
+      "maths": 48.0,
+      "english": 70.0
+    },
+    {
+      "id": "S1220",
+      "attendance": 81.2,
+      "maths": 57.0,
+      "english": 53.0
+    },
+    {
+      "id": "S1221",
+      "attendance": 87.4,
+      "maths": 57.0,
+      "english": 53.0
+    },
+    {
+      "id": "S1222",
+      "attendance": 73.6,
+      "maths": 48.0,
+      "english": 56.0
+    },
+    {
+      "id": "S1223",
+      "attendance": 88.9,
+      "maths": 70.0,
+      "english": 79.0
+    },
+    {
+      "id": "S1224",
+      "attendance": 93.0,
+      "maths": 72.0,
+      "english": 83.0
+    },
+    {
+      "id": "S1225",
+      "attendance": 95.5,
+      "maths": 64.0,
+      "english": 64.0
+    },
+    {
+      "id": "S1226",
+      "attendance": 78.9,
+      "maths": 67.0,
+      "english": 70.0
+    },
+    {
+      "id": "S1227",
+      "attendance": 64.3,
+      "maths": 31.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1228",
+      "attendance": 63.0,
+      "maths": 50.0,
+      "english": 62.0
+    },
+    {
+      "id": "S1229",
+      "attendance": 97.3,
+      "maths": 67.0,
+      "english": 58.0
+    },
+    {
+      "id": "S1230",
+      "attendance": 90.3,
+      "maths": 56.0,
+      "english": 49.0
+    },
+    {
+      "id": "S1231",
+      "attendance": 66.7,
+      "maths": 40.0,
+      "english": 49.0
+    },
+    {
+      "id": "S1232",
+      "attendance": 87.8,
+      "maths": 62.0,
+      "english": 65.0
+    },
+    {
+      "id": "S1233",
+      "attendance": 70.1,
+      "maths": 45.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1234",
+      "attendance": 76.5,
+      "maths": 43.0,
+      "english": 56.0
+    },
+    {
+      "id": "S1235",
+      "attendance": 83.4,
+      "maths": 49.0,
+      "english": 62.0
+    },
+    {
+      "id": "S1236",
+      "attendance": null,
+      "maths": 44.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1237",
+      "attendance": 92.7,
+      "maths": 82.0,
+      "english": 62.0
+    },
+    {
+      "id": "S1238",
+      "attendance": 72.9,
+      "maths": 55.0,
+      "english": 38.0
+    },
+    {
+      "id": "S1239",
+      "attendance": 86.1,
+      "maths": 59.0,
+      "english": 62.0
+    },
+    {
+      "id": "S1240",
+      "attendance": 38.4,
+      "maths": 34.0,
+      "english": 48.0
+    },
+    {
+      "id": "S1241",
+      "attendance": 92.7,
+      "maths": 71.0,
+      "english": 55.0
+    },
+    {
+      "id": "S1242",
+      "attendance": 75.5,
+      "maths": 44.0,
+      "english": 47.0
+    },
+    {
+      "id": "S1243",
+      "attendance": 92.0,
+      "maths": 64.0,
+      "english": 67.0
+    },
+    {
+      "id": "S1244",
+      "attendance": null,
+      "maths": 65.0,
+      "english": 60.0
+    },
+    {
+      "id": "S1245",
+      "attendance": 72.2,
+      "maths": 53.0,
+      "english": 72.0
+    },
+    {
+      "id": "S1246",
+      "attendance": 83.1,
+      "maths": 77.0,
+      "english": 72.0
+    },
+    {
+      "id": "S1247",
+      "attendance": 50.8,
+      "maths": 29.0,
+      "english": 36.0
+    },
+    {
+      "id": "S1248",
+      "attendance": 65.6,
+      "maths": 49.0,
+      "english": 46.0
+    },
+    {
+      "id": "S1249",
+      "attendance": 40.3,
+      "maths": 40.0,
+      "english": 62.0
+    },
+    {
+      "id": "S1250",
+      "attendance": 34.7,
+      "maths": 39.0,
+      "english": 67.0
+    },
+    {
+      "id": "S1251",
+      "attendance": 80.7,
+      "maths": 50.0,
+      "english": 67.0
+    },
+    {
+      "id": "S1252",
+      "attendance": 43.9,
+      "maths": 40.0,
+      "english": 74.0
+    },
+    {
+      "id": "S1253",
+      "attendance": 87.0,
+      "maths": 64.0,
+      "english": 74.0
+    },
+    {
+      "id": "S1254",
+      "attendance": 75.5,
+      "maths": 57.0,
+      "english": 68.0
+    },
+    {
+      "id": "S1255",
+      "attendance": 79.3,
+      "maths": 41.0,
+      "english": 53.0
+    },
+    {
+      "id": "S1256",
+      "attendance": 92.6,
+      "maths": 64.0,
+      "english": 78.0
+    },
+    {
+      "id": "S1257",
+      "attendance": 81.7,
+      "maths": 62.0,
+      "english": 70.0
+    },
+    {
+      "id": "S1258",
+      "attendance": 75.3,
+      "maths": 46.0,
+      "english": 51.0
+    },
+    {
+      "id": "S1259",
+      "attendance": 97.8,
+      "maths": 72.0,
+      "english": 91.0
+    },
+    {
+      "id": "S1260",
+      "attendance": 69.7,
+      "maths": 54.0,
+      "english": 40.0
+    },
+    {
+      "id": "S1261",
+      "attendance": 77.9,
+      "maths": 54.0,
+      "english": 77.0
+    },
+    {
+      "id": "S1262",
+      "attendance": 78.9,
+      "maths": 55.0,
+      "english": 66.0
+    },
+    {
+      "id": "S1263",
+      "attendance": 63.1,
+      "maths": 27.0,
+      "english": 57.0
+    },
+    {
+      "id": "S1264",
+      "attendance": 61.0,
+      "maths": 38.0,
+      "english": 51.0
+    },
+    {
+      "id": "S1265",
+      "attendance": 80.0,
+      "maths": 46.0,
+      "english": 56.0
+    },
+    {
+      "id": "S1266",
+      "attendance": 87.2,
+      "maths": 46.0,
+      "english": 62.0
+    },
+    {
+      "id": "S1267",
+      "attendance": 96.0,
+      "maths": 52.0,
+      "english": 57.0
+    },
+    {
+      "id": "S1268",
+      "attendance": 88.2,
+      "maths": 62.0,
+      "english": 65.0
+    },
+    {
+      "id": "S1269",
+      "attendance": 67.4,
+      "maths": 47.0,
+      "english": 55.0
+    },
+    {
+      "id": "S1270",
+      "attendance": 70.1,
+      "maths": 19.0,
+      "english": 26.0
+    },
+    {
+      "id": "S1271",
+      "attendance": 80.9,
+      "maths": 52.0,
+      "english": 71.0
+    },
+    {
+      "id": "S1272",
+      "attendance": 50.5,
+      "maths": 42.0,
+      "english": 36.0
+    },
+    {
+      "id": "S1273",
+      "attendance": 86.1,
+      "maths": 60.0,
+      "english": 71.0
+    },
+    {
+      "id": "S1274",
+      "attendance": 98.4,
+      "maths": 69.0,
+      "english": 70.0
+    },
+    {
+      "id": "S1275",
+      "attendance": 74.0,
+      "maths": 69.0,
+      "english": 70.0
+    },
+    {
+      "id": "S1276",
+      "attendance": 94.1,
+      "maths": 64.0,
+      "english": 62.0
+    },
+    {
+      "id": "S1277",
+      "attendance": 82.1,
+      "maths": 54.0,
+      "english": 65.0
+    },
+    {
+      "id": "S1278",
+      "attendance": 56.5,
+      "maths": 54.0,
+      "english": 53.0
+    },
+    {
+      "id": "S1279",
+      "attendance": 86.4,
+      "maths": 56.0,
+      "english": 53.0
+    },
+    {
+      "id": "S1280",
+      "attendance": 96.2,
+      "maths": 63.0,
+      "english": 52.0
+    },
+    {
+      "id": "S1281",
+      "attendance": 65.9,
+      "maths": 44.0,
+      "english": 57.0
+    },
+    {
+      "id": "S1282",
+      "attendance": 94.1,
+      "maths": 66.0,
+      "english": 82.0
+    },
+    {
+      "id": "S1283",
+      "attendance": 95.2,
+      "maths": 70.0,
+      "english": 75.0
+    },
+    {
+      "id": "S1284",
+      "attendance": 84.9,
+      "maths": 69.0,
+      "english": 68.0
+    },
+    {
+      "id": "S1285",
+      "attendance": 60.8,
+      "maths": 39.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1286",
+      "attendance": 85.3,
+      "maths": 54.0,
+      "english": 51.0
+    },
+    {
+      "id": "S1287",
+      "attendance": 58.5,
+      "maths": 53.0,
+      "english": 41.0
+    },
+    {
+      "id": "S1288",
+      "attendance": 92.7,
+      "maths": 64.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1289",
+      "attendance": 66.0,
+      "maths": 59.0,
+      "english": 65.0
+    },
+    {
+      "id": "S1290",
+      "attendance": 81.9,
+      "maths": 64.0,
+      "english": 52.0
+    },
+    {
+      "id": "S1291",
+      "attendance": 84.7,
+      "maths": 54.0,
+      "english": 42.0
+    },
+    {
+      "id": "S1292",
+      "attendance": 81.7,
+      "maths": 40.0,
+      "english": 62.0
+    },
+    {
+      "id": "S1293",
+      "attendance": 80.2,
+      "maths": 76.0,
+      "english": 72.0
+    },
+    {
+      "id": "S1294",
+      "attendance": 80.0,
+      "maths": 61.0,
+      "english": 46.0
+    },
+    {
+      "id": "S1295",
+      "attendance": 91.4,
+      "maths": 65.0,
+      "english": 83.0
+    },
+    {
+      "id": "S1296",
+      "attendance": 80.2,
+      "maths": 81.0,
+      "english": 79.0
+    },
+    {
+      "id": "S1297",
+      "attendance": 88.1,
+      "maths": 73.0,
+      "english": 71.0
+    },
+    {
+      "id": "S1298",
+      "attendance": 54.7,
+      "maths": 56.0,
+      "english": 73.0
+    },
+    {
+      "id": "S1299",
+      "attendance": 33.5,
+      "maths": 45.0,
+      "english": 51.0
+    },
+    {
+      "id": "S1300",
+      "attendance": 80.7,
+      "maths": 76.0,
+      "english": 99.0
+    },
+    {
+      "id": "S1301",
+      "attendance": 60.8,
+      "maths": 64.0,
+      "english": 53.0
+    },
+    {
+      "id": "S1302",
+      "attendance": 90.8,
+      "maths": 78.0,
+      "english": 58.0
+    },
+    {
+      "id": "S1303",
+      "attendance": 70.4,
+      "maths": 57.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1304",
+      "attendance": 60.5,
+      "maths": 49.0,
+      "english": 43.0
+    },
+    {
+      "id": "S1305",
+      "attendance": 47.6,
+      "maths": 37.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1306",
+      "attendance": 87.6,
+      "maths": 58.0,
+      "english": 54.0
+    },
+    {
+      "id": "S1307",
+      "attendance": 87.8,
+      "maths": 72.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1308",
+      "attendance": 92.9,
+      "maths": 62.0,
+      "english": 65.0
+    },
+    {
+      "id": "S1309",
+      "attendance": 65.0,
+      "maths": 43.0,
+      "english": 57.0
+    },
+    {
+      "id": "S1310",
+      "attendance": 81.5,
+      "maths": 46.0,
+      "english": 60.0
+    },
+    {
+      "id": "S1311",
+      "attendance": 73.0,
+      "maths": 60.0,
+      "english": 64.0
+    },
+    {
+      "id": "S1312",
+      "attendance": 54.1,
+      "maths": 37.0,
+      "english": 69.0
+    },
+    {
+      "id": "S1313",
+      "attendance": 77.1,
+      "maths": 59.0,
+      "english": 68.0
+    },
+    {
+      "id": "S1314",
+      "attendance": 94.4,
+      "maths": 77.0,
+      "english": 77.0
+    },
+    {
+      "id": "S1315",
+      "attendance": 99.4,
+      "maths": 96.0,
+      "english": 98.0
+    },
+    {
+      "id": "S1316",
+      "attendance": 97.3,
+      "maths": 67.0,
+      "english": 70.0
+    },
+    {
+      "id": "S1317",
+      "attendance": 54.8,
+      "maths": 38.0,
+      "english": 54.0
+    },
+    {
+      "id": "S1318",
+      "attendance": 62.8,
+      "maths": 39.0,
+      "english": 51.0
+    },
+    {
+      "id": "S1319",
+      "attendance": 62.5,
+      "maths": 14.0,
+      "english": 26.0
+    },
+    {
+      "id": "S1320",
+      "attendance": 92.7,
+      "maths": 59.0,
+      "english": 49.0
+    },
+    {
+      "id": "S1321",
+      "attendance": 72.6,
+      "maths": 59.0,
+      "english": 57.0
+    },
+    {
+      "id": "S1322",
+      "attendance": 86.2,
+      "maths": 81.0,
+      "english": 59.0
+    },
+    {
+      "id": "S1323",
+      "attendance": 89.7,
+      "maths": 75.0,
+      "english": 73.0
+    },
+    {
+      "id": "S1324",
+      "attendance": 93.0,
+      "maths": 75.0,
+      "english": 56.0
+    },
+    {
+      "id": "S1325",
+      "attendance": 63.6,
+      "maths": 60.0,
+      "english": 83.0
+    },
+    {
+      "id": "S1326",
+      "attendance": 73.8,
+      "maths": 70.0,
+      "english": 85.0
+    },
+    {
+      "id": "S1327",
+      "attendance": 96.1,
+      "maths": 74.0,
+      "english": 88.0
+    },
+    {
+      "id": "S1328",
+      "attendance": 80.2,
+      "maths": 52.0,
+      "english": 52.0
+    },
+    {
+      "id": "S1329",
+      "attendance": 72.1,
+      "maths": 52.0,
+      "english": 54.0
+    },
+    {
+      "id": "S1330",
+      "attendance": 76.5,
+      "maths": 42.0,
+      "english": 62.0
+    },
+    {
+      "id": "S1331",
+      "attendance": 99.4,
+      "maths": 76.0,
+      "english": 81.0
+    },
+    {
+      "id": "S1332",
+      "attendance": 81.8,
+      "maths": 66.0,
+      "english": 81.0
+    },
+    {
+      "id": "S1333",
+      "attendance": 81.9,
+      "maths": 63.0,
+      "english": 64.0
+    },
+    {
+      "id": "S1334",
+      "attendance": 89.3,
+      "maths": 41.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1335",
+      "attendance": 60.0,
+      "maths": 54.0,
+      "english": 57.0
+    },
+    {
+      "id": "S1336",
+      "attendance": 76.6,
+      "maths": 53.0,
+      "english": 62.0
+    },
+    {
+      "id": "S1337",
+      "attendance": 89.2,
+      "maths": 62.0,
+      "english": 49.0
+    },
+    {
+      "id": "S1338",
+      "attendance": 61.9,
+      "maths": 50.0,
+      "english": 55.0
+    },
+    {
+      "id": "S1339",
+      "attendance": 90.1,
+      "maths": 71.0,
+      "english": 73.0
+    },
+    {
+      "id": "S1340",
+      "attendance": 64.7,
+      "maths": 43.0,
+      "english": 55.0
+    },
+    {
+      "id": "S1341",
+      "attendance": 90.9,
+      "maths": 68.0,
+      "english": 68.0
+    },
+    {
+      "id": "S1342",
+      "attendance": 56.5,
+      "maths": 38.0,
+      "english": 72.0
+    },
+    {
+      "id": "S1343",
+      "attendance": 74.9,
+      "maths": 37.0,
+      "english": 60.0
+    },
+    {
+      "id": "S1344",
+      "attendance": 87.8,
+      "maths": 46.0,
+      "english": 74.0
+    },
+    {
+      "id": "S1345",
+      "attendance": 62.0,
+      "maths": 56.0,
+      "english": 37.0
+    },
+    {
+      "id": "S1346",
+      "attendance": 99.5,
+      "maths": 60.0,
+      "english": 77.0
+    },
+    {
+      "id": "S1347",
+      "attendance": 88.0,
+      "maths": 61.0,
+      "english": 66.0
+    },
+    {
+      "id": "S1348",
+      "attendance": 60.6,
+      "maths": 62.0,
+      "english": 51.0
+    },
+    {
+      "id": "S1349",
+      "attendance": 38.8,
+      "maths": 33.0,
+      "english": 46.0
+    },
+    {
+      "id": "S1350",
+      "attendance": 83.1,
+      "maths": 56.0,
+      "english": 58.0
+    },
+    {
+      "id": "S1351",
+      "attendance": 95.6,
+      "maths": 84.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1352",
+      "attendance": null,
+      "maths": 55.0,
+      "english": 49.0
+    },
+    {
+      "id": "S1353",
+      "attendance": 84.1,
+      "maths": 81.0,
+      "english": 75.0
+    },
+    {
+      "id": "S1354",
+      "attendance": 72.7,
+      "maths": 62.0,
+      "english": 64.0
+    },
+    {
+      "id": "S1355",
+      "attendance": 89.0,
+      "maths": 41.0,
+      "english": 54.0
+    },
+    {
+      "id": "S1356",
+      "attendance": 69.0,
+      "maths": 47.0,
+      "english": 47.0
+    },
+    {
+      "id": "S1357",
+      "attendance": 73.8,
+      "maths": 47.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1358",
+      "attendance": 88.1,
+      "maths": 44.0,
+      "english": 66.0
+    },
+    {
+      "id": "S1359",
+      "attendance": 87.7,
+      "maths": 41.0,
+      "english": 56.0
+    },
+    {
+      "id": "S1360",
+      "attendance": 69.0,
+      "maths": 75.0,
+      "english": 50.0
+    },
+    {
+      "id": "S1361",
+      "attendance": 82.9,
+      "maths": 52.0,
+      "english": 68.0
+    },
+    {
+      "id": "S1362",
+      "attendance": 68.8,
+      "maths": 55.0,
+      "english": 67.0
+    },
+    {
+      "id": "S1363",
+      "attendance": 25.4,
+      "maths": 25.0,
+      "english": 48.0
+    },
+    {
+      "id": "S1364",
+      "attendance": 64.6,
+      "maths": 54.0,
+      "english": 78.0
+    },
+    {
+      "id": "S1365",
+      "attendance": 80.1,
+      "maths": 49.0,
+      "english": 41.0
+    },
+    {
+      "id": "S1366",
+      "attendance": 85.6,
+      "maths": 56.0,
+      "english": 81.0
+    },
+    {
+      "id": "S1367",
+      "attendance": 97.8,
+      "maths": 61.0,
+      "english": 64.0
+    },
+    {
+      "id": "S1368",
+      "attendance": 72.1,
+      "maths": 44.0,
+      "english": 78.0
+    },
+    {
+      "id": "S1369",
+      "attendance": 90.4,
+      "maths": 52.0,
+      "english": 60.0
+    },
+    {
+      "id": "S1370",
+      "attendance": 69.1,
+      "maths": 45.0,
+      "english": 41.0
+    },
+    {
+      "id": "S1371",
+      "attendance": 76.7,
+      "maths": 72.0,
+      "english": 66.0
+    },
+    {
+      "id": "S1372",
+      "attendance": 93.4,
+      "maths": 73.0,
+      "english": 71.0
+    },
+    {
+      "id": "S1373",
+      "attendance": 52.5,
+      "maths": 56.0,
+      "english": 65.0
+    },
+    {
+      "id": "S1374",
+      "attendance": 83.7,
+      "maths": 55.0,
+      "english": 66.0
+    },
+    {
+      "id": "S1375",
+      "attendance": 82.4,
+      "maths": 62.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1376",
+      "attendance": 88.3,
+      "maths": 73.0,
+      "english": 91.0
+    },
+    {
+      "id": "S1377",
+      "attendance": 33.9,
+      "maths": 35.0,
+      "english": 65.0
+    },
+    {
+      "id": "S1378",
+      "attendance": 78.7,
+      "maths": 44.0,
+      "english": 64.0
+    },
+    {
+      "id": "S1379",
+      "attendance": 73.3,
+      "maths": 55.0,
+      "english": 58.0
+    },
+    {
+      "id": "S1380",
+      "attendance": 77.0,
+      "maths": 44.0,
+      "english": 32.0
+    },
+    {
+      "id": "S1381",
+      "attendance": 57.0,
+      "maths": 51.0,
+      "english": 70.0
+    },
+    {
+      "id": "S1382",
+      "attendance": 91.5,
+      "maths": 63.0,
+      "english": 65.0
+    },
+    {
+      "id": "S1383",
+      "attendance": 34.8,
+      "maths": 48.0,
+      "english": 66.0
+    },
+    {
+      "id": "S1384",
+      "attendance": 83.5,
+      "maths": 47.0,
+      "english": 50.0
+    },
+    {
+      "id": "S1385",
+      "attendance": 61.9,
+      "maths": 39.0,
+      "english": 67.0
+    },
+    {
+      "id": "S1386",
+      "attendance": 86.3,
+      "maths": 55.0,
+      "english": 48.0
+    },
+    {
+      "id": "S1387",
+      "attendance": 76.0,
+      "maths": 65.0,
+      "english": 66.0
+    },
+    {
+      "id": "S1388",
+      "attendance": 60.7,
+      "maths": 58.0,
+      "english": 50.0
+    },
+    {
+      "id": "S1389",
+      "attendance": 36.9,
+      "maths": 33.0,
+      "english": 45.0
+    },
+    {
+      "id": "S1390",
+      "attendance": 55.5,
+      "maths": 32.0,
+      "english": 51.0
+    },
+    {
+      "id": "S1391",
+      "attendance": 92.4,
+      "maths": 59.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1392",
+      "attendance": 88.8,
+      "maths": 65.0,
+      "english": 84.0
+    },
+    {
+      "id": "S1393",
+      "attendance": 91.5,
+      "maths": 71.0,
+      "english": 99.0
+    },
+    {
+      "id": "S1394",
+      "attendance": 77.8,
+      "maths": 63.0,
+      "english": 68.0
+    },
+    {
+      "id": "S1395",
+      "attendance": 81.3,
+      "maths": 63.0,
+      "english": 75.0
+    },
+    {
+      "id": "S1396",
+      "attendance": 76.7,
+      "maths": 69.0,
+      "english": 83.0
+    },
+    {
+      "id": "S1397",
+      "attendance": 61.8,
+      "maths": 50.0,
+      "english": 67.0
+    },
+    {
+      "id": "S1398",
+      "attendance": 71.3,
+      "maths": 68.0,
+      "english": 70.0
+    },
+    {
+      "id": "S1399",
+      "attendance": 79.2,
+      "maths": 54.0,
+      "english": 88.0
+    },
+    {
+      "id": "S1400",
+      "attendance": 92.6,
+      "maths": 68.0,
+      "english": 60.0
+    },
+    {
+      "id": "S1401",
+      "attendance": 73.1,
+      "maths": 49.0,
+      "english": 65.0
+    },
+    {
+      "id": "S1402",
+      "attendance": 73.0,
+      "maths": 54.0,
+      "english": 62.0
+    },
+    {
+      "id": "S1403",
+      "attendance": 70.9,
+      "maths": 53.0,
+      "english": 65.0
+    },
+    {
+      "id": "S1404",
+      "attendance": 39.8,
+      "maths": 38.0,
+      "english": 58.0
+    },
+    {
+      "id": "S1405",
+      "attendance": 69.1,
+      "maths": 38.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1406",
+      "attendance": 55.7,
+      "maths": 16.0,
+      "english": 54.0
+    },
+    {
+      "id": "S1407",
+      "attendance": 68.8,
+      "maths": 58.0,
+      "english": 54.0
+    },
+    {
+      "id": "S1408",
+      "attendance": 22.2,
+      "maths": 16.0,
+      "english": 30.0
+    },
+    {
+      "id": "S1409",
+      "attendance": 55.1,
+      "maths": 49.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1410",
+      "attendance": 84.2,
+      "maths": 74.0,
+      "english": 51.0
+    },
+    {
+      "id": "S1411",
+      "attendance": 84.6,
+      "maths": 43.0,
+      "english": 43.0
+    },
+    {
+      "id": "S1412",
+      "attendance": 36.1,
+      "maths": 49.0,
+      "english": 78.0
+    },
+    {
+      "id": "S1413",
+      "attendance": 83.4,
+      "maths": 66.0,
+      "english": 92.0
+    },
+    {
+      "id": "S1414",
+      "attendance": 96.2,
+      "maths": 73.0,
+      "english": 69.0
+    },
+    {
+      "id": "S1415",
+      "attendance": 39.9,
+      "maths": 59.0,
+      "english": 67.0
+    },
+    {
+      "id": "S1416",
+      "attendance": 50.0,
+      "maths": 64.0,
+      "english": 86.0
+    },
+    {
+      "id": "S1417",
+      "attendance": 65.0,
+      "maths": 38.0,
+      "english": 32.0
+    },
+    {
+      "id": "S1418",
+      "attendance": 69.4,
+      "maths": 64.0,
+      "english": 66.0
+    },
+    {
+      "id": "S1419",
+      "attendance": 86.9,
+      "maths": 72.0,
+      "english": 82.0
+    },
+    {
+      "id": "S1420",
+      "attendance": 33.7,
+      "maths": 27.0,
+      "english": 71.0
+    },
+    {
+      "id": "S1421",
+      "attendance": 99.5,
+      "maths": 73.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1422",
+      "attendance": 71.0,
+      "maths": 44.0,
+      "english": 42.0
+    },
+    {
+      "id": "S1423",
+      "attendance": 84.8,
+      "maths": 52.0,
+      "english": 66.0
+    },
+    {
+      "id": "S1424",
+      "attendance": 80.7,
+      "maths": 36.0,
+      "english": 56.0
+    },
+    {
+      "id": "S1425",
+      "attendance": 83.5,
+      "maths": 57.0,
+      "english": 52.0
+    },
+    {
+      "id": "S1426",
+      "attendance": 87.7,
+      "maths": 53.0,
+      "english": 67.0
+    },
+    {
+      "id": "S1427",
+      "attendance": 82.4,
+      "maths": 43.0,
+      "english": 46.0
+    },
+    {
+      "id": "S1428",
+      "attendance": 85.4,
+      "maths": 46.0,
+      "english": 37.0
+    },
+    {
+      "id": "S1429",
+      "attendance": 84.9,
+      "maths": 53.0,
+      "english": 76.0
+    },
+    {
+      "id": "S1430",
+      "attendance": 84.4,
+      "maths": 55.0,
+      "english": 57.0
+    },
+    {
+      "id": "S1431",
+      "attendance": 91.5,
+      "maths": 52.0,
+      "english": 59.0
+    },
+    {
+      "id": "S1432",
+      "attendance": 67.6,
+      "maths": 28.0,
+      "english": 34.0
+    },
+    {
+      "id": "S1433",
+      "attendance": 23.5,
+      "maths": 24.0,
+      "english": 55.0
+    },
+    {
+      "id": "S1434",
+      "attendance": 76.8,
+      "maths": 51.0,
+      "english": 51.0
+    },
+    {
+      "id": "S1435",
+      "attendance": 86.6,
+      "maths": 61.0,
+      "english": 70.0
+    },
+    {
+      "id": "S1436",
+      "attendance": 83.2,
+      "maths": 52.0,
+      "english": 56.0
+    },
+    {
+      "id": "S1437",
+      "attendance": 75.7,
+      "maths": 79.0,
+      "english": 81.0
+    },
+    {
+      "id": "S1438",
+      "attendance": 83.2,
+      "maths": 61.0,
+      "english": 60.0
+    },
+    {
+      "id": "S1439",
+      "attendance": 89.4,
+      "maths": 53.0,
+      "english": 58.0
+    },
+    {
+      "id": "S1440",
+      "attendance": 65.1,
+      "maths": 47.0,
+      "english": 45.0
+    },
+    {
+      "id": "S1441",
+      "attendance": 87.6,
+      "maths": 62.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1442",
+      "attendance": 40.1,
+      "maths": 35.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1443",
+      "attendance": 77.0,
+      "maths": 62.0,
+      "english": 99.0
+    },
+    {
+      "id": "S1444",
+      "attendance": 81.4,
+      "maths": 56.0,
+      "english": 57.0
+    },
+    {
+      "id": "S1445",
+      "attendance": 97.9,
+      "maths": 78.0,
+      "english": 57.0
+    },
+    {
+      "id": "S1446",
+      "attendance": 57.6,
+      "maths": 48.0,
+      "english": 66.0
+    },
+    {
+      "id": "S1447",
+      "attendance": 88.2,
+      "maths": 63.0,
+      "english": 73.0
+    },
+    {
+      "id": "S1448",
+      "attendance": 50.3,
+      "maths": 52.0,
+      "english": 65.0
+    },
+    {
+      "id": "S1449",
+      "attendance": 91.8,
+      "maths": 69.0,
+      "english": 74.0
+    },
+    {
+      "id": "S1450",
+      "attendance": 68.2,
+      "maths": 65.0,
+      "english": 52.0
+    },
+    {
+      "id": "S1451",
+      "attendance": 85.6,
+      "maths": 71.0,
+      "english": 69.0
+    },
+    {
+      "id": "S1452",
+      "attendance": 92.0,
+      "maths": 71.0,
+      "english": 73.0
+    },
+    {
+      "id": "S1453",
+      "attendance": 58.8,
+      "maths": 38.0,
+      "english": 88.0
+    },
+    {
+      "id": "S1454",
+      "attendance": 92.8,
+      "maths": 64.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1455",
+      "attendance": 56.2,
+      "maths": 36.0,
+      "english": 41.0
+    },
+    {
+      "id": "S1456",
+      "attendance": 95.6,
+      "maths": 89.0,
+      "english": 81.0
+    },
+    {
+      "id": "S1457",
+      "attendance": 55.6,
+      "maths": 48.0,
+      "english": 73.0
+    },
+    {
+      "id": "S1458",
+      "attendance": 65.9,
+      "maths": 29.0,
+      "english": 57.0
+    },
+    {
+      "id": "S1459",
+      "attendance": 68.8,
+      "maths": 55.0,
+      "english": 54.0
+    },
+    {
+      "id": "S1460",
+      "attendance": 59.9,
+      "maths": 36.0,
+      "english": 58.0
+    },
+    {
+      "id": "S1461",
+      "attendance": 98.4,
+      "maths": 71.0,
+      "english": 92.0
+    },
+    {
+      "id": "S1462",
+      "attendance": 99.4,
+      "maths": 65.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1463",
+      "attendance": 62.6,
+      "maths": 43.0,
+      "english": 37.0
+    },
+    {
+      "id": "S1464",
+      "attendance": 83.5,
+      "maths": 72.0,
+      "english": 73.0
+    },
+    {
+      "id": "S1465",
+      "attendance": 22.3,
+      "maths": 34.0,
+      "english": 60.0
+    },
+    {
+      "id": "S1466",
+      "attendance": 77.4,
+      "maths": 66.0,
+      "english": 89.0
+    },
+    {
+      "id": "S1467",
+      "attendance": 46.8,
+      "maths": 51.0,
+      "english": 53.0
+    },
+    {
+      "id": "S1468",
+      "attendance": 76.7,
+      "maths": 27.0,
+      "english": 37.0
+    },
+    {
+      "id": "S1469",
+      "attendance": 85.5,
+      "maths": 59.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1470",
+      "attendance": 91.7,
+      "maths": 49.0,
+      "english": 52.0
+    },
+    {
+      "id": "S1471",
+      "attendance": 76.8,
+      "maths": 61.0,
+      "english": 51.0
+    },
+    {
+      "id": "S1472",
+      "attendance": 70.3,
+      "maths": 37.0,
+      "english": 39.0
+    },
+    {
+      "id": "S1473",
+      "attendance": 76.5,
+      "maths": 66.0,
+      "english": 63.0
+    },
+    {
+      "id": "S1474",
+      "attendance": 96.2,
+      "maths": 80.0,
+      "english": 90.0
+    },
+    {
+      "id": "S1475",
+      "attendance": 66.3,
+      "maths": 34.0,
+      "english": 35.0
+    },
+    {
+      "id": "S1476",
+      "attendance": 80.3,
+      "maths": 69.0,
+      "english": 74.0
+    },
+    {
+      "id": "S1477",
+      "attendance": 88.2,
+      "maths": 42.0,
+      "english": 54.0
+    },
+    {
+      "id": "S1478",
+      "attendance": 25.3,
+      "maths": 62.0,
+      "english": 95.0
+    },
+    {
+      "id": "S1479",
+      "attendance": 71.7,
+      "maths": 64.0,
+      "english": 69.0
+    },
+    {
+      "id": "S1480",
+      "attendance": 86.5,
+      "maths": 55.0,
+      "english": 59.0
+    },
+    {
+      "id": "S1481",
+      "attendance": 98.4,
+      "maths": 75.0,
+      "english": 82.0
+    },
+    {
+      "id": "S1482",
+      "attendance": 62.5,
+      "maths": 57.0,
+      "english": 68.0
+    },
+    {
+      "id": "S1483",
+      "attendance": 68.2,
+      "maths": 58.0,
+      "english": 53.0
+    },
+    {
+      "id": "S1484",
+      "attendance": 38.8,
+      "maths": 49.0,
+      "english": 81.0
+    },
+    {
+      "id": "S1485",
+      "attendance": 59.9,
+      "maths": 44.0,
+      "english": 64.0
+    },
+    {
+      "id": "S1486",
+      "attendance": 61.2,
+      "maths": 30.0,
+      "english": 62.0
+    },
+    {
+      "id": "S1487",
+      "attendance": 99.4,
+      "maths": 73.0,
+      "english": 93.0
+    },
+    {
+      "id": "S1488",
+      "attendance": 32.8,
+      "maths": 30.0,
+      "english": 65.0
+    },
+    {
+      "id": "S1489",
+      "attendance": 27.6,
+      "maths": 30.0,
+      "english": 56.0
+    },
+    {
+      "id": "S1490",
+      "attendance": 87.4,
+      "maths": 62.0,
+      "english": 57.0
+    },
+    {
+      "id": "S1491",
+      "attendance": 60.1,
+      "maths": 35.0,
+      "english": 55.0
+    },
+    {
+      "id": "S1492",
+      "attendance": 91.8,
+      "maths": 55.0,
+      "english": 53.0
+    },
+    {
+      "id": "S1493",
+      "attendance": 95.7,
+      "maths": 62.0,
+      "english": 66.0
+    },
+    {
+      "id": "S1494",
+      "attendance": 82.7,
+      "maths": 56.0,
+      "english": 59.0
+    },
+    {
+      "id": "S1495",
+      "attendance": 65.9,
+      "maths": 56.0,
+      "english": 57.0
+    },
+    {
+      "id": "S1496",
+      "attendance": 65.6,
+      "maths": 63.0,
+      "english": 64.0
+    },
+    {
+      "id": "S1497",
+      "attendance": 94.5,
+      "maths": 59.0,
+      "english": 67.0
+    },
+    {
+      "id": "S1498",
+      "attendance": 92.7,
+      "maths": 70.0,
+      "english": 80.0
+    },
+    {
+      "id": "S1499",
+      "attendance": 84.7,
+      "maths": 52.0,
+      "english": 67.0
+    },
+    {
+      "id": "S1500",
+      "attendance": 57.5,
+      "maths": 47.0,
+      "english": 57.0
+    },
+    {
+      "id": "S1501",
+      "attendance": 65.2,
+      "maths": 44.0,
+      "english": 77.0
+    },
+    {
+      "id": "S1502",
+      "attendance": 57.6,
+      "maths": 45.0,
+      "english": 46.0
+    },
+    {
+      "id": "S1503",
+      "attendance": 59.9,
+      "maths": 58.0,
+      "english": 69.0
+    },
+    {
+      "id": "S1504",
+      "attendance": 91.1,
+      "maths": 74.0,
+      "english": 58.0
+    },
+    {
+      "id": "S1505",
+      "attendance": 88.5,
+      "maths": 61.0,
+      "english": 75.0
+    },
+    {
+      "id": "S1506",
+      "attendance": 63.1,
+      "maths": 31.0,
+      "english": 53.0
+    },
+    {
+      "id": "S1507",
+      "attendance": 87.0,
+      "maths": 69.0,
+      "english": 61.0
+    },
+    {
+      "id": "S1508",
+      "attendance": 87.6,
+      "maths": 55.0,
+      "english": 42.0
+    },
+    {
+      "id": "S1509",
+      "attendance": 84.9,
+      "maths": 66.0,
+      "english": 69.0
+    },
+    {
+      "id": "S1510",
+      "attendance": 73.8,
+      "maths": 54.0,
+      "english": 71.0
+    },
+    {
+      "id": "S1511",
+      "attendance": 75.3,
+      "maths": 55.0,
+      "english": 54.0
+    },
+    {
+      "id": "S1512",
+      "attendance": 58.5,
+      "maths": 62.0,
+      "english": 67.0
+    },
+    {
+      "id": "S1513",
+      "attendance": 90.7,
+      "maths": 70.0,
+      "english": 77.0
+    },
+    {
+      "id": "S1514",
+      "attendance": 80.1,
+      "maths": 41.0,
+      "english": 47.0
+    },
+    {
+      "id": "S1515",
+      "attendance": 88.8,
+      "maths": 69.0,
+      "english": 75.0
+    },
+    {
+      "id": "S1516",
+      "attendance": 39.3,
+      "maths": 38.0,
+      "english": 64.0
+    },
+    {
+      "id": "S1517",
+      "attendance": null,
+      "maths": 57.0,
+      "english": 53.0
+    },
+    {
+      "id": "S1518",
+      "attendance": 95.5,
+      "maths": 68.0,
+      "english": 58.0
+    },
+    {
+      "id": "S1519",
+      "attendance": 78.7,
+      "maths": 49.0,
+      "english": 59.0
+    },
+    {
+      "id": "S1520",
+      "attendance": 69.3,
+      "maths": 57.0,
+      "english": 58.0
+    }
+  ]
+}

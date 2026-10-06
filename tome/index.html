@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tome · Kushagra Bhatnagar</title>
+  <meta name="description" content="Tome turns a section of a textbook into a narrated lesson. One real run, on three pages about throwing a ball, replayed on a moving track.">
+  <link rel="preload" href="fonts/Literata-sub.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/SourceSans3VF-Upright.ttf.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=20261006-links">
+</head>
+<body>
+  <section class="tome" id="tome" aria-labelledby="tome-title">
+    <header class="tome-head">
+      <p class="wordmark">Tome</p>
+      <h2 id="tome-title">Tome turns a textbook section into a narrated lesson.</h2>
+      <p class="replay-note" id="replay-note"></p>
+    </header>
+
+    <div class="scene" id="scene">
+      <div class="rail-band" aria-hidden="true">
+        <div class="rail"></div>
+        <div class="actors" id="actors"></div>
+        <div class="worker voice" id="w-voice"><span class="grille"><svg viewBox="0 0 40 20" preserveAspectRatio="none"><path d=""/></svg></span><span class="wname">Voice service</span></div>
+        <div class="worker gpt" id="w-gpt"><span class="rod"></span><span class="body"><span class="win"><i></i><i></i><i></i><i></i><i></i></span></span><span class="wname"><b>GPT-5</b><span class="sub"> · an AI model</span></span></div>
+        <div class="worker fixed" id="w-fixed"><span class="plate"></span><span class="wname">Fixed code</span></div>
+      </div>
+      <p class="caption" id="caption" aria-live="polite"></p>
+      <svg class="arrows" id="arrows" aria-hidden="true">
+        <defs><marker id="head" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker></defs>
+        <path class="arw" id="arw-up" marker-end="url(#head)"/>
+        <path class="arw" id="arw-down" marker-end="url(#head)"/>
+      </svg>
+      <div class="track" id="track"></div>
+      <!-- the whole run's input and output, hinged to the page's edges -->
+      <aside class="edge edge-in" id="edge-in" aria-label="What went in: my three pages">
+        <div class="edge-head"><span><b>What went in</b><small>my 3 pages, as I wrote them</small></span><button type="button" class="open-btn" aria-label="Open my 3 pages full screen">⤢ Open</button><button type="button" class="fold-btn" aria-expanded="true" aria-label="Fold this flap"><i aria-hidden="true"></i></button></div>
+        <div class="edge-body" id="edge-in-body"></div>
+        <span class="spine" aria-hidden="true">What went in</span>
+      </aside>
+      <aside class="edge edge-out" id="edge-out" aria-label="What came out: the lesson Tome built">
+        <div class="edge-head"><span><b>What came out</b><small>the lesson Tome built</small></span><button type="button" class="open-btn" aria-label="Open the lesson full screen">⤢ Open</button><button type="button" class="fold-btn" aria-expanded="true" aria-label="Fold this flap"><i aria-hidden="true"></i></button></div>
+        <div class="edge-body" id="edge-out-body"></div>
+        <span class="spine" aria-hidden="true">What came out</span>
+      </aside>
+      <div class="flyers" id="flyers" aria-hidden="true"></div>
+    </div>
+
+    <nav class="controls" aria-label="Replay controls">
+      <button type="button" class="ctl" id="pause">Pause</button>
+      <ol class="dots" id="dots"></ol>
+      <a class="more" href="#how">How this run was made ↓</a>
+    </nav>
+  </section>
+
+  <footer class="tome-foot" id="how">
+    <p id="receipt"></p>
+    <p>Replayed from records: the reading, the topics, the plan and the building. Worked out live in your browser: the ball's flight, the marking and your own throws.</p>
+    <p><b>GPT-5</b> is an AI model that reads text and writes text back; Tome pays for each request. <b>Fixed code</b> is ordinary code: same input, same result, every time. The <b>voice service</b> turns written lines into speech.</p>
+    <p>Three values of gravity appear, and all are real: Tome's simulation uses g = 9.81, its practice question uses g = 10 so the sums come out round (40 m), and my page uses g = 9.8 (40.8 m).</p>
+    <p>I checked the physics with separate code that shares nothing with Tome. The flight time and range are right, 45° goes farthest, angles that add up to 90° land in the same place, and the practice answer is right.</p>
+    <p class="links"><a href="https://github.com/kushagrab21/tome" target="_blank" rel="noopener">Tome's code on GitHub</a><a href="https://youtu.be/3Ndfqpeo_8o" target="_blank" rel="noopener">Watch the whole app (video)</a></p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

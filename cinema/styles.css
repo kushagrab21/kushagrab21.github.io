@@ -1,0 +1,137 @@
+@font-face { font-family: 'Overpass'; src: url(fonts/overpass-var.woff2) format('woff2'); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: 'Literata'; src: url(fonts/literata-latin-400-normal.woff2) format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Literata'; src: url(fonts/literata-latin-400-italic.woff2) format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Literata'; src: url(fonts/literata-latin-600-normal.woff2) format('woff2'); font-weight: 600; font-display: swap; }
+
+:root {
+  --room: #1c1714;
+  --ink: #f3ece2;
+  --ink-2: #c9bdb0;
+  --dim: #8a7e73;
+  --lamp: #f6c453;
+  --line: #a98bd8;            /* the Writing line's colour: its mark only */
+  --rule: rgba(243, 236, 226, 0.16);
+  --house: 0;                 /* 0 = lights down (film on), 1 = lights up; set by app.js */
+  font-family: 'Overpass', system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--room);
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; overflow: hidden; background: var(--room); }
+button { font: inherit; color: inherit; cursor: pointer; background: none; border: 0; padding: 0; }
+a { color: inherit; }
+
+.hall { position: relative; width: 100%; height: 100%; overflow: hidden; }
+#room { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+/* ---------- the sign above the screen: placed by app.js from the screen's position ---------- */
+.sign { position: absolute; margin: 0; display: grid; grid-template-columns: 1fr auto; column-gap: 24px; align-items: end;
+  opacity: calc(.62 + .38 * var(--house)); transition: opacity 1.2s; }
+.where { grid-column: 1; margin: 0 0 6px; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); display: flex; align-items: center; }
+.line-mark { width: 18px; height: 4px; border-radius: 2px; background: var(--line); margin-right: 9px; }
+.sep { display: inline-block; width: 3px; height: 3px; border-radius: 50%; background: currentColor; margin: 0 .6em; vertical-align: middle; }
+.runs { grid-column: 2; grid-row: 1 / span 2; align-self: end; margin: 0 0 4px; font-size: 15px; font-weight: 600; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.claim { grid-column: 1; margin: 0; font-family: 'Literata', Georgia, serif; font-weight: 400; font-size: clamp(16px, 1.3vw, 20px); line-height: 1.38; color: var(--ink); max-width: 72ch; text-wrap: pretty; }
+.claim:empty { display: none; }
+.title { grid-column: 1; margin: 6px 0 0; font-size: 13px; color: var(--dim); }
+.read-now { margin-left: 14px; color: var(--ink-2); font-weight: 700; text-decoration: none; border-bottom: 1px solid var(--rule); }
+.read-now:hover, .read-now:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
+.hall[data-phase="ended"] .read-now { visibility: hidden; }
+.claim:empty + .title { font-family: 'Literata', Georgia, serif; font-size: clamp(16px, 1.3vw, 20px); color: var(--ink); margin: 0; }
+.claim:empty + .title .date { display: block; margin-top: 6px; font-family: 'Overpass', system-ui, sans-serif; font-size: 13px; color: var(--dim); }
+.claim:empty + .title .date .sep { display: none; }
+.progress { grid-column: 1 / -1; display: block; height: 2px; margin-top: 12px; background: var(--rule); border-radius: 1px; overflow: hidden; }
+.progress b { display: block; height: 100%; width: 0; background: var(--ink-2); }
+
+/* ---------- the overlay that sits exactly on the room's screen ---------- */
+.screen { position: absolute; cursor: pointer; }
+.screen video { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }   /* the picture is drawn in the room */
+.disclose { position: absolute; left: 2.2%; bottom: 4%; margin: 0; max-width: 64%; padding: 9px 13px; font-size: 14px; line-height: 1.4;
+  background: rgba(20, 16, 13, 0.78); border-radius: 3px; color: var(--ink); transition: all .9s cubic-bezier(.3, 0, .2, 1); }
+.disclose.small { max-width: 30%; padding: 4px 8px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); background: rgba(20, 16, 13, 0.55); }
+.disclose:empty, .hall[data-phase="ended"] .disclose { display: none; }
+.controls { position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: center; gap: 18px; padding: 14px 18px;
+  background: linear-gradient(to top, rgba(18, 14, 11, 0.86), rgba(18, 14, 11, 0)); opacity: 0; transform: translateY(6px); transition: opacity .35s, transform .35s; pointer-events: none; }
+.hall.reach .controls, .hall[data-phase="paused"] .controls { opacity: 1; transform: none; pointer-events: auto; }
+.hall.reach .disclose, .hall[data-phase="paused"] .disclose { bottom: calc(4% + 54px); }
+.controls button { font-size: 15px; font-weight: 700; padding: 6px 2px; border-bottom: 1.5px solid transparent; }
+.controls button:hover, .controls button:focus-visible { border-bottom-color: var(--ink); outline: none; }
+.c-time { font-size: 14px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.c-bar { flex: 1; height: 3px; background: rgba(243, 236, 226, 0.25); border-radius: 2px; overflow: hidden; cursor: pointer; }
+.c-bar b { display: block; height: 100%; width: 0; background: var(--ink); }
+
+/* ---------- under the screen ---------- */
+.under { position: absolute; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.hint { margin: 0; font-size: 14px; color: var(--dim); }
+.sound { display: inline-flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 800; padding: 8px 16px; border-radius: 6px;
+  color: #c8c8c8; border: 2.5px solid #999; background: #292929;
+  box-shadow: 0 3px 0 #111; transition: color .2s, border-color .2s, background .2s; }
+.sound-copy { display: grid; text-align: left; line-height: 1.2; gap: 3px; }
+.sound-copy small { font-size: 11px; font-weight: 600; }
+.sound .lamp { width: 8px; height: 8px; border-radius: 50%; background: #999; }
+.sound.on { color: var(--lamp); border-color: var(--lamp); background: #302719; }
+.sound.on .lamp { background: var(--lamp); box-shadow: 0 0 10px var(--lamp); }
+.sound:hover { border-color: #eee; background: #363636; }
+.sound:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+
+/* ---------- the end: lights up, the next film as the centre card ---------- */
+.end { position: absolute; display: grid; grid-template-columns: auto auto; align-items: end; justify-content: center; column-gap: 28px; row-gap: 14px; pointer-events: none; }
+.end[hidden] { display: none; }
+.next { pointer-events: auto; width: min(460px, 100%); padding: 22px 24px 20px; border-radius: 6px 22px 6px 22px;
+  background: rgba(30, 24, 20, 0.86); border: 1px solid rgba(243, 236, 226, 0.22); box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+  animation: forward 1.4s cubic-bezier(.25, .1, .2, 1) both; }
+@keyframes forward { from { opacity: 0; transform: translate(42%, 6%) scale(.82); filter: blur(8px); } }
+.next-kicker { margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+.next-claim { margin: 0; font-family: 'Literata', Georgia, serif; font-size: 20px; line-height: 1.35; }
+.next-meta { margin: 8px 0 16px; font-size: 14px; color: var(--dim); }
+.next-go { font-size: 17px; font-weight: 700; padding: 11px 20px 10px; border-radius: 4px; background: var(--lamp); color: #1c1714; box-shadow: 0 0 26px rgba(246, 196, 83, 0.35); }
+.read { pointer-events: auto; align-self: end; font-size: 16px; font-weight: 700; text-decoration: none; padding: 10px 18px 9px; border-radius: 4px; border: 1.5px solid rgba(243, 236, 226, 0.6); background: rgba(24, 19, 16, 0.9);
+  animation: forward 1.4s .25s cubic-bezier(.25, .1, .2, 1) both; }
+.read:hover, .read:focus-visible { background: var(--ink); color: #1c1714; }
+.countdown { grid-column: 1 / -1; justify-self: center; margin: 0; font-size: 14px; color: var(--ink-2); padding: 4px 10px; border-radius: 3px; background: rgba(20, 16, 13, 0.6); }
+.countdown:empty { display: none; }
+
+/* ---------- phone ---------- */
+@media (max-width: 700px) {
+  .sign { grid-template-columns: 1fr; }
+  .runs { grid-column: 1; grid-row: auto; order: 3; margin: 8px 0 0; font-size: 14px; }
+  .claim { font-size: 17px; }
+  .progress { order: 4; }
+  .under { flex-direction: column-reverse; align-items: flex-start; }
+  .hint { font-size: 13px; }
+  .disclose { font-size: 12px; max-width: 92%; padding: 6px 9px; }
+  .end { grid-template-columns: 1fr; justify-items: stretch; }
+  .next { width: 100%; padding: 16px 18px; }
+  .next-claim { font-size: 17px; }
+  .next-meta { margin: 6px 0 12px; }
+  .next-go { font-size: 16px; padding: 10px 16px 9px; }
+  .read { justify-self: start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 1ms !important; transition-duration: 1ms !important; }
+}
+.claim:empty + .title .read-now { display: inline-block; margin: 8px 0 0; font-family: 'Overpass', system-ui, sans-serif; font-size: 13px; }
+.date { white-space: nowrap; }
+
+/* a soft dark band behind the sign, so dust and light in the room never sit under its words */
+.scrim { position: absolute; left: 0; right: 0; top: 0; pointer-events: none; background: linear-gradient(to bottom, rgba(8, 7, 6, 0.82), rgba(8, 7, 6, 0.6) 75%, rgba(8, 7, 6, 0)); }
+.read-now { white-space: nowrap; }
+
+/* checkpoint 4: the sign above is gone (screen readers still get it); length and the piece sit in the row under the screen */
+.sr-only { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.scrim { display: none; }
+.under { display: grid; grid-template-columns: 1fr auto auto; column-gap: 22px; align-items: center; }
+.meta { margin: 0; display: flex; align-items: center; gap: 16px; font-size: 15px; color: var(--ink-2); white-space: nowrap; }
+.meta .runs { font-weight: 600; font-variant-numeric: tabular-nums; margin: 0; }
+.meta .read-now { margin: 0; }
+.hall[data-phase="ended"] .meta { visibility: hidden; }
+@media (max-width: 700px) {
+  .under { grid-template-columns: 1fr; row-gap: 10px; justify-items: start; }
+  .meta { order: 2; }
+}
+
+/* the screen can be wider than the film; words that belong to the film sit within the film's own 16:9 */
+.screen .disclose { left: calc(var(--inset, 0%) + 2.2%); }
+.screen .controls { left: var(--inset, 0%); right: var(--inset, 0%); }
+.read[hidden], .read-now[hidden] { display: none; }

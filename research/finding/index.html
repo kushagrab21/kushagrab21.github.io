@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The finding</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="finding" id="finding">
+  <header class="head">
+    <p class="kicker"><span class="line-mark" aria-hidden="true"></span>Research<span class="sep"></span>The finding</p>
+    <h1>An AI fixing code said &ldquo;done&rdquo; too early, almost always at one moment.</h1>
+    <p class="sub"><span class="sub-long">My experiment from August 2026. First one real job, replayed step by step, then every DONE in the study.</span><span class="sub-short">My experiment, Aug 2026, replayed from <a href="https://github.com/kushagrab21/gauntlet" target="_blank" rel="noopener">the public logs&nbsp;↗</a></span></p>
+  </header>
+
+  <section class="stage" id="stage" aria-label="The replay">
+    <!-- the step cards, on a shallow curved track behind the figures (dimmed, never blurred: blur is kept for the checker's pages) -->
+    <ol class="track" id="track" aria-hidden="true"></ol>
+    <div class="actors" id="actors" role="img" aria-label="Two figures: the AI, lit by a warm light that stands for what it can see, and my checker, standing in the dark holding the checks the AI has not been shown."></div>
+    <svg class="sight" id="sight" aria-hidden="true"><defs><linearGradient id="sightFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6c453" stop-opacity=".26"/><stop offset="1" stop-color="#f6c453" stop-opacity=".05"/></linearGradient></defs><polygon id="sightCone" fill="url(#sightFill)"/></svg>
+    <div class="fog" id="fog" aria-hidden="true"></div>
+    <p class="label label-ai" id="labAI"><b>The AI</b><span class="sep"></span><span id="modelName"></span></p>
+    <p class="label label-checker" id="labChecker"><b>My checker</b></p>
+
+    <p class="caption" id="caption" aria-live="polite"></p>
+    <div class="spot" id="spot" aria-hidden="true"></div>
+
+    <!-- What the AI can see: its code and the page of checks in front of it. Lit by its sight. -->
+    <article class="desk" id="desk">
+      <div class="desk-head">
+        <span class="stepchip" id="deskChip"></span>
+        <span class="tag" id="deskTag">One real job, replayed</span>
+      </div>
+      <p class="corner" id="corner" aria-live="polite"></p>
+      <p class="corner-note" id="cornerNote">The exact line the AI read. Its &ldquo;stage&rdquo; is a batch of checks.</p>
+      <div class="desk-body">
+        <pre class="code" id="code" aria-label="The AI's code"></pre>
+        <div class="slot" id="slot"><div class="seen-rows" id="seenRows"></div></div>
+      </div>
+      <div class="desk-foot">
+        <p class="question" id="question">The job never says: does <code>1..5</code> include 5? What does <code>9..2</code> give?</p>
+        <div class="moves" id="moves">
+          <span class="move move-done" id="moveDone"><code>DONE</code> ends the job</span>
+          <span class="move move-again" id="moveAgain">Check again <b>(costs nothing)</b></span>
+        </div>
+      </div>
+    </article>
+
+    <!-- The pages. Kept-back pages wait in the fog, blurred (blur only on the decorative layer). -->
+    <div class="pages" id="pages"></div>
+    <p class="kept" id="kept">Held back from the AI: <b id="keptN">2</b> <span id="keptUnit">batches</span></p>
+
+    <!-- Every DONE in the study -->
+    <div class="tally" id="tally" role="img" aria-label="Every DONE in the study, by the moment it was said: nothing tried yet, 1 DONE, wrong; a check it can see is failing, no DONEs in 115 chances; everything it can see passes with more held back, 263 DONEs, 73 of them wrong; everything shown and passing, 344 DONEs, none wrong.">
+      <span class="stepchip tally-chip" id="tallyChip"></span>
+      <p class="tally-key" aria-hidden="true"><span><i class="k-wrong"></i>one wrong DONE</span><span><i class="k-right"></i>one right DONE</span></p>
+      <canvas id="tallyCanvas"></canvas>
+      <div class="signs" id="signs"></div>
+    </div>
+    <div class="fixstrip" id="fixstrip">
+      <p class="fix-row"><span class="fix-label">Wrong DONEs here, same jobs without and with the line</span>
+        <span class="fix-pile"><span class="fix-dots" id="fixWithout"></span><span class="fix-n" id="fixWithoutN"></span><span class="fix-sub">without the line</span></span>
+        <span class="fix-arrow" aria-hidden="true">&rarr;</span>
+        <span class="fix-pile"><span class="fix-dots" id="fixWith"></span><span class="fix-n" id="fixWithN"></span><span class="fix-sub">with it</span></span>
+      </p>
+      <p class="caveat" id="caveat"></p>
+    </div>
+
+    <div class="note" id="note" hidden><p id="noteText"></p>
+      <div class="try" id="try" hidden><button type="button" id="trySay">Say DONE</button><button type="button" id="tryKeep">Check again</button></div>
+    </div>
+  </section>
+
+  <nav class="controls" aria-label="Replay controls">
+    <button type="button" class="play" id="play">Pause</button>
+    <ol class="dots" id="dots"></ol>
+    <p class="source" id="source"></p>
+  </nav>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>

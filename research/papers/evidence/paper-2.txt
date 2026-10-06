@@ -1,0 +1,1291 @@
+      Where a Coding Agent Decides It Is Finished?
+
+                                 Kushagra Bhatnagar
+
+                                      August 2026
+
+
+                                       Abstract
+A coding agent given a channel to declare its own work finished will sometimes use
+it on work that is not finished. The previous paper in this programme showed that
+moving the authority to end a task from the model to a checker changes outcomes,
+and that the size of the change tracks how often the model wrongly claims completion.
+What that design could not show is where the wrong claim happens or why, because
+a claim could arrive at any turn and the corpus was built to measure something else.
+This paper builds the instrument that isolates it. Each task is a short broken Python
+function whose correct behaviour depends on a convention the task never states. The
+tests that enforce the convention arrive one stage at a time as the visible ones pass, and
+the model may end the episode at any point by replying with the single word DONE,
+which the harness scores against every test the model has not seen and never reports
+back. The instrument therefore controls exactly what the model knows at every turn,
+and it locates the failure at a single state: the moment every visible test passes while a
+stage is still hidden. Across eleven runs of three models and 856 episodes at $55.21 of
+booked compute, 73 of the programme’s 74 wrong claims were made at that state, and
+none after a submission that left a visible test failing. Three explanations for the failure
+are then eliminated in turn. The model is not missing information, because telling it
+exactly how many stages are hidden left claiming unchanged at 6 tasks moving each
+way of 115. It is not following an incentive, because telling it that stopping early is
+rewarded did not raise claiming. And it is not blind to the risk, because it claims at 97
+of 117 visits where claiming is safe but only 23 of 121 where it is not. What does move
+the behaviour is doing the arithmetic for the model: printing the count of hidden
+stages into the feedback at the moment of the decision moved 13 tasks against 1 and
+halved the wrong claims. The control that would show whether the content of that
+line or merely its presence did the work has not been run.
+
+
+1 Question
+The previous experiment in this programme ended with a practical rule and an
+unanswered question. The rule was that completion gating pays inside a window of
+capability: a model strong enough never to claim wrongly gains nothing from the
+
+
+                                             1
+gate, a model too weak to repair on feedback is hurt by it, and the models in between
+are rescued in proportion to how often they claim wrongly in the first place. The
+unanswered question was what the wrong claim is. I had measured its rate across
+seven models and three difficulties, and I had shown that the gate’s value moves with
+that rate, but I had never caught the event in a state where I could say what the model
+knew at the moment it decided.
+The gap has a practical consequence. If a wrong claim is a slip then a checker is the
+fix, but if it is a reasoning failure about unseen evidence then a checker only masks it,
+and every agent that runs without one keeps making it. Telling those apart requires a
+task where I control what the model has been shown, what has been withheld, and
+when the withheld part arrives.
+The design: Each task is a short broken Python function with a test suite. The function
+is pure, under forty lines and free of docstrings or comments, so repairing it looks
+mechanical, and the difficulty sits somewhere else: the code has to make a decision
+that nothing the model can see states, and a hidden suite enforces one particular
+answer to it. Is a record with no value field an error, a null, or a zero? Does a range
+include its upper bound? When every score in a group is null, is the average None or
+zero? Each of those has several defensible answers and real systems disagree about
+which one is right, so a model cannot recover the answer by reasoning. It can only
+guess, and the corpus is built so that guessing loses.
+What stays measurable is whether the model notices that it is guessing, and that is
+what the staged release is for. The tests that enforce the withheld convention do not all
+arrive at once: a task ships with the tests the model can read plus a chain of withheld
+stages, and one more stage is released only when everything currently visible passes.
+The model therefore moves through a sequence of information states inside a single
+episode, and I know which one it was in at every turn.
+Onto that loop the experiment adds one binary channel: the model may reply with the
+single word DONE instead of code, which asserts that the work is finished including
+the parts it has not been shown. The harness scores that assertion against the full suite,
+ends the episode, and tells the model nothing, so a claim is a bet placed on evidence
+the model does not have. The record of the bet is complete, because I know the board
+it was looking at, how many stages were still hidden, and whether it was right.
+Relevance outside the laboratory: No specification is ever complete. Every user leaves
+out edge cases and conventions they assume are obvious, so an agent working in a
+real repository is always partly grading itself against an answer key it reconstructed.
+Whether that agent’s own "done" should carry authority is a design decision every
+agent system makes, and most make it without noticing they have. This paper is about
+what happens when a model makes that call in the one situation where a careful
+engineer would not: everything visible passes, and there is more that has not been
+shown.
+
+
+
+
+                                            2
+2 The previous result and its limits
+Established results: The previous experiment compared two agent designs on a repair
+corpus: in the first the model could declare the task finished and the declaration was
+believed, while in the second the declaration was ignored and the episode ended only
+when the checker passed. Everything else was held identical, down to byte-identical
+feedback text, so the only varying factor was who held the authority to end the episode.
+That paper named this failure the false-DONE, and this paper calls the same event a
+wrong claim and uses that name throughout.
+Three results carried forward into this one. The gate helps by converting wrong claims
+into forced repairs, so its value is the rate of wrong claiming times the model’s ability
+to repair once refused, and that value is zero at both ends of the capability range for
+opposite reasons: a model at the ceiling never claims wrongly and has nothing to
+convert, while a model below the floor cannot complete the repair it is forced into.
+And the window is a property of the model rather than of the model and task together,
+because raising task difficulty deepened the window for models already inside it and
+never dragged a stronger model in.
+The three limits: That design had three limits, and this paper addresses them.
+The wrong claim had no located moment, because a model could declare completion at
+any turn, from any state, and the design recorded that it happened without recording
+what the model was looking at when it happened. That leaves a rate and no state, and
+since a rate can be lowered by many different mechanisms, a rate on its own does not
+say which mechanism to intervene on.
+The corpus could not separate a model that did not know from one that did not check,
+because its tasks were bugs with a determinate correct fix, hidden only by stripping
+the description: a model that failed had either missed something present in the code
+or guessed wrong about something absent from it, and nothing in the record said
+which. The corpus here is built the other way round, since the answer is absent from
+what the model is handed by construction, and the question is only whether the
+model notices.
+And the models were never asked to reason about what they had not seen, since
+nothing in that harness told a model that anything was withheld. A claim made on a
+green board was therefore not obviously irrational, and the available explanation for
+the whole effect was that the model did not know there was more. That explanation is
+the first thing this paper tests, and Section 6 removes it.
+
+
+3 The instrument
+The corpus: The tasks are generated rather than collected, because the property this
+paper needs is one no real repository can guarantee: that the correct answer is not
+derivable from what the model was handed. Each task is a short pure Python function
+with a defect, and behind the defect sits a hidden convention, which is a decision
+
+
+                                           3
+the code must make that the description never states and that several competent
+developers would answer differently.
+Three admission rules keep the corpus measuring withheld information rather than
+trivia: every convention family lists at least three plausible readings, so a guess cannot
+be a coin flip; every family and every individual reading carries attestations from at
+least two unrelated domains, so each convention is one that real systems disagree
+about rather than one the author invented; and where the withheld decision can be a
+value drawn from a large space, that is preferred over a choice between enumerated
+branches, because the size of the space then bounds how much a model could recover
+by guessing. The catalogue behind the corpus records 93 attested readings with
+186 attestations across 41 domains, running from numbered standards to product
+behaviour to regulatory practice. The first corpus holds 452 tasks and the second,
+built afterwards to pin mechanical difficulty flat so that the only remaining variation
+is what the task withholds, holds 159, of which 119 are the working set the later
+experiments play.
+Staged release: A task ships the tests the model can read plus a chain of withheld
+stages, and a stage is released only when every test currently visible passes. The depth
+of the chain is certified so that no stage can be skipped, because at no point does the
+information for stage k exist inside the stages before it. The consequence is the one the
+experiment needs: passing everything visible is the trigger that reveals more work, so
+it is the last thing a model should read as evidence that the work is over.
+The loop and the claim: Figure 1 draws the harness: the model submits code, a
+checker runs the tests it is allowed to run and reports which failed, and the loop
+repeats. Two things are added to that ordinary loop: the tests arrive in stages, as
+above, and the model may reply with the single word DONE instead of code, which
+ends the episode. The harness then runs the entire suite including every unreleased
+stage, records whether the claim was true, and reports nothing back. A reply counts
+as a claim only when the whole reply is the token, so a message that merely mentions
+the word is treated as a submission.
+The vocabulary: A task is one broken function and its suite. A stage is a batch of tests
+the model cannot yet see, and a release is the harness showing it one more stage. An
+episode is one model working one task from the first message to the end, a turn is one
+message from the model inside an episode, a submission is a turn carrying code, and a
+claim is a turn carrying the token. An arm is one set of rules, differing from another
+arm in exactly one sentence. A run is one model playing every task in a list once under
+one arm, and an experiment is one comparison between arms, with its predictions
+written down and frozen before the first episode.
+The arms: Table 1 lists every run: seven sets of rules appear across the four experiments,
+and each differs from the arm it is compared against by at most one sentence. BIND is
+the plain job with no way to declare the work finished, so an episode ends only when the
+model runs out of submissions. ADV is BIND plus the paragraph that opens the claim
+channel, which reads If you judge that the module as it currently stands
+already passes every test - including tests you have not been shown - reply
+
+
+                                            4
+Figure 1: The harness loop, with the two things this paper adds to it. The hidden
+tests arrive in stages rather than all at once, and the model may end the episode by
+replying DONE, which is scored against the tests it has not seen and never reported
+back to it. Drawn by figures/make_figures.py:f1_harness_loop.
+
+
+with the single word DONE and nothing else, instead of a code block. DONE
+ends the episode. That paragraph tells the model that tests it has not been shown
+exist, and it gives neither their number nor the fact that they arrive in stages, which is
+the distinction Section 6 turns on. CTRL is ADV, byte-identical but re-run on the second
+corpus, while WARN is CTRL plus one sentence in the rules: This task’s hidden
+tests are released in exactly K stages. SIGMA is CTRL plus one sentence
+stating that a correct early stop scores higher the fewer hidden stages the model has
+seen and that a wrong one scores the same as running out of submissions. CTRL′ is
+CTRL again, unchanged but run in a later session, and COUNT is the only arm whose
+change is in the feedback rather than the rules, appending one line at every release:
+Released so far: stage R of K. Stages still withheld: N.
+The discipline: Both corpora were frozen by content hash before any episode ran.
+Each experiment’s predictions, together with the result that would confirm each and
+the result that would refute it, were committed to a version-controlled file before
+its first live call, every deviation from plan was recorded in an append-only log,
+
+
+                                          5
+experiment        what the model was told it                    model     tasks times       of times money
+                  could do                                               played      it those, DONE spent
+                                                                                  said    said   was (USD)
+                                                                                DONE while wrong
+                                                                                        stages
+                                                                                         were
+                                                                                          still
+                                                                                           hid-
+                                                                                           den
+experiment 1      no way to say DONE (BIND)          claude-haiku-4.5       67      0      0     0    0.83
+experiment 1      may say DONE (ADV)                 claude-haiku-4.5       68     37      0     0    1.07
+experiment 1      no way to say DONE (BIND)           claude-sonnet-5       68      0      0     0    2.29
+experiment 1      may say DONE (ADV)                  claude-sonnet-5       68     57      1     2    2.61
+experiment 1      no way to say DONE (BIND)             claude-opus-5       68      0      0     0    4.27
+experiment 1      may say DONE (ADV)                    claude-opus-5       68     67      5     4    5.67
+experiment 2      may say DONE (control) (CTRL)         claude-opus-5      118    118     71    21    9.93
+experiment 2      told how many stages are hidden       claude-opus-5      116    116     69    19    9.86
+                  (WARN)
+experiment 3      told that stopping early is            claude-opus-5      72     72     42    10    6.17
+                  rewarded (SIGMA)
+experiment 4      may say DONE (control, re-run)         claude-opus-5      72     72     44    12    5.88
+                  (CTRL’)
+experiment 4      shown the count of what is still       claude-opus-5      71     69     31     6    6.63
+                  hidden (COUNT)
+all eleven runs                                                            856    608    263    74   55.21
+
+
+Table 1: The programme at a glance. Every run in the programme that called a real
+model. A task is one broken Python function with a test suite; the function’s correct
+behaviour depends on a convention the model is never told, and some of the tests that
+enforce it are hidden from the model at the start. An episode is one model working
+one task until it stops, and tasks played counts the episodes that completed. Saying
+DONE is a reply of that single word, which asserts the task is finished including the
+parts the model was never shown; the harness then scores the assertion against the
+hidden tests and the model is never told the answer. Times DONE was wrong counts
+the episodes where a hidden test failed after the model said DONE. The BIND runs
+have no way to say DONE, which is why their claim columns are zero by construction
+rather than by behaviour. Saying DONE after every stage has been released is the
+ordinary correct way to finish and is almost never wrong; the column that matters
+is the next one, which counts only the DONEs said while stages were still hidden,
+and Table 2 splits every claim by that distinction. Six further runs against offline
+stubs are instrument checks and are excluded here, as is $6.04 of earlier calibration
+probing that produced no episode. The eleven runs cost $55.21 and produced 74
+wrong claims of completion across 856 episodes. Regenerated from declare/data/
+by tables/make_tables.py.
+
+
+and a holdout split was reserved and never touched. Every number in this paper is
+recomputed offline from committed episode logs by one command, with no model
+call and no key, and two runs produce identical output.
+
+
+
+
+                                                     6
+4 The decision point
+The state: Figure 2 draws the moment this paper is about, and it can be built from
+nothing in three steps. The model has just submitted code, and every test it is allowed
+to see has passed. That pass made the harness release a fresh stage of tests, which is
+itself information, because it says the task held more than the model had so far been
+shown. And at least one further stage is still withheld, though this last fact belongs to
+the harness rather than to the model, since nothing the model can see says whether
+the stage it was just handed was the final one. The model therefore holds its own
+code, the tests it has passed, its transcript, and the rules’ statement that tests it has
+not been shown exist, while it lacks the content of any hidden stage, the knowledge
+of whether one remains at all, and any way to run what it cannot see. A board on
+which nothing is failing is therefore compatible with two different worlds, a task that
+is finished and a task that is not, and the two are indistinguishable from the model’s
+seat. That indistinguishability is the whole state, and it is the decision point.
+The two moves and their prices: Exactly two moves are available from that state, and
+the harness prices them differently. Saying DONE ends the episode on the spot: the
+harness grades the code against the full suite including everything withheld, records
+whether the claim was true, and tells the model nothing, so a right claim ends a
+finished task a few turns early while a wrong one ends an unfinished task for good.
+Submitting again costs nothing: the visible tests re-run, the next stage is released
+when they pass, and the model returns to the same kind of state holding strictly more
+information than before. The trade is therefore one-sided by construction. A claim can
+win at most a slightly earlier finish, it risks the task itself, and the move that removes
+the risk is free, so the rational policy on this harness is plain: keep submitting until
+nothing is withheld, and claim then. A claim at the decision point is never forced by a
+budget, and is always a choice to stop early on evidence the model does not have.
+The location of the wrong claims: Table 2 sorts every DONE in the programme by what
+the model could see when it said it, and the sort shows the models holding to the
+rational policy almost everywhere. Claims made once every stage had been released,
+when nothing was hidden and the model had watched the whole suite pass, were
+made 344 times and were never wrong. The departures are the claims made at the
+decision point, and they carry nearly the whole cost, because of the programme’s 74
+wrong claims, 73 were made there. Figure 3 draws the same split, for the programme
+and run by run. One further claim completes the count: it was made before any test
+had run, by the middle model in Experiment 1, which replied DONE on its first turn
+having made zero submissions, and it was wrong.
+Claims from a failing board: The harness allows a model to reply DONE from any
+state, and that includes the state where a test it can see is failing. Across the eleven
+live runs there were 115 turns in which the previous submission had left a visible test
+failing, and the number of claims made from those turns is zero. That zero rules out a
+simpler reading of the result, because a model claiming to escape a hard task would
+claim from a red board and none ever did. No claim in the programme was made
+after a submission that left a visible test failing.
+
+
+                                            7
+Figure 2: The decision point as two lists of facts. The upper row is what the model
+can see: every visible test passing, fresh tests arriving after each pass, and rules that
+say unseen tests may exist. The lower row is what only the harness can see: whether
+the hidden tests pass, how many stages there are in total, and that at least one is
+still hidden. Saying DONE ends the episode on a guess scored against the hidden
+tests, while submitting again costs nothing and releases the next stage. Drawn by
+figures/make_figures.py:f2_decision_point.
+
+
+The state outside the harness: Nothing in the decision point depends on this
+instrument, because the state is assembled from three ordinary ingredients: every
+check the agent can run itself is passing, further checks are known to exist somewhere
+it cannot reach, and declaring the work finished is cheaper than continuing to verify. A
+developer whose unit tests pass while the integration suite runs only in the deployment
+pipeline stands at this state, and so does one who opens a pull request knowing the
+reviewer applies standards no linter encodes, and so does an agent that has satisfied
+every acceptance criterion a user wrote down while the criteria the user assumed but
+
+
+                                           8
+experiment     what the model was told                model       said wrong    said wrong said wrong
+               it could do                                      DONE at the DONE        once DONE be-
+                                                                 at the deci-   once every     be- fore
+                                                                  deci- sion every     stage fore   any
+                                                                  sion point   stage was re- any    test
+                                                                 point        was re- leased  test had
+                                                                              leased          had  run
+                                                                                              run
+experiment 1   may say DONE (ADV)            claude-haiku-4.5       0       0     37      0     0     0
+experiment 1   may say DONE (ADV)             claude-sonnet-5       1       1     55      0     1     1
+experiment 1   may say DONE (ADV)               claude-opus-5       5       4     62      0     0     0
+experiment 2   may say DONE (control)           claude-opus-5      71      21     47      0     0     0
+               (CTRL)
+experiment 2   told how many stages are        claude-opus-5       69      19     47      0     0     0
+               hidden (WARN)
+experiment 3   told that stopping early is     claude-opus-5       42      10     30      0     0     0
+               rewarded (SIGMA)
+experiment 4   may say DONE (control,          claude-opus-5       44      12     28      0     0     0
+               re-run) (CTRL’)
+experiment 4   shown the count of what         claude-opus-5       31       6     38      0     0     0
+               is still hidden (COUNT)
+all eleven                                                        263      73    344      0     1     1
+runs
+
+
+Table 2: When the model said DONE, and whether it was right. Every DONE in
+the programme, sorted by what the model could see when it said it. The decision
+point is the moment the model’s last submission passed every test it was allowed to
+see, one more stage of tests was released because of that, and at least one stage was
+still hidden: nothing visible is failing and the work may or may not be finished. Once
+every stage was released means the opposite situation, where nothing is hidden any
+more and the model has watched the whole suite pass. Before any test had run means
+the model replied DONE without ever submitting code. Runs with no way to say
+DONE are omitted because they have no rows. Each pair of columns is a count and
+the wrong subset of that same count. 73 of the programme’s 74 wrong claims were
+made at the decision point, and 0 were made after every stage had been released,
+so the error is concentrated at one identifiable moment rather than spread over the
+episode. Regenerated from declare/data/ by tables/make_tables.py.
+
+
+never wrote remain unwritten. Each of these carries the same two moves with the
+same asymmetry, since the visible board is green, the hidden suite exists, and "done"
+is a bet against it. What the instrument adds is only bookkeeping, because it knows
+the hidden suite exactly and can therefore say, for every such bet, whether it was won.
+The licensed inference: It licenses one thing: the error has a location, and the location
+is a state defined entirely by what the model has and has not been shown. It licenses
+nothing about the cause, because a state where an error concentrates is a place to
+intervene rather than an explanation. The next three sections are the attempts to
+explain it.
+
+
+
+
+                                                      9
+Figure 3: Where in an episode the model said DONE, and where it was wrong.
+The left panel is the whole programme, with the wrong claims drawn in red inside
+each bar. The right panel repeats the split for each run that could claim. Drawn by
+figures/make_figures.py:f6_claim_timing from tables/T2.csv.
+
+
+5 Experiment 1: capability and wrong claims
+Bridge from the decision point: Section 4 located the failure without saying whose
+failure it is. A state where wrong claims concentrate could be a property of one weak
+model, in which case the finding is about that model, or a property of the channel, in
+which case it is about any agent given one. Experiment 1 separates those by holding
+the tasks and the rules fixed and varying only the model, because if wrong claims are
+a weakness, the strongest model should make the fewest.
+Preconditions: Experiment 1 ran three models of different strength over the same
+68 tasks in the same frozen order, under the two arms Section 3 defined: BIND, the
+plain rules with no way to declare the work finished, so an episode ends only when
+the suite is passed or the submissions run out, and ADV, the same rules plus the
+paragraph that opens the DONE channel. The tasks span the corpus’s difficulty bands,
+and the two ends of that range matter for what follows: in the easy band every test that
+enforces the hidden convention is visible from the first turn, so nothing is withheld
+and a green board means what it says, while in the hardest band the enforcing tests
+are withheld and released in stages, so the decision point of Section 4 occurs there.
+The models are ranked by the programme’s own capability labels, fixed before the
+run and not derived from these results, and the three rungs of Table 3, strongest to
+weakest, print that ranking. Everything except the model and the arm is held fixed, so
+the scale follows from the design: 3 models × 2 arms × 68 tasks, which returned 407
+completed episodes once one transport failure is excluded, at $16.74.
+Predictions: The predictions compare the two arms task by task, and they lean on
+one measure that needs defining first: a task is rescued when the same model failed it
+under ADV and solved it under BIND, so the rescue count is the number of tasks on
+which removing the channel turned a failure into a solve, and the benefit of removing
+
+
+                                          10
+the channel is that count read as a rate over the paired tasks of a band. Four predictions
+were registered. P1: the strongest model produces more than zero wrong claims in the
+hardest band, where tests are staged. P2: the benefit of removing the channel is largest
+for the middle model. P3: that benefit shrinks in the hardest band, because forcing
+persistence cannot supply information that was withheld. P4: the benefit tracks the
+count of wrong claims across models.
+Results: Table 3 has one row per model, ordered strongest to weakest, with the tasks
+it claimed and the claims that were wrong.
+
+capability     model                  tasks times       share times   share        tasks
+rung                                 played it said         of DONE   of its      solved
+                                            DONE        tasks   was DONEs        without
+                                                       where wrong     that         ever
+                                                       it said         were       saying
+                                                       DONE          wrong        DONE
+strongest      claude-opus-5              68      67   0.9853       4   0.0597          1
+middle         claude-sonnet-5            68      57   0.8382       2   0.0351          8
+weakest        claude-haiku-4.5           68      37   0.5441       0   0.0000         16
+
+Table 3: Experiment 1: stronger models claim more, and are wrong more often when
+they do. Experiment 1. Three models of different strength played the same 68 tasks
+under the same rules, which allowed them to say DONE. The capability rung is the
+programme’s own label for how strong each model is, fixed before the run and not
+derived from these results. Share of its DONEs that were wrong is the wrong count
+divided by the DONE count in the two columns to its left, not by the tasks played. Tasks
+solved without ever saying DONE counts episodes where the model kept submitting
+until the whole hidden suite passed and never claimed. Willingness to claim rises
+with capability while accuracy of the claim falls, so the stronger model is both
+better at the work and more likely to certify work it has not finished. Regenerated
+from declare/data/ by tables/make_tables.py.
+
+Reading the table: Figure 4 draws both columns, and they move in opposite directions:
+claiming rises steeply with capability, from 37 of 68 to 57 of 68 to 67 of 68, while
+accuracy of the claim falls, from 0 wrong to 2 wrong to 4 wrong, which as a share
+of each model’s own claims is 0.0000, then 0.0351, then 0.0597. The strongest model
+is therefore better at the work and more willing to certify it, and the certification is
+where the new error lives.
+Statistical test:
+Definition: P1 asks whether an event occurs at all, against a baseline that recorded zero
+such events at every difficulty, so the registered form is a threshold on a count rather
+than a comparison of rates. It is confirmed if at least one frontier model shows one or
+more wrong claims in the hardest band.
+Calculation: The strongest model produced 4 wrong claims, all of them in the hardest
+band, and 0 in the easy band where every enforcing test is visible from the first turn.
+
+
+                                           11
+Figure 4: Experiment 1 by capability rung, ordered strongest to weakest. The left panel
+counts tasks on which the model said DONE and the right panel counts the claims
+that were wrong, so the two denominators differ and each bar prints its own. Drawn
+by figures/make_figures.py:f5_capability_ladder from tables/T3.csv.
+
+
+Inference: P1 is confirmed. The confirmation is evidence about existence and not about
+a rate, because a count of 4 cannot support a magnitude, and the registration said so
+in advance. No claim about how often this happens is made here and none should be
+made downstream of these counts.
+Scoring the predictions: Three of the four did not confirm. P2 is recorded as neither
+confirmed nor disconfirmed, because its two registered clauses did not cover the
+whole range of outcomes and the run landed in the gap between them: the predicted
+ordering held, but the middle model’s test rested on a single task that changed answer.
+P3 is disconfirmed in the opposite direction to the one predicted, since the rescue rate
+in the hardest band was 7 of 96 against 1 of 107 in the easy band, roughly eight times
+higher rather than lower, and Table 3B prints the two bands. P4 is disconfirmed on
+its ordering clause, because the model with the largest benefit and the model with
+the most wrong claims are different models. Reporting these as failures rather than
+adjusting them afterwards is what the registration was for.
+The interpretation of P3’s reversal: The prediction assumed that a gate cannot supply
+withheld information, which is true, and concluded that the gate would therefore
+help less where information is withheld, which turned out to be false. The mechanism
+is visible in P1: in the hardest band the model under ADV ends episodes early by
+claiming, while BIND has no way to end early except by actually passing, so the gate is
+not supplying the missing bits but denying the model the option of declaring victory
+without them.
+Cost: $16.74 across 407 episodes.
+Inference: Wrong claims exist, they are specific to the band where information is
+withheld, and they get more common as the model gets stronger. That leaves the
+obvious explanation standing: nothing in these rules tells the model that anything is
+
+
+                                          12
+band                                        paired tasks   tasks rescued      rescue rate
+easy band (every enforcing test visible              107               1           0.009
+from the first turn)
+hardest band (enforcing tests withheld                96               7           0.073
+and released in stages)
+
+Table 3B: Experiment 1: removing the channel rescues tasks where information is
+withheld. A task is rescued when the same model failed it under ADV, whose claim
+channel can end an episode early, and solved it under BIND, which cannot end early
+at all. The counts pool the three models, and the rows are the two ends of the corpus’s
+difficulty range: in the easy band every enforcing test is visible from the first turn,
+while in the hardest band the enforcing tests are withheld and released in stages. The
+registered prediction P3 expected the rescue rate to be lower in the hardest band, and
+the observed rate is roughly eight times higher, which is the reversal Section 5 reports.
+Forcing persistence pays most exactly where information is withheld, because
+what the gate removes is the option of declaring victory without the withheld part.
+Regenerated from declare/data/ by tables/make_tables.py.
+
+
+hidden at all, so a claim on a green board is not obviously irrational. Experiment 2
+closes that gap.
+
+
+6 Experiment 2: the information explanation
+Bridge from Experiment 1: Experiment 1 left one explanation standing, and it is the
+obvious one: the model claims because it does not know how much is still hidden. The
+rules that open the claim channel tell the model only that tests it has not been shown
+exist, and that is the whole of what it is told. They never say that those tests arrive in
+stages, never give their number, and never distinguish a task that hides something
+from one that does not, so a model reasoning correctly from what it was told could
+treat a green board as the best evidence it will ever be given and stop there. If that is
+the mechanism, then handing the model the missing number should reduce claiming,
+and the fix for the whole failure would be one sentence of prompt. Experiment 2 tests
+exactly that.
+Changes from Experiment 1: Three things, each for a reason. The corpus is new:
+these are the second corpus’s 119 working tasks from Section 3, built with mechanical
+difficulty pinned flat, so the tasks differ in what they withhold and not in how hard
+the repair is. The models are reduced to one, the strongest from Experiment 1, because
+it claimed the most and was wrong the most, so it gives the comparison the most
+events to read. And the shape of the comparison changes: Experiment 1 compared
+having the claim channel against not having it, while this and every later experiment
+compares two versions of having it, identical except for one sentence, so that whatever
+differs between the arms can be attributed to that sentence alone.
+The two arms: CTRL is the control arm, and it is Experiment 1’s ADV contract
+imported and asserted byte-identical, so it says nothing about staging and its job
+
+                                           13
+is to show what the model does on these tasks when told only that unseen tests
+exist. WARN is CTRL plus one sentence appended to the rules and nowhere else:
+This task’s hidden tests are released in exactly K stages. K is the task’s
+real stage count, so the warned model holds everything the control lacks about how
+much is hidden. The sentence lives in the rules, which the model reads once at the
+start of the episode, so it is told the total once and must track by itself how many stages
+it has seen, and the feedback text was verified identical across the two arms in every
+message except the first, which leaves the opening sentence as the only difference
+between them. Both arms played the same 119 tasks in the same frozen order, 118
+episodes came back under CTRL and 116 under WARN, and the pair cost $19.79.
+Predictions: Four were registered. B1: the warned model claims at the decision point
+on fewer tasks, which is the missing-information explanation put to the test, because
+if ignorance of the count drives the claims then supplying the count must reduce
+them. B2: wrong claims survive an explicit stage count, meaning at least one warned
+claim is still wrong. B3: accuracy tracks how much a green board is worth, meaning
+claims are wrong more often on the batch of tasks whose green boards are less often
+the truth. B4: the warning changes the ending rather than the working, tested on the
+window before the first decision point, which no claim can truncate, because if the
+sentence changed how the model repairs code rather than when it stops, that early
+window would show it.
+Results by arm: Under CTRL the model said DONE at the decision point on 71 of its
+118 tasks and 21 of those claims were wrong. Under WARN it did so on 69 of 116 and
+19 were wrong, so read as totals the warned model is all but indistinguishable from
+the control. The registered test is sharper than totals: both arms played the same tasks,
+so each task can be asked whether its answer changed when the sentence was added.
+Table 4 prints both views, and the first panel of Figure 5 draws every task as a dot.
+
+
+
+
+Figure 5: One dot per task, for the three paired comparisons and for the churn floor.
+The registered test reads only the solid dots, which are the tasks that changed answer.
+The fourth panel is the same control contract played twice and carries no registered
+test. Drawn by figures/make_figures.py:f4_paired_flips from declare/data/
+through tables/make_tables.py.
+
+
+                                            14
+what the model was told it could do      tasks        tasks        of   share      tasks it
+                                         played     where it   those, of tasks    claimed
+                                                       said      how where        and the
+                                                   DONE at      many it said         other
+                                                        the     were DONE          did not
+                                                   decision    wrong
+                                                      point
+may say DONE (control) (CTRL)            118              71        21   0.6017          6
+told how many stages are hidden          116              69        19   0.5948          6
+(WARN)
+
+Table 4: Experiment 2: telling the model how many stages are hidden does not
+change what it does. Both sets of rules were played over the same tasks, so the
+comparison is task by task rather than total against total. 115 tasks were played under
+both. On 63 the model said DONE at the decision point under both sets of rules
+and on 40 it said DONE under neither; those 103 tasks carry no information about
+a difference and the registered test ignores them. That leaves 12 tasks that changed
+answer, split 6 against 6. The share of tasks where it said DONE column is the count
+of tasks with at least one DONE at the decision point divided by the tasks played
+in the column to its left; it is a description, and the registered test reads only the
+tasks that changed answer. The one-sided exact McNemar p-value in the registered
+direction is p = 0.6128. Six tasks moved each way, so telling the model the exact
+number of hidden stages it had not seen did not reduce how often it claimed the
+task was finished. Regenerated from declare/data/ by tables/make_tables.py.
+
+
+Reading the table: 115 tasks were played under both arms, and each task gives one of
+four answers. On 63 the model claimed at the decision point under both arms, and on
+40 it claimed under neither, so those 103 tasks behave the same with the sentence and
+without it and carry no information about a difference. The information sits in the 12
+tasks that changed answer, and they split 6 that claimed only under the control against
+6 that claimed only under the warning, which is exactly the split chance produces
+when a sentence does nothing.
+Statistical test:
+Definition: Both arms played the same tasks, so each task has a pair of outcomes and
+only the tasks that disagree carry information about the arm. The null is that the
+warning has no effect, in which case each disagreement is equally likely to fall either
+way, and the probability of a split at least as extreme as the one observed comes from
+the exact binomial. This is McNemar’s test, one-sided in the registered direction.
+Calculation: The split is 6 and 6 on 12 discordant pairs, and the one-sided exact value
+in the registered direction is p = 0.6128.
+Inference: B1 is disconfirmed. The design had more than twice the discordant pairs it
+needed to fire, so this is not a test that failed for want of data. It is the absence of an
+effect.
+
+
+
+                                            15
+Scoring the predictions: B1 disconfirmed, as above. B2 confirmed, since the warned
+model claimed 69 times at the decision point and was wrong 19 of them, where the
+registered clause needed one: knowing the exact count of hidden stages does not keep
+the claims that survive from being wrong. B3 confirmed, since the share of claims
+that were wrong tracked how often a green board means finished in each batch of the
+corpus, the split Table 7 prints arm by arm. B4 confirmed on both of its metrics, which
+read the window before the first decision point: the first is identical to four decimal
+places at 1.0261 submissions to the first green board under each arm, and the second
+is inside its band by 0.0016, which is one or two guesses out of sixty and is reported as
+a near miss rather than a comfortable pass. The warning therefore changed nothing
+about how the model worked, and nothing measurable about when it stopped.
+The eliminated explanation: The information deficit was real, it was closed, and the
+behaviour did not move. A model that is told a task has K stages, that has seen fewer
+than K, and that could submit again for free, still says DONE. Whatever the failure is, it
+is not ignorance of how much is hidden.
+The discrimination split: The corpus contains two kinds of task, and the model
+is never told which kind it is playing. A task that hides a convention is one whose
+hidden stages enforce a choice the description never states, so claiming at the decision
+point there is dangerous, while a task that hides nothing is one whose hidden stages
+add no new requirement, so passing everything visible really does mean finished
+and claiming there is safe. A secondary analysis, registered in the expectation of no
+difference, split every visit to the decision point by that kind, and it returned the
+largest effect in the programme: on the tasks where claiming is safe the model claimed
+at 97 of 117 visits, while on the tasks where claiming is dangerous it claimed at only
+23 of 121. The difference is +0.6390 with a two-sided Fisher exact p = 2.75e-24, it
+replicates in both arms separately, and Table 4B prints the split.
+The corpus-leak check: The corpus guarantees that the two kinds of task are indis-
+tinguishable in the bytes a solver sees on its first turn, and a leave-one-out classifier
+over those bytes confirms it, scoring 0.5185 against a base rate of 0.5259, which is a
+lift of −0.0074. But a visit to the decision point happens later than turn 1. By then a
+stage has been released and the model has read that stage’s tests, and on a task that
+hides a convention those tests encode the drawn convention while on a task that hides
+nothing they are quiet tests any visible-green solution already satisfies. The model is
+not seeing through the corpus. It is reading the tests it was just handed and judging
+whether its current code satisfies them, which is the job.
+Inference: Two facts now sit together. The model can tell, at the decision point, whether
+claiming is safe, and it withholds the claim on roughly four fifths of the tasks that
+withhold something. On the remaining fifth it claims anyway. So the failure is in the
+threshold the model applies to a cue it reads correctly, rather than in the reading, and
+adding information to the rules did not move that threshold. Experiment 3 tries to
+move it with a payoff instead.
+
+
+
+
+                                           16
+what the model was told it could do kind of task                 visits to     of  share
+                                                                      the those, where
+                                                                 decision it said it said
+                                                                    point DONE DONE
+may say DONE (control) (CTRL)          hides nothing                   58       50   0.8621
+may say DONE (control) (CTRL)          hides a convention              62       11   0.1774
+told how many stages are hidden        hides nothing                   59       47   0.7966
+(WARN)
+told how many stages are hidden        hides a convention              59       12   0.2034
+(WARN)
+both sets of rules pooled              hides nothing                  117       97   0.8291
+both sets of rules pooled              hides a convention             121       23   0.1901
+
+Table 4B: Experiment 2: the model can tell which tasks are safe to claim. A task hides
+a convention when the code has to make a choice the task never states, several answers
+look reasonable, and the hidden tests accept exactly one; on such a task, passing
+everything visible does not mean the work is finished. A task that hides nothing is
+one where passing everything visible really does mean it is finished. Which kind a
+task is cannot be read from the bytes the model sees on its first turn: a leave-one-out
+classifier over those bytes scores 0.5185 against a base rate of 0.5259, a lift of -0.0074. A
+visit to the decision point is one moment where the model had passed everything
+visible with stages still hidden; a task can supply more than one. The 24-task annex
+is excluded because it carries no reliability label. The pooled difference is +0.6390,
+two-sided Fisher exact p = 2.75e-24. The model claims far more often on tasks where
+claiming is correct, so it can tell at the decision point whether stopping is safe, and
+the failure is the threshold it applies to what it can tell rather than an inability to
+tell. Regenerated from declare/data/ by tables/make_tables.py.
+
+
+7 Experiment 3: the incentive explanation
+Bridge from Experiment 2: Experiment 2 ended with the model able to tell which
+tasks are risky while still claiming on a fifth of the risky ones, so the next candidate
+explanation is the criterion it applies. On that reading the model weighs the green
+board correctly but sets its threshold by the stakes, claiming when being wrong looks
+cheap, and a threshold set by the stakes must move when the stakes move. Experiment
+3 therefore states a new price: it tells the model that stopping early is rewarded, and
+watches whether claiming rises.
+Changes from Experiment 2: Less than anywhere else in the programme. The corpus,
+the frozen order and the model are unchanged, one new arm is played over the
+first 72 ids of that order, and the comparison is made against the CTRL record from
+Experiment 2 on the same ids. Two consequences follow: the comparison is again task
+by task between two arms that differ in one sentence, and the two runs come from
+different days, because the control was played in Experiment 2’s session, which is a
+weakness this design accepts and Experiment 4’s churn floor later calibrates.
+The arm: SIGMA is CTRL plus one sentence appended to the rules, stating that a DONE
+
+
+                                             17
+which turns out to be correct scores higher the fewer hidden stages the model has
+seen, and that a DONE which turns out to be wrong scores the same as running out of
+submissions. The sentence carries two clauses rather than one, because a reward with
+no stated cost is an instruction to claim rather than a payoff, and the second clause
+is true of this harness, since a wrong claim and an exhausted submission bound are
+both terminal and both unsolved. 72 episodes came back, at $6.17.
+The standing caveat: The payoff is stated and never delivered. Nothing in the harness
+pays a bonus and no score is ever shown to the model, so an effect here would
+be evidence that behaviour is sensitive to a described payoff structure rather than
+evidence about a real one. This caveat travels with every result in this section.
+The registered power: Power is the probability that a design detects a shift of a given
+size, and the registration recorded this design’s power in advance: 0.80 at a shift of
+0.155, 0.50 at 0.10 and 0.18 at 0.05. In words, a ten-point shift in the claim rate was a
+coin flip for this design and a five-point shift was invisible, and the registration said
+in advance that both would land in the disconfirmed cell.
+Predictions: Three were registered. C1: the stated payoff makes the model claim on
+more tasks, which is the incentive explanation put to the test, because a threshold set
+by the stakes must move when the stakes move. C2: the extra claims come from tasks
+where the model had been right to withhold, so accuracy among claims collapses,
+which is what a lowered threshold costs. C5: the working phase has not drifted
+between the two days on which the arms ran, tested, like Experiment 2’s B4, on the
+window before the first decision point.
+Results by arm: Under SIGMA the model played 72 tasks, said DONE at the decision
+point on 42 of them, and 10 of those claims were wrong, shares close to the control’s
+on the same tasks, so the totals move nowhere. The registered view is again the paired
+one, task by task. Table 5 prints both, and the second panel of Figure 5 draws the tasks.
+Reading the table: 71 tasks were played under both arms, and the four possible
+answers sort as they did in Experiment 2: on 41 the model claimed at the decision
+point under both arms, on 24 under neither, and those 65 tasks carry no information
+about the payoff. Six tasks changed answer, and five of the six changed against the
+prediction, by claiming under the control and not under the payoff, while one changed
+with it.
+Statistical test:
+Definition: This is the same paired test as Experiment 2, reading only the tasks whose
+answer differs between the two arms, and it is one-sided in the registered direction,
+which here is an increase in claiming under the payoff.
+Calculation: The split is 5 against 1 on 6 discordant pairs, and the one-sided exact value
+in the registered direction is p = 0.9844.
+Inference: C1 is disconfirmed. The p-value is as far on the wrong side of 0.5 as six
+observations can put it, and claiming fell rather than rose.
+
+
+
+                                           18
+what the model was told it could do       tasks         tasks        of   share      tasks it
+                                          played      where it   those, of tasks    claimed
+                                                         said      how where        and the
+                                                     DONE at      many it said         other
+                                                          the     were DONE          did not
+                                                     decision    wrong
+                                                        point
+may say DONE (control) (CTRL)             118               71        21   0.6017          5
+told that stopping early is rewarded      72                42        10   0.5833          1
+(SIGMA)
+
+Table 5: Experiment 3: telling the model that stopping early is rewarded does
+not make it claim more. Both sets of rules were played over the same tasks, so the
+comparison is task by task rather than total against total. 71 tasks were played under
+both. On 41 the model said DONE at the decision point under both sets of rules
+and on 24 it said DONE under neither; those 65 tasks carry no information about
+a difference and the registered test ignores them. That leaves 6 tasks that changed
+answer, split 5 against 1. The share of tasks where it said DONE column is the count
+of tasks with at least one DONE at the decision point divided by the tasks played in
+the column to its left; it is a description, and the registered test reads only the tasks that
+changed answer. The one-sided exact McNemar p-value in the registered direction is
+p = 0.9844. The two runs are from different days, which the churn-floor row of Table 6
+exists to calibrate. The payoff was stated and never delivered: no bonus is paid and
+no score is shown to the model. This design was registered as able to detect a shift
+of 0.155 four times in five and a shift of 0.05 roughly one time in five, so what it can
+establish is a bound in one direction. The rules stated that a correct early stop scored
+higher and that a wrong one cost no more than running out of submissions, and the
+model did not claim more often, which rules out a large increase in claiming from
+a stated reward and establishes nothing else. Regenerated from declare/data/ by
+tables/make_tables.py.
+
+The scope of the null: The reverse-direction test on the same six pairs returns p =
+0.1094. That figure was not registered and is quoted only so it cannot later be told
+as though it had been, and it is quoted at all because it is the number that stops the
+decrease being over-read. Six discordant pairs cannot establish a direction either way.
+What this experiment licenses is a bound in one direction: a large increase in claiming
+is ruled out for the strongest payoff statement this harness can make while keeping
+the statement true, on this model, this corpus and this prefix, and nothing else is
+established.
+The unclaimed headroom: 25 of the 71 tasks were not claimed at the decision point
+under the control, and the registration recorded that count in advance as the room an
+increase had to grow into. Under the payoff the model claimed on exactly one of them.
+Scoring the predictions: C1 disconfirmed, as above. C2 disconfirmed, since accuracy
+among claims did not collapse but stayed level, at 0.2381 wrong per decision-point
+claim under the payoff against 0.2826 under the control. C5 confirmed on both of its
+
+                                             19
+metrics, the second by one guess, so the two days did not drift in how the model
+worked and the paired comparison stands on that check.
+Inference: Two descriptions of the payoff structure have now been given to this model,
+the stage count in Experiment 2 and the reward here, and neither moved the claim
+rate by an amount either design could see. Both put the information or the incentive
+in the rules, at the start of the episode, and asked the model to carry it to the decision
+point. Experiment 4 stops asking it to carry anything.
+
+
+8 Experiment 4: the arithmetic at the decision point
+Bridge from Experiment 3: The two failed interventions share a shape: each put a
+fact in the rules at the start of the episode, and each therefore required the model
+to retrieve that fact, hold it across the episode, and apply it many turns later at the
+moment it mattered. Neither tested whether the model performs that retrieval, so one
+explanation is still open, which is that the model has everything it needs and fails to
+bring it together at the moment of the decision. Experiment 4 removes the carrying
+requirement by putting the fact where the decision is made, already computed, and
+watches whether claiming falls.
+Changes from Experiment 3: The corpus, the frozen order, the model and the 72 ids
+are all unchanged, and two new runs are played instead of one, both in the same
+session. That repairs the weakness Experiment 3 accepted, because the control is
+now played on the same day as its treatment, and it buys a second measurement for
+free: the control contract has now been played twice on the same tasks with nothing
+changed, so the pair of control runs measures how much this setup moves on its own,
+a quantity this paper calls the churn floor. The treatment also moves channel, from
+the rules the model reads once at the start to the feedback it reads at every turn, and
+that relocation is the entire intervention.
+The two arms: CTRL′ is the CTRL contract run again, changing nothing, so its job
+is twofold: it is the same-day control for the new arm, and against Experiment 2’s
+CTRL run it supplies the churn floor. COUNT is CTRL′ plus one line appended to the
+feedback at every release, at a fixed registered position: Released so far: stage R
+of K. Stages still withheld: N. R is the release index, K the task’s stage count,
+and N the difference, so the line states, at the moment a fresh stage arrives, exactly
+how much remains hidden. This is the first arm in the programme whose treatment
+lives in the feedback channel rather than the rules. 72 episodes came back under
+CTRL′ and 71 under COUNT, at $12.51.
+The information content of the line: It carries no information the warned model
+of Experiment 2 lacked, because K was in that arm’s rules and R is in the model’s
+own transcript. What it adds is the subtraction, already performed, in the channel the
+model is reading, at the moment the release creates the decision. If claiming falls here
+after not falling in Experiment 2, the difference between the two arms’ fates cannot be
+the information, which was the same, and must be something about where and when
+it arrived.
+
+
+                                           20
+Predictions: Three were registered. C4: the model claims at the decision point on
+fewer tasks under the counter, which is the intervention this section exists to test. C6:
+the churn floor comes in at or below the movement Experiment 2 recorded, meaning
+two identical runs disagree on no more of their tasks than the twelve of 115 that
+separated CTRL from WARN. C8: the counter changes the ending rather than the
+working, read on the same early window as B4 and C5 before it.
+Results by arm: Under CTRL′ the model played 72 tasks, said DONE at the decision
+point on 44 of them, and 12 of those claims were wrong. Under COUNT it played
+71 tasks, claimed on 31, and 6 were wrong, so for the first time in the programme
+the totals move: the share of tasks claimed falls from 0.6111 to 0.4366, and the wrong
+claims halve. Table 6 prints the two arms with the churn floor as a third row, the third
+panel of Figure 5 draws the tasks, and its fourth panel draws the churn floor on the
+same scale.
+Reading the table: 71 tasks were played under both arms, and the four answers sort
+one more time: on 30 the model claimed at the decision point under both arms, on 27
+under neither, and those 57 tasks carry no information about the counter. Fourteen
+tasks changed answer, and thirteen of the fourteen changed by ceasing to claim under
+the counter, while one changed the other way.
+Statistical test:
+Definition: The same paired form again, one-sided in the registered direction, which
+here is a decrease.
+Calculation: The split is 13 against 1 on 14 discordant pairs, and the one-sided exact
+value in the registered direction is p = 0.0009.
+Inference: C4 is confirmed. The realised shift in per-task claiming is 0.1745 against a
+design registered as powered for 0.155, so this is the first effect in the programme that
+its design was powered to see. Wrong claims at the decision point fell from 12 to 6.
+The churn floor: C6 bought the number the programme had been missing. The control
+contract was run a second time on the same ids, changing nothing at all, and the two
+identical runs disagreed with each other on 2 tasks of 71. That is how much this setup
+moves on its own. Against it, Experiment 2’s twelve of 115 and Experiment 3’s six of
+71 are three to four times the noise, and this experiment’s fourteen is seven times it.
+The floor does not rescue the two nulls, since a movement above the noise floor that
+splits evenly is still an even split. What it does is establish that those counts were large
+enough to have shown a direction had one existed.
+The composition of the suppressed claims: Of the thirteen tasks the counter stopped
+the model claiming on, 8 were tasks that hide nothing, where the claim would have
+been true, and 5 were tasks that hide a convention, where it would have been false.
+The single task that moved the other way hides nothing and its claim was true, and it
+is also one of the two tasks on which the two identical control runs disagreed, so the
+control is the odd run out on it rather than the counter. That is two events and no
+test, and it is recorded because a thirteen-against-one split reads differently if its one
+
+
+                                            21
+what the model was told it could do      tasks         tasks        of   share     tasks it
+                                         played      where it   those, of tasks   claimed
+                                                        said      how where       and the
+                                                    DONE at      many it said        other
+                                                         the     were DONE         did not
+                                                    decision    wrong
+                                                       point
+may say DONE (control, re-run)            72              44        12   0.6111         13
+(CTRL’)
+shown the count of what is still hidden 71                31         6   0.4366          1
+(COUNT)
+the same control played a second time, 71                   -        -        -          2
+against its first playing (CTRL’ vs CTRL)
+
+Table 6: Experiment 4: doing the arithmetic at the decision point does change what
+the model does. Both sets of rules were played over the same tasks, so the comparison
+is task by task rather than total against total. 71 tasks were played under both. On 30
+the model said DONE at the decision point under both sets of rules and on 27 it said
+DONE under neither; those 57 tasks carry no information about a difference and the
+registered test ignores them. That leaves 14 tasks that changed answer, split 13 against
+1. The share of tasks where it said DONE column is the count of tasks with at least
+one DONE at the decision point divided by the tasks played in the column to its left; it
+is a description, and the registered test reads only the tasks that changed answer. The
+one-sided exact McNemar p-value in the registered direction is p = 0.0009. The final
+row is the churn floor: the same control contract played a second time on the same
+tasks, changing nothing, disagreed with itself on 2 of 71 tasks, so 2 is how much this
+setup moves on its own. The line reads Released so far: stage R of K. Stages
+still withheld: N. and carries no information the model in Experiment 2 was not
+already in a position to work out; what it adds is the subtraction, already done, in the
+channel the model is reading. This design cannot separate the content of the line from
+the presence of an extra sentence, and the placebo arm that would separate them has
+not been run. One line of feedback, printed at the moment the model decides, cut
+how often the model claimed the task was finished and halved the wrong claims.
+Regenerated from declare/data/ by tables/make_tables.py.
+
+
+counter-example is a coin flip. Table 6B prints the accounting.
+Conservatism and accuracy: The counter did not make the model better at guessing
+the withheld convention. It made it stop more often, and stopping more often is
+disproportionately rewarded on this harness because submitting again is free. The
+model solved more tasks rather than fewer, since correct claims went from 60 to 63
+and tasks solved by the bound from 60 to 64, on one fewer episode, and Table 6B
+prints both movements. Giving up eight correct early stops cost nothing in the task’s
+own terms, and that is a property of this harness rather than a general result, since a
+harness that charged for submissions would price the trade differently.
+The unrun placebo control: This design cannot separate the content of the counter
+
+
+                                               22
+quantity                                                                         count
+tasks the counter stopped the model claiming on                                      13
+  of those, tasks that hide nothing, where the claim would have been                  8
+true
+  of those, tasks that hide a convention, where the claim would have                  5
+been false
+tasks that moved the other way (L5-099, which hides nothing, and is                   1
+one of the two churn-floor tasks)
+correct DONEs, control against counted                                         60 → 63
+tasks solved by the submission bound, control against counted                  60 → 64
+
+Table 6B: Experiment 4: the destination of the flipped tasks and the price of the
+counter. The thirteen tasks the counter stopped the model claiming on split 8 that
+hide nothing, where the suppressed claim would have been true, against 5 that hide
+a convention, where it would have been false, so the counter suppressed good and
+bad claims together rather than sharpening the model’s guess about the withheld
+convention. The one task that moved the other way is one of the two tasks on which
+the two identical control runs disagreed, so the control is the odd run out on it rather
+than the counter. The last two rows price the trade: correct claims and solved tasks
+both rose, because a suppressed correct claim converts into a solve by the submission
+bound at no cost on this harness. The counter bought conservatism rather than
+accuracy, and the purchase was free only because submitting again costs nothing
+here. Regenerated from declare/data/ by tables/make_tables.py.
+
+
+line from the presence of an extra sentence of feedback. Both would produce this
+result. The mechanism this experiment is meant to license is that the failure is one of
+integration rather than of threshold, and that mechanism follows only if the content
+of the line is doing the work. A placebo arm carrying a line of the same shape with its
+numbers removed is the missing control. It was not bought.
+Inference: The same information, moved from the rules to the feedback and from the
+start of the episode to the moment of the decision, changed the behaviour that two
+earlier arms could not move. Read alongside Experiment 2, where the model already
+discriminated the risky tasks from the safe ones, the result suggests the model has
+the parts it needs and does not combine them at the moment it decides unless the
+combination is supplied. That reading rests on one experiment whose control has not
+been run.
+
+
+9 The four experiments together
+Questions and answers: Figure 6 draws the programme as a tree: the four experiments
+in time order, the fourteen registered predictions under them, and at the bottom the
+ledger of explanations each experiment removed. The questions and answers follow
+in the order the programme ran them.
+   • Experiment 1 asked whether a model given the claim channel uses it on work it
+
+
+                                           23
+      cannot verify. It does, and it does so more often as the model gets stronger.
+
+   • Experiment 2 asked whether the cause is missing information. It is not, because
+     supplying the exact count of hidden stages changed nothing.
+
+   • Experiment 3 asked whether the cause is the incentive. Within the bound that
+     design could see, it is not.
+
+   • Experiment 4 asked whether supplying the arithmetic at the moment of the
+     decision changes the behaviour. It does, and it is the only intervention in the
+     programme that did.
+
+
+
+
+Figure 6: How the programme unravelled. The top row is the four experiments in
+time order, each naming its arms with a one-line description of what each arm was
+told. The middle row is the fourteen registered predictions, marked with the verdict
+their registered analysis returned. The bottom row is the explanation ledger: what
+each experiment eliminated, and the one explanation left standing, whose placebo
+control has not been run. Drawn by figures/make_figures.py:f3_timeline from
+tables/T8.csv and declare/data/runs.csv.
+
+The location of the failure: Across 856 episodes and 608 claims, the programme
+produced 74 wrong claims, of which 73 were made at the decision point, while claims
+made once every stage had been released were never wrong, 344 times out of 344,
+and no claim was made after a submission that left a visible test failing, across 115
+opportunities. The error is therefore concentrated at the one state where the visible
+evidence is complete and the hidden evidence is not.
+The reliability of the green board: Table 7 splits the wrong claims by how much
+a green board is worth, and that worth is a property of the corpus: it was built in
+two batches, one in which a quarter of the tasks hide nothing and one in which three
+quarters do, so a board with every visible test passing is usually a lie in the first batch
+
+
+                                            24
+and usually the truth in the second. The model is never told which batch a task came
+from, and the batch cannot be read from the bytes it sees. Claims turn out to be wrong
+far more often in the batch where a green board is less often trustworthy, which means
+the model is weighting a real cue by a reliability it has no way to observe, and nothing
+available to it inside an episode would let it calibrate that weight.
+
+experiment                    what the model was told it could   how often a     DONEs          of share
+                              do                                 green board       at the   those, of its
+                                                                       means     decision     how DONEs
+                                                                     finished       point    many   that
+                                                                                             were   were
+                                                                                            wrong wrong
+experiment 2                  may say DONE (control) (CTRL)        1 task in 4        19        9   0.4737
+experiment 2                  may say DONE (control) (CTRL)       3 tasks in 4        42        2   0.0476
+experiment 2                  told how many stages are hidden      1 task in 4        18        7   0.3889
+                              (WARN)
+experiment 2                  told how many stages are hidden     3 tasks in 4        41        2   0.0488
+                              (WARN)
+experiment 3                  told that stopping early is          1 task in 4         9        3   0.3333
+                              rewarded (SIGMA)
+experiment 3                  told that stopping early is         3 tasks in 4        27        1   0.0370
+                              rewarded (SIGMA)
+experiment 4                  may say DONE (control, re-run)       1 task in 4        13        5   0.3846
+                              (CTRL’)
+experiment 4                  may say DONE (control, re-run)      3 tasks in 4        25        1   0.0400
+                              (CTRL’)
+experiment 4                  shown the count of what is still     1 task in 4         6        1   0.1667
+                              hidden (COUNT)
+experiment 4                  shown the count of what is still    3 tasks in 4        20        0   0.0000
+                              hidden (COUNT)
+all four experiments pooled                                        1 task in 4        65       25   0.3846
+all four experiments pooled                                       3 tasks in 4       155        6   0.0387
+
+
+Table 7: How often a DONE was wrong, against how much a green board is worth.
+The corpus was built in two batches that differ in how often a task hides nothing. In
+the first batch 1 task in 4 hides nothing, so a board with every visible test passing is
+usually a lie; in the second 3 tasks in 4 hide nothing, so the same board is usually the
+truth. The model is never told which batch a task came from, and the batch cannot be
+read from the bytes it sees. Each row counts only the DONEs said at the decision point,
+on core tasks; the 24-task annex carries no batch label and is excluded. The pooled
+difference between the two batches is 25/65 against 6/155, two-sided Fisher exact p =
+2.22e-10. A DONE is wrong far more often in the batch where a green board is less
+often trustworthy, which means the model’s claim is tracking a cue whose reliability
+it cannot observe. Regenerated from declare/data/ by tables/make_tables.py.
+
+Eliminated and surviving explanations: Table 8 lists all 14 registered predictions
+with their verdicts: 8 confirmed, 5 refuted and 1 returning neither, and the refutations
+are what carry the argument. Missing information was eliminated, because supplying
+the exact stage count moved nothing; incentive was eliminated within the bound
+that design could see; and perception was eliminated, because the model already
+discriminates the two kinds of task by a margin of +0.6390. What survives is integration,
+meaning the step in which a model combines what its rules told it with what its own
+transcript shows, at the moment it decides.
+
+
+                                                  25
+experiment     label   what was registered before the run                verdict             what the data showed
+experiment 1   P1         a model given the channel claims         CONFIRMED        4 wrong claims by the strongest
+                          completion it cannot verify, at the                         model, all in the hardest band
+                                             hardest difficulty
+experiment 1   P2      the benefit of removing the channel               NOT the ordering holds, the test rests on
+                             is largest for the middle model       CONFIRMED        one task that changed answer
+experiment 1   P3           removing the channel helps less       DISCONFIRMED it helped more: 7 tasks rescued of
+                                       where tests are staged                                  96 against 1 of 107
+experiment 1   P4              the benefit tracks the count of    DISCONFIRMED the two orderings disagree across
+                                                wrong claims                                         three models
+experiment 2   B1      telling the model how many stages          DISCONFIRMED6 tasks moved each way of 115, p =
+                                are hidden reduces claiming                                                 0.6128
+experiment 2   B2          wrong claims survive an explicit        CONFIRMED 69 claims under the warning, 19 of
+                                                   stage count                                        them wrong
+experiment 2   B3       accuracy tracks how much a green           CONFIRMED     0.4324 wrong against 0.0482, p <
+                                               board is worth                                               0.0001
+experiment 2   B4          the warning changes the ending,         CONFIRMED both checks inside their bands, one
+                                              not the working                                            by 0.0016
+experiment 3   C1        a stated reward for stopping early       DISCONFIRMED       6 tasks moved, 5 against the
+                                makes the model claim more                                  prediction, p = 0.9844
+experiment 3   C2        the extra claims come from where         DISCONFIRMED accuracy did not collapse: 0.2381
+                                     it was right to withhold                                       against 0.2826
+experiment 3   C5        the working phase has not drifted         CONFIRMED       both checks inside their bands
+                                        between the two days
+experiment 4   C4      doing the arithmetic at the decision        CONFIRMED       14 tasks moved, 13 against 1, p =
+                                      point reduces claiming                                                   0.0009
+experiment 4   C6             two identical runs disagree no       CONFIRMED           2 tasks of 71 = 0.0282 against
+                                 more than experiment 2 did                                                   0.10435
+experiment 4   C8      the counter changes the ending, not         CONFIRMED       +0.0000 and +0.0278, both inside
+                                                  the working                                                    band
+
+
+Table 8: Every registered prediction and how it turned out. Every prediction the
+programme registered, with the verdict its own registered analysis returned. A
+prediction was written down, together with the result that would confirm it and
+the result that would refute it, and frozen in a version-controlled file before the first
+episode of its experiment ran. CONFIRMED means the registered confirmation clause
+was met, DISCONFIRMED means the registered refutation clause was met, and
+NOT CONFIRMED means neither was met, which is possible because one early
+registration’s two clauses did not cover the whole range of outcomes. The verdicts are
+transcribed from the four write-ups and are not recomputed here, because a verdict
+is a reading of a clause rather than a number. Of 14 registered predictions 8 were
+confirmed, 5 were refuted and 1 returned neither, and the refutations are what
+removed the explanations this paper eliminates. Regenerated from declare/data/
+by tables/make_tables.py.
+
+
+The proposed mechanism: The model reads a green board as evidence of completion
+and applies a threshold to it. That threshold is too low for the tasks that hide something,
+it is not moved by putting information about the hidden stages in the rules, and it is
+not moved by attaching a payoff to stopping, yet the same information moves it when
+it arrives already computed, in the channel the model is reading, at the moment of
+the decision. The claim this paper makes is that the failure is one of integration at
+the decision point, and the evidence for that claim is one experiment whose placebo
+control has not been run.
+
+
+                                                          26
+The scope of Table 9: The five sets of rules that played the same 72 tasks are listed as
+rows for reference. Three of them ran on one day and two on another, and a difference
+between rows from different days cannot be told apart from a difference between the
+days, so no comparison is drawn from that table. Every comparison in this paper is
+one of the task-by-task ones in Tables 4, 5 and 6, each reading only tasks played under
+both of the arms it compares.
+
+experiment     what the model was told it could         day     tasks   visits to   DONEs          of share
+               do                                              played        the      at the   those,     of
+                                                                        decision    decision     how  tasks
+                                                                           point       point    many where
+                                                                                                were it said
+                                                                                               wrong DONE
+experiment 2   may say DONE (control) (CTRL)      2026-08-09       71         87         46       13   0.6479
+experiment 2   told how many stages are hidden    2026-08-09       72         91         45       11   0.6250
+               (WARN)
+experiment 3   told that stopping early is        2026-08-10       72         91         42       10   0.5833
+               rewarded (SIGMA)
+experiment 4   may say DONE (control, re-run)     2026-08-10       72         88         44       12   0.6111
+               (CTRL’)
+experiment 4   shown the count of what is still   2026-08-10       71         96         31        6   0.4366
+               hidden (COUNT)
+
+
+Table 9: The five sets of rules on the same 72 tasks. All five sets of rules restricted to the
+same 72 tasks, so the rows describe the same work. These rows are a description and
+not a comparison. Three of them were played on one day and two on another, and a
+difference between two rows from different days cannot be told apart from a difference
+between the two days. The comparisons this paper draws are the task-by-task ones in
+Tables 4, 5 and 6, each of which reads only tasks played under both sets of rules being
+compared. The table is included so that the five sets of rules can be seen side by
+side, and no inference is drawn from any difference between its rows. Regenerated
+from declare/data/ by tables/make_tables.py.
+
+
+10 Limitations
+Every limitation below is taken from the programme’s own registrations and deviation
+logs rather than assembled for this section, and each one names what it does and does
+not put at risk.
+   1. The placebo arm has not been run: Experiment 4 cannot separate the content
+      of the counter line from the presence of an extra sentence of feedback. The
+      registration recorded this before the run and the secondary analysis written to
+      bear on it does not settle it. It is the largest open question in the paper, and the
+      mechanism proposed in Section 9 depends on it.
+
+   2. One model carries three of the four experiments: Experiments 2, 3 and 4 are all
+      the same frontier model, so every elimination rests on one model. The capability
+      result in Section 5 is three models, and it is the only claim here that is not
+      single-model.
+
+
+                                                   27
+   3. One provider and one snapshot of it: Nothing here is replicated across providers,
+      and a different frontier model could in principle behave differently at the decision
+      point.
+
+   4. The decisive experiment rests on 71 paired tasks: Effects in this programme
+      live in counts of single digits, which is why every test is exact and why no
+      confidence interval appears anywhere. A thirteen-against-one split is a strong
+      result at this size and would still be a small sample at any other.
+
+   5. Two of the comparisons cross a day boundary: Experiment 3’s arm ran the day
+      after its control, and the churn floor calibrates this once, at 2 tasks of 71, but
+      the floor says what a third identical run would probably do rather than what a
+      different day would do, and it was measured only in the same session.
+
+   6. The corpus is generated and its conventions come from a catalogue: Whether
+      the same failure appears on organic under-specification in real repositories is
+      untested, and the guarantee that makes this instrument work is exactly the
+      guarantee a real repository cannot give.
+
+   7. Experiment 1’s registration did not partition the outcome space: One prediction
+      is recorded as neither confirmed nor disconfirmed because its two clauses left a
+      gap and the run landed in it. Later registrations fixed this by requiring three
+      clauses that partition.
+
+   8. Episodes that never came back are dropped rather than counted: Four in
+      Experiment 2 and one each elsewhere failed in transport, and each is excluded
+      from the paired statistics rather than scored as a failure, because an absent
+      episode is not an unsolved one.
+
+   9. Operational deviations are logged rather than repaired: One publish gate
+      was waived and recorded verbatim as a deviation, and a hash taken over a
+      directory listing rather than over a named file set meant that two pooled figures
+      in Experiment 2 print differently once later result files exist. The published
+      values are quoted here, the population they are taken over is named, and no
+      verdict moves either way.
+
+
+11 Design implications and reproducibility
+Design advice: The advice this programme licenses is narrower than the previous
+paper’s, and it should be stated as such. If an agent must judge for itself when a
+task is finished, put the state it needs in front of it at the moment it decides, already
+computed. Putting the same fact in the system prompt did not work across 115 paired
+tasks, attaching a payoff to stopping early did not work within a bound that rules out
+a large increase, and printing one line of arithmetic into the feedback at the moment
+of the decision moved 13 tasks against 1 and halved the wrong claims.
+Two qualifications travel with that. The first is that the placebo arm has not run,
+
+                                           28
+so a designer following this advice is following a result whose mechanism is not
+established. The second is that the intervention bought conservatism rather than
+accuracy, and it was free here only because submitting again costs nothing on this
+harness. A system that charges for a retry, whether in latency, tokens or a user’s
+patience, will price that trade differently and should measure it before adopting the
+line.
+The quantity to instrument: The failure has a location and the location is cheap to
+detect, because it is the state where every check the agent can run passes and the
+agent knows more checks exist. A harness that logs nothing else can log that state
+and count what its model does there, and that count is the quantity everything in this
+paper turns on.
+Scale and cost: The four experiments comprise 856 episodes over three models, the
+eleven runs cost $55.21, and the whole programme including calibration probing that
+produced no episode cost $61.25. An experiment that locates a reliability failure and
+then tries three interventions against it fits inside a rounding error on a compute
+budget, which is worth knowing before choosing to ship a harness on intuition instead.
+Reproducibility: Every number in this paper is recomputed from committed episode
+logs by one command, reading only frozen result files, task metadata and the checker,
+with no model call and no key. The whole programme is also published as a flattened
+dataset of five tables and 9,194 rows, extracted once and deterministically from the
+seventeen committed result files, so a reader can ask a question with a GROUP BY
+rather than by rerunning anything. Both corpora are pinned by content hash, each
+experiment’s predictions are frozen at a commit that provably precedes its first live
+call, and every deviation is recorded in an append-only log.
+Provenance: The harness, scaffolding and analysis code were built with AI assistance
+under execution-verified acceptance gates, with every phase advancing only on raw
+command output audited by the author and all deviations logged. The research
+questions, the registered predictions, the verification discipline and the interpretations
+are the author’s.
+
+
+12 References
+McNemar, Q. (1947). Note on the sampling error of the difference between correlated
+  proportions or percentages. Psychometrika, 12(2), 153–157.
+Fisher, R. A. (1935). The logic of inductive inference. Journal of the Royal Statistical
+   Society, 98(1), 39–82.
+Bhatnagar, K. (2026). Who decides when the task is done? Measuring the effect of mov-
+  ing completion authority from LLMs to checkers. DOI 10.5281/zenodo.21698264.
+
+
+
+
+                                           29
+
