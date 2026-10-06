@@ -97,7 +97,11 @@ function enter(i) {
   if (state.active) later(FADE + HOLD, () => { if (state.phase === 'arrive') start(); });
 }
 
+// analytics: the site shell (the parent page) passes these to its report; on its own the hall sends nothing
+const report = (name, extra = {}) => { try { parent.__track?.(name, { film: films[state.i].id, ...extra }); } catch { /* not inside the site */ } };
+
 function start() {
+  if (!state.counted?.has(state.i)) { (state.counted ||= new Set()).add(state.i); report('film_start'); }
   if (!state.active) return;
   leaveEnd();
   if (state.heldFor == null) state.heldFor = Math.round(performance.now() - state.enteredAt);   // how long the arrival held, by the page's own clock
@@ -141,6 +145,7 @@ function leaveEnd() {
 
 // ---------- the end: a hard stop, the lights come up, the next film comes forward ----------
 function ended() {
+  report('film_complete');
   clearTimers();
   state.watched.add(state.i);
   setPhase('ended');
@@ -236,7 +241,7 @@ el.cAgain.addEventListener('click', () => { video.currentTime = 0; if (state.pha
 el.cBar.addEventListener('click', (e) => { const b = el.cBar.getBoundingClientRect(); if (video.duration) video.currentTime = ((e.clientX - b.left) / b.width) * video.duration; if (state.phase === 'ended') { setPhase('paused'); leaveEnd(); } renderText(); });
 el.sound.addEventListener('click', () => {
   if (!state.active) return;
-  soundOn = video.muted; video.muted = !soundOn;
+  soundOn = video.muted; video.muted = !soundOn; if (soundOn) report('film_sound_on', { at: Math.round(video.currentTime) });
   if (soundOn && (state.phase === 'paused' || state.phase === 'arrive')) { clearTimers(); start(); }
   renderText();
 });

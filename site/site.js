@@ -1,5 +1,6 @@
 import { LINES, TOUR, STOPS, PANELS, linesAt } from './data.js?v=20261006-arrival-audio';
 import { Ride, runProfile, JUNCTION } from './ride.js?v=20261006k';
+import { track, stationView } from './analytics.js?v=20261007b';
 
 const $ = (s, r = document) => r.querySelector(s);
 const q = new URLSearchParams(location.search);
@@ -412,6 +413,7 @@ async function turn(to) {
 // Stopped: a beat, turn to the platform, the window's light swells, then step inside.
 async function arrive(id) {
   state.stop = id;
+  stationView(id, STOPS[id].name);
   const ti = TOUR.findIndex((t) => t.stop === id && t.line === state.line);
   if (ti >= 0) state.tour = ti;
   state.mode = 'platform';
@@ -687,6 +689,7 @@ function leaveText() {
 let landingRaf = 0;
 async function landing() {
   state.mode = 'landing';
+  stationView('landing', 'Landing');
   state.boardLeft = BOARD_AFTER;
   if (still) state.riding = false;
   body.classList.add('landing');
@@ -752,3 +755,6 @@ async function board(line = 'built') {
   await arrive(start);
   state.busy = false;
 })();
+
+// analytics: the resume button is counted wherever it is pressed
+document.addEventListener('click', (e) => { const a = e.target.closest('a[href*="resume"]'); if (a) track('resume_open', { from: state.stop }); }, true);
