@@ -104,6 +104,9 @@ const tally = createTally($('tallyCanvas'));
 // ── Layout: the stage is measured once per resize; pages move between measured spots ──
 let G = null;
 function layout() {
+  // a short phone (inside the site: about 600 px or less) gets a tighter page, and the revealed batch is laid over the desk (7 Oct 2026)
+  root.classList.toggle('is-short', innerWidth < 640 && innerHeight < 720);
+  const short = root.classList.contains('is-short');
   const st = $('stage').getBoundingClientRect();
   const W = st.width; const H = st.height; const narrow = W < 640;
   root.classList.toggle('is-narrow', narrow);
@@ -112,7 +115,7 @@ function layout() {
   // short laptop screens show 7 lines of code (styles.css, 3.1), and that room goes to the figures
   const shortScreen = !narrow && innerHeight <= 760;
   let actorsH = narrow ? Math.round(Math.max(118, Math.min(136, H * 0.17))) : Math.round(Math.max(160, Math.min(266, H * (shortScreen ? 0.4 : 0.32))));
-  const capH = narrow ? 50 : 40;
+  const capH = narrow ? (short ? 42 : 50) : 40;
   const deskW = narrow ? W - 24 : Math.min(720, Math.round(W * 0.54));
   const deskX = narrow ? 12 : Math.round(W * 0.43 - deskW / 2);
   let deskTop = actorsH + capH;
@@ -125,18 +128,18 @@ function layout() {
   // laptop only down to the code beside it), then, if still needed, give the figures less height.
   {
     const had = root.classList.contains('show-countline'); root.classList.add('show-countline');
-    const below = narrow ? 150 : 10; // phone: room for "Held back…" and the revealed batch under the desk
+    const below = short ? 26 : narrow ? 150 : 10; // phone: room for "Held back…" and the revealed batch under the desk
     const measureOver = () => $('desk').getBoundingClientRect().bottom - st.top + below - H;
     let over = measureOver();
     if (over > 0) {
       const codeH = narrow ? 0 : $('code').getBoundingClientRect().height;
-      const floor = narrow ? 122 : Math.max(132, Math.ceil(codeH));
+      const floor = short ? 112 : narrow ? 122 : Math.max(132, Math.ceil(codeH));
       const cut = Math.min(over, Math.max(0, slotH - floor));
       slotH -= Math.ceil(cut); s.setProperty('--slot-h', `${slotH}px`);
       over = measureOver();
     }
     if (over > 0) {
-      const cut = Math.min(Math.ceil(over), actorsH - (narrow ? 104 : 138));
+      const cut = Math.min(Math.ceil(over), actorsH - (short ? 74 : narrow ? 104 : 138));
       actorsH -= cut; deskTop -= cut;
       s.setProperty('--actors-h', `${actorsH}px`); s.setProperty('--desk-top', `${deskTop}px`); s.setProperty('--cap-top', `${actorsH + 4}px`);
     }
@@ -145,7 +148,7 @@ function layout() {
   // tally area: where the desk and the fog were
   const tw = narrow ? W - 24 : Math.min(980, W - 120);
   const tx = (W - tw) / 2; const ty = actorsH + capH + (narrow ? 0 : 6);
-  const th = Math.max(200, (narrow ? H - ty - 112 : H - ty - 84));
+  const th = Math.max(short ? 170 : 200, (narrow ? H - ty - (short ? 150 : 112) : H - ty - 84));
   s.setProperty('--tally-x', `${tx}px`); s.setProperty('--tally-y', `${ty}px`); s.setProperty('--tally-w', `${tw}px`); s.setProperty('--tally-h', `${th}px`);
   tally.layout(tw, th, narrow);
   placeSigns(narrow, th);
@@ -183,7 +186,9 @@ function measure() {
   G.slot = { x: sr.left - st.left, y: sr.top - st.top, w: sr.width, h: sr.height };
   const desk = { x: dr.left - st.left, y: dr.top - st.top, w: dr.width, h: dr.height };
   const pageW = narrow ? desk.w - 36 : Math.min(300, Math.round(W * 0.2));
-  G.pile = narrow
+  G.pile = narrow && root.classList.contains('is-short')
+    ? { x: desk.x + 14, y: G.slot.y + 6, w: desk.w - 28, h: Math.max(90, Math.min(150, H - (G.slot.y + 6) - 4)) }
+    : narrow
     ? { x: desk.x + 18, y: desk.y + desk.h + 22, w: pageW, h: Math.max(90, Math.min(150, H - (desk.y + desk.h + 22) - 4)) }
     : { x: Math.min(W - pageW - 24, desk.x + desk.w + Math.round((W - desk.x - desk.w - pageW) / 2)), y: desk.y + 34, w: pageW, h: Math.min(200, desk.h - 120) };
   const s = root.style;

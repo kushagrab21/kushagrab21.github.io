@@ -355,3 +355,28 @@ button { font: inherit; }
 
 /* the code and video links under the scene (6 Oct 2026) */
 .tome-foot .links { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 14px; }
+
+/* phone repair (7 Oct 2026): the block sits in the site's iframe at phone width, often under 520px tall */
+@media (max-width: 760px) {
+  .tome { min-height: 0; }                       /* the 520px floor pushed the Pause row below a short screen */
+  .card { container-type: inline-size; }
+  .card-head { align-items: center; gap: 6px; padding: 8px 10px 0; }
+  .card-head .nm { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .card-head .open-btn { margin-left: 0; flex: none; }
+  .card-head .k { flex: none; }
+  .scene.flaps-short .edge:not(.closed) { top: var(--card-top); bottom: 6px; }
+  .controls { gap: 10px; padding: 4px 12px 8px; }
+}
+@media (max-width: 760px) and (max-height: 600px) {
+  .wordmark { display: none; }                   /* the site's band already names the stop; the heading says "Tome" too */
+  .tome-head { padding-top: 6px; }
+  .tome-head h2 { font-size: 17px; }
+  .replay-note { font-size: 11px; line-height: 1.3; }
+}
+@container (max-width: 300px) {
+  .card-head .k { display: none; }               /* a narrow card keeps its name and "Full screen" on one line */
+}
+@container (max-width: 230px) {
+  .card-head .open-btn { font-size: 0; padding: 2px 7px; }
+  .card-head .open-btn::first-letter { font-size: 12px; }
+}

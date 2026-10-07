@@ -135,3 +135,12 @@ a { color: inherit; }
 .screen .disclose { left: calc(var(--inset, 0%) + 2.2%); }
 .screen .controls { left: var(--inset, 0%); right: var(--inset, 0%); }
 .read[hidden], .read-now[hidden] { display: none; }
+
+/* a phone on its side (7 Oct 2026): the row under the screen goes back to one line, so the film keeps its height */
+@media (max-width: 700px) and (orientation: landscape) {
+  .under { grid-template-columns: 1fr auto auto; justify-items: stretch; row-gap: 0; }
+  .meta { order: 0; }
+}
+/* a short wide window (a large phone on its side): the sound button keeps its two lines, and the hint gives way to it */
+.sound-copy { white-space: nowrap; }
+@media (min-width: 701px) and (max-height: 440px) { .hint { font-size: 12.5px; } .under { column-gap: 14px; } }

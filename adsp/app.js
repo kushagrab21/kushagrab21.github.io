@@ -367,7 +367,7 @@ function liftRecord(row){
   }
   requestAnimationFrame(drawTether);setTimeout(drawTether,800);
   $('pause-prompt').textContent='Read this row, or choose another dot.'; $('control-summary').textContent='Move the slider to change the group.';
-  $('close-point').focus({preventScroll:true});announce(`Student ${recordNumber(row)}, attendance ${attendanceText(row)}. Row opened from the chart.`);
+  $('close-point').focus({preventScroll:true});if(smallLayout.matches)setTimeout(()=>$('point-card').scrollIntoView({block:'nearest',behavior:reducedMotion.matches?'auto':'smooth'}),720);announce(`Student ${recordNumber(row)}, attendance ${attendanceText(row)}. Row opened from the chart.`);
 }
 function updateLiftedRecord(){
   if(!liftedRow)return;
@@ -438,7 +438,7 @@ function paintPlayback(running){
   $('play-icon').textContent=running?'Ⅱ':'▶';
   $('play-label').textContent=motionOff?'Step':running?'Pause':'Resume';
   $('demo-status').textContent=running?'Changing the attendance limit':motionOff?'Motion off':'Choose a group';
-  $('pause-prompt').textContent=running?'Click anywhere to take over.':'Flow paused until you resume.';
+  $('pause-prompt').textContent=running?(matchMedia('(hover: none)').matches?'Tap':'Click')+' anywhere to take over.':'Flow paused until you resume.';
   $('control-summary').textContent=running?'Move the slider to choose a group.':'Drag to change the student group.';
 }
 const demo=createCutoffDemo({

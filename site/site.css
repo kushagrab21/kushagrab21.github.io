@@ -403,3 +403,39 @@ a.bx-resume:hover { background: #fff; }
   [data-hand="b"] .dep > span { font-size: 18.5px; }
   [data-hand="b"] .board { border-image-width: 22px; }
 }
+
+/* Phone band fix (7 Oct 2026): the next button no longer starves the station name. The name keeps at least a third of the band, and the next button wraps to two lines instead. */
+@media (max-width: 720px) {
+  .bx-here { flex: 1 1 0; min-width: 34%; }
+  .bx-next { flex: 0 1 auto; min-width: 0; max-width: 46%; }
+  .bx-next .go { white-space: normal; line-height: 1.15; text-align: left; font-size: 14px; padding: 0 10px; overflow: hidden; }
+  .bx-here b { font-size: 14px; }
+}
+/* Short phones: the departures board fits without scrolling */
+@media (max-width: 720px) and (max-height: 700px) {
+  [data-hand="b"] .board h1 { font-size: 36px; margin-bottom: 4px; }
+  [data-hand="b"] .board .one { font-size: 17px; margin-bottom: 10px; }
+  [data-hand="b"] .dep { padding: 9px 0 10px; }
+  [data-hand="b"] .dep b { font-size: 21px; }
+  [data-hand="b"] .dep > span { font-size: 16.5px; }
+  .board { padding: 16px 16px 14px; }
+  .board-act { margin-top: 12px; gap: 8px; }
+  .board-act > * { padding-top: 9px; padding-bottom: 9px; }
+  .leave { margin-top: 8px; }
+}
+/* Phone map (7 Oct 2026): the line's name sits above the first stop instead of on it, and the Research/Writing fork sits beside the line, not across it. */
+@media (max-width: 720px) {
+  .vmap { inset: 22px 0 0 0; }
+  .vmap .mname { top: -20px; }
+  .vmap.forked .fork { left: 54px; top: 100%; }
+}
+@media (max-width: 360px) { .vmap .fork button { margin-right: 10px; } .vmap .fork small { font-size: 12px; } }
+@media (max-width: 380px) {
+  .band { gap: 5px; padding: 0 5px; }
+  .bx-here { padding: 0 6px; }
+  .bx-here b { font-size: 13px; }
+  .bx-next { max-width: 40%; }
+  .bx-next .go { font-size: 13px; padding: 0 8px; }
+  .bx-back { width: 34px; }
+  .bx-resume { padding: 0 7px; }
+}

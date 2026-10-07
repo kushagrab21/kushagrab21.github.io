@@ -230,6 +230,8 @@ function setFlap(side, open) {
   hinge.setAttribute('aria-expanded', String(open));
   hinge.setAttribute('aria-label', open ? FLAP.close : (side === 'in' ? FLAP.openInput : FLAP.openOutput));
   $('#inspect').classList.toggle(`${side}-closed`, !open);
+  // On a phone an open record covers the stage, so only one is open at a time.
+  if (open && narrow()) setFlap(side === 'in' ? 'out' : 'in', false);
 }
 
 /* ---------------- who owns the stage: the replay, or the visitor reading ---------------- */
@@ -258,6 +260,10 @@ function show(i, { animate = true } = {}) {
   $$('.step').forEach((b) => b.classList.toggle('is-shown', Number(b.dataset.op) === i));
   $$('.area').forEach((a) => a.classList.toggle('is-shown', a.dataset.area === op.area));
   if ($('#jobmap').classList.contains('tighter')) fitMap();
+  if (narrow()) {
+    const map = $('#jobmap'); const b = $(`.step[data-op="${i}"]`);
+    if (b) { const m = map.getBoundingClientRect(); const r = b.getBoundingClientRect(); map.scrollTo({ left: map.scrollLeft + r.left - m.left - m.width * 0.3, behavior: animate && !reduced ? 'smooth' : 'auto' }); }
+  }
   if (animate && !reduced && prev >= 0) carryTokens(prev, i);
 }
 
@@ -326,6 +332,7 @@ function pin(i = shown, why = 'select') {
 }
 function follow() {
   reading = null; exercise.open = false;
+  if (narrow()) { setFlap('in', false); setFlap('out', false); }
   const { i } = opAt(clock); show(i, { animate: false });
   updateOwnership();
 }
@@ -462,7 +469,7 @@ function drawRoom(t, f, dt) {
   const area = OPS[shown].area; const shift = { documents: 26, review: 0, later: -26 }[area];
   $('#ft').style.setProperty('--room-shift', `${reduced ? 0 : shift + Math.sin(t / 8) * 6}px`);
   const replayBtn = $(`.step[data-op="${i}"]`); const mk2 = $('#replay-marker');
-  if (replayBtn) { const m = $('#jobmap').getBoundingClientRect(); const b = replayBtn.getBoundingClientRect(); mk2.style.transform = `translate(${(b.left - m.left + b.width / 2).toFixed(1)}px, ${(b.bottom - m.top + 2).toFixed(1)}px)`; }
+  if (replayBtn) { const m = $('#jobmap').getBoundingClientRect(); const b = replayBtn.getBoundingClientRect(); mk2.style.transform = `translate(${(b.left - m.left + $('#jobmap').scrollLeft + b.width / 2).toFixed(1)}px, ${(b.bottom - m.top + 2).toFixed(1)}px)`; }
 }
 
 // Unowned flaps drift a little sideways; while someone reads, they hold still.
@@ -550,6 +557,10 @@ show(opAt(clock).i, { animate: false });
 if (params.has('read')) pin(opIndex(params.get('read')));
 for (const k of (params.get('ex') || '').split(',').filter(Boolean)) exercise[k] = true;
 if (params.get('try') === '1') { exercise.open = true; renderFlap('out'); }
+const phoneMQ = matchMedia('(max-width: 760px)');
+const foldForWidth = () => { setFlap('in', !phoneMQ.matches); setFlap('out', !phoneMQ.matches); };
+if (phoneMQ.matches) foldForWidth();
+phoneMQ.addEventListener('change', foldForWidth);
 for (const s of (params.get('closed') || '').split(',').filter(Boolean)) setFlap(s, false);
 if (params.has('tab')) { const [s, n] = params.get('tab').split(':'); flaps[s].tab = Number(n); renderFlap(s); }
 if (params.get('run') === '1') setPaused(false);

@@ -210,14 +210,21 @@ function renderText() {
 
 // ---------- placing the HTML on the room ----------
 function place() {
-  const w = innerWidth, h = innerHeight, phone = w <= 700;
+  const w = innerWidth, h = innerHeight, phone = w <= 700, gap = phone ? 16 : 14;
   // no sign above any more: the screen takes the space, wider and taller, with the row of controls and the seats below it
-  room.layout(w, h, phone ? Math.max(16, h * 0.06) : Math.max(14, h * 0.04), h * (phone ? 0.62 : 0.79), w * (phone ? 0.96 : 0.94));   // 0.79: a taller screen, with a band of seats still below   // 0.76: leaves the red rows a real share of the view
-  const r = room.screenRect();
-  Object.assign(el.screen.style, { left: `${r.left}px`, top: `${r.top}px`, width: `${r.width}px`, height: `${r.height}px` });
-  el.screen.style.setProperty('--inset', `${(room.filmInset * 100).toFixed(2)}%`);   // words on the film sit on the film, not on the extension
-  Object.assign(el.under.style, phone ? { left: '16px', width: `${w - 32}px`, top: `${r.top + r.height + 16}px` }
-    : { left: `${r.left}px`, width: `${r.width}px`, top: `${r.top + r.height + 14}px` });
+  let bottom = h * (phone ? 0.62 : 0.79);   // 0.79: a taller screen, with a band of seats still below   // 0.76: leaves the red rows a real share of the view
+  for (let i = 0; i < 3; i++) {
+    room.layout(w, h, phone ? Math.max(16, h * 0.06) : Math.max(14, h * 0.04), bottom, w * (phone ? 0.96 : 0.94));
+    const r = room.screenRect();
+    Object.assign(el.screen.style, { left: `${r.left}px`, top: `${r.top}px`, width: `${r.width}px`, height: `${r.height}px` });
+    el.screen.style.setProperty('--inset', `${(room.filmInset * 100).toFixed(2)}%`);   // words on the film sit on the film, not on the extension
+    Object.assign(el.under.style, phone ? { left: '16px', width: `${w - 32}px`, top: `${r.top + r.height + gap}px` }
+      : { left: `${r.left}px`, width: `${r.width}px`, top: `${r.top + r.height + gap}px` });
+    // on a short window (a phone on its side) the row under the screen must stay in view: the screen gives up the height it needs
+    const over = r.top + r.height + gap + el.under.offsetHeight - (h - 8);
+    if (over <= 1) break;
+    bottom -= over;
+  }
   placeEnd();
 }
 function placeEnd() {

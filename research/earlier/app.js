@@ -44,6 +44,7 @@ function render() {
   document.querySelectorAll('[data-go]').forEach(button => {
     button.setAttribute('aria-current', button.dataset.go === s.id ? 'step' : 'false');
   });
+  keepBadgeInView(s.id);
   if (pieces.some(p => p.id === s.id)) updateSketch($(`#card-${s.id}`), s.id, s.still ? 1 : s.progress, overrides, s.still || directSelection);
   const visual = sceneAt(s, s.still || directSelection || !!detailsId);
   for (const key of ['room','figures','card','caption','flight']) $('.station').style.setProperty(`--scene-${key}`, visual[key]);
@@ -121,3 +122,11 @@ motion.addEventListener('change', () => {
 });
 window.__station = { get state() { return { ...controller.state, overrides: { ...overrides }, detailsId }; }, play, pause, go, seek };
 render(); schedule();
+
+// On a short phone the badges are one row that scrolls sideways; keep the current piece's badge in view (7 Oct 2026).
+function keepBadgeInView(id) {
+  const row = $('#credentials'); if (id === keepBadgeInView.shown || row.scrollWidth <= row.clientWidth + 1) return;
+  const badge = row.querySelector(`[data-go="${id}"]`);
+  keepBadgeInView.shown = id;
+  row.scrollTo({ left: badge ? Math.max(0, badge.offsetLeft - 8) : 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+}

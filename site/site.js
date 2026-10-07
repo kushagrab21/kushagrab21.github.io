@@ -7,6 +7,7 @@ const q = new URLSearchParams(location.search);
 const body = document.body;
 const phoneMQ = matchMedia('(max-width: 720px)');
 const still = matchMedia('(prefers-reduced-motion: reduce)').matches || q.has('still');
+const TAP = matchMedia('(hover: none)').matches ? 'Tap' : 'Click';
 const sleep = (ms) => new Promise((r) => setTimeout(r, still ? 0 : ms));
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const mmss = (n) => `${Math.floor(n / 60)}:${String(Math.max(0, Math.ceil(n % 60))).padStart(2, '0')}`;
@@ -118,7 +119,7 @@ function renderNameband(phase) {
   const s = phase === 'to-junction' ? { name: 'Junction', gloss: 'choose Research or Writing' } : STOPS[state.target || state.stop];
   const lead = { stopping: 'Now stopping at', approaching: 'Now approaching', entering: 'Entering', 'to-junction': 'Next' }[phase] || 'Next station';
   nameband.innerHTML = `<div class="nb-name"><small>${lead}</small><b>${esc(s.name)}</b><span>${esc(s.gloss)}</span></div>
-    <div class="nb-hint">${state.busy && (phase === 'next' || !phase) ? `Click anywhere to go straight to ${esc(s.name)}` : ''}</div>`;
+    <div class="nb-hint">${state.busy && (phase === 'next' || !phase) ? `${TAP} anywhere to go straight to ${esc(s.name)}` : ''}</div>`;
 }
 
 /* ================= the band (inside a station, full screen) ================= */
@@ -680,7 +681,7 @@ const FIRST = { built: 'intro', research: 'finding', writing: 'w-articles' };   
 function leaveText() {
   const bar = $('#leave-bar'), txt = $('#leave-text');
   if (!txt) return;
-  if (state.riding && !still) { txt.textContent = `Off to ${FIRST.built === 'intro' ? 'the introduction' : STOPS[FIRST.built].name} in ${Math.ceil(state.boardLeft)} s (click anywhere if you’d rather stay).`; bar.style.width = `${100 * (1 - state.boardLeft / BOARD_AFTER)}%`; }
+  if (state.riding && !still) { txt.textContent = `Off to ${FIRST.built === 'intro' ? 'the introduction' : STOPS[FIRST.built].name} in ${Math.ceil(state.boardLeft)} s (${TAP.toLowerCase()} anywhere if you’d rather stay).`; bar.style.width = `${100 * (1 - state.boardLeft / BOARD_AFTER)}%`; }
   else { txt.textContent = 'No rush. Hop on, or pick a line.'; bar.style.width = '0'; }
 }
 

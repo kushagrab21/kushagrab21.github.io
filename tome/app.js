@@ -79,10 +79,10 @@ let G;
 function layout() {
   const W = scene.clientWidth, H = scene.clientHeight, full = $('tome').clientHeight;
   const phone = W < 760;
-  const bandH = Math.round(Math.max(phone ? 104 : 130, Math.min(phone ? 128 : 210, full * (phone ? 0.15 : 0.22))));
+  const bandH = Math.round(Math.max(phone ? (full < 600 ? 92 : 104) : 130, Math.min(phone ? 128 : 210, full * (phone ? 0.15 : 0.22))));
   const capH = phone ? 44 : 32;
   const cardTop = bandH + capH + 8;
-  const below = phone ? 30 : 26;
+  const below = phone ? 54 : 26;               // phone: room under the card for the two folded flap tabs (12 + 34 + 8)
   const headH = 30, ratio = 300 / 480;
   let cardW = phone ? Math.min(360, W - 40) : Math.min(560, Math.max(340, W * 0.39));
   const maxH = Math.min(full * 0.5 + (phone ? 40 : 0), H - cardTop - below);
@@ -99,6 +99,8 @@ function layout() {
   s.setProperty('--edge-w', `${edgeW}px`);
   s.setProperty('--gpt-h', `${gptH}px`); s.setProperty('--gpt-w', `${Math.round(gptH * 1.9)}px`);
   s.setProperty('--rail-gap', `${phone ? 64 : Math.min(240, W * 0.13)}px`);
+  // phone with little room under the card: an opened flap rises over the card instead of opening as a sliver (7 Oct 2026)
+  scene.classList.toggle('flaps-short', phone && H - (cardTop + G.cardH) < 130);
 }
 
 // ── The cards: each builds an SVG once, then draw(u) updates it from the clock ──
